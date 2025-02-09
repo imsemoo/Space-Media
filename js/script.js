@@ -1,10 +1,27 @@
+$(document).ready(function(){
+  $(".articles-slider").owlCarousel({
+    loop: true,
+    nav: true,
+    dots: false,
+    navText: [
+      '<i class="fas fa-arrow-left"></i>',
+      '<i class="fas fa-arrow-right"></i>'
+    ],
+    responsive: {
+      0: { items: 1 },
+      600: { items: 2 },
+      1000: { items: 3 }
+    }
+  });
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Fixed Navbar: Toggle 'fixed-nav' class when scrolling past 50px
+  // Fixed Navbar Animation (unchanged)
   window.addEventListener("scroll", function () {
     document.querySelector(".navbar").classList.toggle("fixed-nav", window.scrollY > 50);
   });
 
-  // Initial Navbar Animations
   gsap.from(".navbar-brand", {
     duration: 1,
     y: -50,
@@ -20,11 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
     ease: "power2.out"
   });
 
-  // Animate Header Section on scroll (or on page load if in view)
+  // Animate Header Section (unchanged)
   gsap.timeline({
     scrollTrigger: {
       trigger: "header.header",
-      start: "top center"  // when header reaches center of viewport
+      start: "top center"
     }
   })
     .from("header.header .overlay", { duration: 1, opacity: 0 })
@@ -32,17 +49,17 @@ document.addEventListener("DOMContentLoaded", function () {
     .from("header.header p", { duration: 1, opacity: 0, y: 50 }, "-=0.7")
     .from("header.header .search-filter", { duration: 1, opacity: 0, y: 50 }, "-=0.7");
 
-  // Animate Featured Media Section
+  // Animate Featured Media Section (unchanged)
   gsap.timeline({
     scrollTrigger: {
       trigger: "#featured-media",
-      start: "top 80%"  // animation triggers when top of section is 80% down viewport
+      start: "top 80%"
     }
   })
     .from("#featured-media .section-header", { duration: 1, opacity: 0, y: -30, delay: 0.3 })
     .from("#featured-media .media-card", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
 
-  // Animate Thematic Galleries Section
+  // Animate Thematic Galleries Section (unchanged)
   gsap.timeline({
     scrollTrigger: {
       trigger: "#thematic-galleries",
@@ -52,17 +69,17 @@ document.addEventListener("DOMContentLoaded", function () {
     .from("#thematic-galleries .section-header", { duration: 1, opacity: 0, y: -30, delay: 0.3 })
     .from("#thematic-galleries .gallery-card", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
 
-  // Animate Articles Section
+  // Animate Articles Section Slider Container Only
   gsap.timeline({
     scrollTrigger: {
-      trigger: "#articles",
-      start: "top 80%"
+      trigger: ".articles-slider",
+      start: "top 80%",
+      toggleActions: "play none none none"
     }
   })
-    .from("#articles .section-header", { duration: 1, opacity: 0, y: -30, delay: 0.3 })
-    .from("#articles .article-card", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
+    .from(".articles-slider", { duration: 1, opacity: 0, y: 30, ease: "power2.out" });
 
-  // Animate Latest Updates Section
+  // Animate Latest Updates Section (unchanged)
   gsap.timeline({
     scrollTrigger: {
       trigger: "#latest-updates",
@@ -80,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     duration: 1,
     opacity: 0,
-    y: 30
+    y: 30,
+    ease: "power2.out"
   });
 });

@@ -594,8 +594,6 @@ ul {
   overflow: hidden;
 }
 
-
-
 /* Section Header */
 .section-header {
   text-align: center;
@@ -703,9 +701,6 @@ ul {
   overflow: hidden;
 }
 
-
-
-
 /* Galleries Grid Layout */
 .galleries-grid {
   display: grid;
@@ -789,91 +784,93 @@ ul {
   color: #fff;
   line-height: 1.4;
 }
-    /* ===================== Articles Section Styles ===================== */
-    .articles-section {
-      padding: 80px 0;
-    }
- 
-    /* Articles Grid */
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 30px;
-      padding-bottom: 30px;
-    }
-    /* Article Card */
-    .article-card {
-      background-color: var(--background-color);
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-    .article-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-    /* Article Image */
-    .article-img {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-    }
-    .article-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .article-card:hover .article-img img {
-      transform: scale(1.05);
-    }
-    /* Article Content */
-    .article-content {
-      padding: 20px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .article-title {
-      font-size: 1.75rem;
-      margin: 0 0 10px;
-      color: var(--primary-color);
-    }
-    .article-meta {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-      color: var(--text-muted-color);
-    }
-    .article-meta span {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .article-excerpt {
-      flex-grow: 1;
-      font-size: 1rem;
-      color: var(--text-color);
-      margin-bottom: 20px;
-    }
+/* ===================== Articles Section Styles ===================== */
+.articles-section {
+  padding: 80px 0;
+}
 
-  /* ===================== Latest Updates Section ===================== */
+/* Articles Grid */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+/* Article Card */
+.article-card {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  min-height: 490px;
+  margin: 15px;
+}
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+/* Article Image */
+.article-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.article-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.article-card:hover .article-img img {
+  transform: scale(1.05);
+}
+/* Article Content */
+.article-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.article-title {
+  font-size: 1.75rem;
+  margin: 0 0 10px;
+  color: var(--primary-color);
+}
+.article-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+}
+.article-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.article-excerpt {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+/* ===================== Latest Updates Section ===================== */
 .latest-updates-section {
   padding: 80px 0;
   background-color: var(--secondary-background-color);
 }
 
-
-
 /* Updates Grid */
 .updates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
   padding-bottom: 30px;
 }
@@ -882,7 +879,7 @@ ul {
 .update-card {
   background-color: var(--background-color);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -890,7 +887,7 @@ ul {
 }
 .update-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Update Image */
@@ -951,12 +948,10 @@ ul {
   color: var(--info-color);
 }
 
-
-
 /* ----------------------- Footer Section ----------------------- */
 .footer {
-  background: #0D1B2A;
-  
+  background: #0d1b2a;
+
   color: #fff;
   font-family: "Poppins", sans-serif; /* or your chosen font */
 }
@@ -971,7 +966,9 @@ ul {
 }
 .footer-columns {
   display: grid;
-  grid-template-columns: calc(30% - 45px) calc(20% - 30px) calc(20% - 30px) calc(30% - 45px);
+  grid-template-columns: calc(30% - 45px) calc(20% - 30px) calc(20% - 30px) calc(
+      30% - 45px
+    );
   gap: 60px;
   text-align: left;
 }
@@ -1049,4 +1046,43 @@ ul {
 .footer-bottom p {
   font-size: 0.9rem;
   margin: 0;
+}
+
+/* ===================== Custom Owl Carousel Arrow Styles ===================== */
+.owl-carousel .owl-nav.disabled {
+  display: block;
+}
+.owl-prev, .owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 1000;
+}
+
+.owl-prev:hover, .owl-next:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.owl-prev {
+  left: -20px;
+}
+
+.owl-next {
+  right: -20px;
+}
+
+/* إخفاء نقاط التنقل إن وجدت */
+.owl-dots {
+  display: none;
 }
