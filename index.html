@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Character encoding -->
   <meta charset="UTF-8" />
@@ -86,9 +87,8 @@
         <img src="./img/logo.png" alt="SPACE MEDIA Logo" />
       </a>
       <!-- Navbar Toggler for Mobile -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-              aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Navbar Content -->
@@ -104,14 +104,15 @@
           </li>
           <!-- Videos Dropdown (opens on hover on desktop) -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" 
-               data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Videos <i class="fa-solid fa-angle-down"></i>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="videos-trending.html">Trending Videos</a></li>
               <li><a class="dropdown-item" href="videos-latest.html">Latest Videos</a></li>
-              <li><hr class="dropdown-divider"></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
               <li><a class="dropdown-item" href="videos-popular.html">Popular Videos</a></li>
             </ul>
           </li>
@@ -164,7 +165,8 @@
                   <span class="input-group-text">
                     <i class="fas fa-search"></i>
                   </span>
-                  <input type="text" class="form-control" placeholder="Search stock media..." aria-label="Search keywords">
+                  <input type="text" class="form-control" placeholder="Search stock media..."
+                    aria-label="Search keywords">
                 </div>
                 <!-- Media Type Selector with Icon -->
                 <div class="input-group">
@@ -215,15 +217,13 @@
       </div>
     </div>
   </header>
-  
 
-
-  
   <section id="featured-media" class="featured-media-section">
     <div class="container">
       <!-- Section Header -->
       <div class="section-header">
-        <h2 class="section-title"><span>Featured Media</span></h2>
+        <h2 class="section-title">  <span><i class="fas fa-photo-video me-2"></i>Featured Media</span>
+        </h2>
         <p class="section-subtitle">
           Discover exclusive, high-quality stock photos and videos curated by industry experts.
         </p>
@@ -305,9 +305,305 @@
       </div>
     </div>
   </section>
-  
-  
-  
+
+  <section id="thematic-galleries" class="thematic-galleries-section">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="section-title">  <span><i class="fas fa-th-large me-2"></i>Thematic Galleries</span>
+        </h2>
+        <p class="section-subtitle">
+          Explore curated collections that capture the diverse stories and themes of our world.
+        </p>
+      </div>
+      <!-- Galleries Grid -->
+      <div class="galleries-grid">
+        <!-- Gallery Card 1 -->
+        <a href="gallery-details.html?id=1" class="gallery-card">
+          <div class="gallery-img">
+            <img src="./img/galleries/1.jpg" alt="Cultural Heritage Gallery">
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h3>Cultural Heritage</h3>
+                <p>Discover timeless traditions and artistic expressions.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Gallery Card 2 -->
+        <a href="gallery-details.html?id=2" class="gallery-card">
+          <div class="gallery-img">
+            <img src="./img/galleries/2.jpg" alt="Urban Life Gallery">
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h3>Urban Life</h3>
+                <p>Experience the energy of modern cityscapes.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Gallery Card 3 -->
+        <a href="gallery-details.html?id=3" class="gallery-card">
+          <div class="gallery-img">
+            <img src="./img/galleries/3.jpg" alt="Nature & Landscapes Gallery">
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h3>Nature & Landscapes</h3>
+                <p>Immerse yourself in breathtaking natural scenes.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Gallery Card 4 -->
+        <a href="gallery-details.html?id=4" class="gallery-card">
+          <div class="gallery-img">
+            <img src="./img/galleries/4.jpg" alt="Abstract & Conceptual Gallery">
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h3>Abstract & Conceptual</h3>
+                <p>Explore innovative artistic interpretations.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Gallery Card 5 -->
+        <a href="gallery-details.html?id=5" class="gallery-card">
+          <div class="gallery-img">
+            <img src="./img/galleries/5.jpg" alt="Fashion & Lifestyle Gallery">
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h3>Fashion & Lifestyle</h3>
+                <p>Get inspired by the latest trends and timeless styles.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Gallery Card 6 -->
+        <a href="gallery-details.html?id=6" class="gallery-card">
+          <div class="gallery-img">
+            <img src="./img/galleries/6.jpg" alt="Sports & Action Gallery">
+            <div class="gallery-overlay">
+              <div class="gallery-info">
+                <h3>Sports & Action</h3>
+                <p>Feel the adrenaline in every frame of dynamic moments.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+  <section id="articles" class="articles-section">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="section-title">
+          <span><i class="fas fa-book-open me-2"></i>Articles</span>
+        </h2>
+        <p class="section-subtitle">
+          Dive into our latest articles for insights, tips, and trends in digital media.
+        </p>
+      </div>
+      <!-- Articles Grid -->
+      <div class="articles-grid">
+        <!-- Article Card 1 -->
+        <article class="article-card">
+          <div class="article-img">
+            <img src="./img/articles/1.jpg" alt="Understanding Visual Storytelling">
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Understanding Visual Storytelling</h3>
+            <div class="article-meta">
+              <span class="article-date"><i class="fas fa-calendar-alt"></i> April 1, 2025</span>
+              <span class="article-readtime"><i class="fas fa-clock"></i> 7 min read</span>
+            </div>
+            <p class="article-excerpt">
+              Learn how compelling visuals can transform your storytelling and captivate audiences.
+            </p>
+            <a href="article-details.html?id=1" class="read-more">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+        <!-- Article Card 2 -->
+        <article class="article-card">
+          <div class="article-img">
+            <img src="./img/articles/2.jpg" alt="The Future of Digital Media">
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">The Future of Digital Media</h3>
+            <div class="article-meta">
+              <span class="article-date"><i class="fas fa-calendar-alt"></i> March 25, 2025</span>
+              <span class="article-readtime"><i class="fas fa-clock"></i> 5 min read</span>
+            </div>
+            <p class="article-excerpt">
+              Explore emerging trends and how digital media is evolving to meet future challenges.
+            </p>
+            <a href="article-details.html?id=2" class="read-more">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+        <!-- Article Card 3 -->
+        <article class="article-card">
+          <div class="article-img">
+            <img src="./img/articles/3.jpg" alt="Maximizing Your Creative Workflow">
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Maximizing Your Creative Workflow</h3>
+            <div class="article-meta">
+              <span class="article-date"><i class="fas fa-calendar-alt"></i> March 18, 2025</span>
+              <span class="article-readtime"><i class="fas fa-clock"></i> 6 min read</span>
+            </div>
+            <p class="article-excerpt">
+              Discover practical tips and techniques to boost productivity and streamline your creative process.
+            </p>
+            <a href="article-details.html?id=3" class="read-more">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Updates Section -->
+  <section id="latest-updates" class="latest-updates-section">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="section-title"><span><i class="fas fa-newspaper me-2"></i>Latest Updates</span></h2>
+        <p class="section-subtitle">
+          Stay informed with the newest updates, news, and insights from SPACE MEDIA.
+        </p>
+      </div>
+      <!-- Updates Grid -->
+      <div class="updates-grid">
+        <!-- Update Card 1 -->
+        <article class="update-card">
+          <div class="update-img">
+            <img src="./img/updates/1.jpg" alt="New Collection Released">
+          </div>
+          <div class="update-content">
+            <h3 class="update-title">New Collection Released</h3>
+            <div class="update-meta">
+              <span class="update-date"><i class="fas fa-calendar-alt"></i> March 20, 2025</span>
+              <span class="update-readtime"><i class="fas fa-clock"></i> 5 min read</span>
+            </div>
+            <p class="update-excerpt">
+              We are excited to announce our latest collection featuring breathtaking visuals from top photographers.
+            </p>
+            <a href="update-details.html?id=1" class="read-more">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+        <!-- Update Card 2 -->
+        <article class="update-card">
+          <div class="update-img">
+            <img src="./img/updates/2.jpg" alt="Platform Update &amp; New Features">
+          </div>
+          <div class="update-content">
+            <h3 class="update-title">Platform Update &amp; New Features</h3>
+            <div class="update-meta">
+              <span class="update-date"><i class="fas fa-calendar-alt"></i> March 15, 2025</span>
+              <span class="update-readtime"><i class="fas fa-clock"></i> 4 min read</span>
+            </div>
+            <p class="update-excerpt">
+              Discover new improvements and features that enhance your experience on our platform.
+            </p>
+            <a href="update-details.html?id=2" class="read-more">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+        <!-- Update Card 3 -->
+        <article class="update-card">
+          <div class="update-img">
+            <img src="./img/updates/3.jpg" alt="Tips for Creators">
+          </div>
+          <div class="update-content">
+            <h3 class="update-title">Tips for Creators</h3>
+            <div class="update-meta">
+              <span class="update-date"><i class="fas fa-calendar-alt"></i> March 10, 2025</span>
+              <span class="update-readtime"><i class="fas fa-clock"></i> 6 min read</span>
+            </div>
+            <p class="update-excerpt">
+              Learn valuable tips and insights to capture and sell premium stock media effectively.
+            </p>
+            <a href="update-details.html?id=3" class="read-more">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-columns">
+          <!-- About Column -->
+          <div class="footer-column about">
+            <a href="#" class="mb-3 d-block">
+              <img src="./img/logo-white.png" alt="" style="height: 80px;">
+            </a>
+            <p>
+              SPACE MEDIA is your premier marketplace for premium stock photos and videos, empowering creators and
+              brands with exclusive media content.
+            </p>
+          </div>
+          <!-- Quick Links Column -->
+          <div class="footer-column links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="photos.html">Photos</a></li>
+              <li><a href="videos.html">Videos</a></li>
+              <li><a href="articles.html">Articles</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Support Column -->
+          <div class="footer-column support">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="support.html">Customer Support</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+          <!-- Social & Newsletter Column -->
+          <div class="footer-column social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <h3>Newsletter</h3>
+            <form class="footer-newsletter" role="form" aria-label="Footer Newsletter Subscription">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 SPACE MEDIA. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
   <!-- JavaScript Libraries with 'defer' for non-blocking execution -->
   <script src="js/jquery-3.7.1.min.js" defer></script>
   <script src="js/owl.carousel.min.js" defer></script>
@@ -316,9 +612,9 @@
   <script src="js/bootstrap.bundle.min.js" defer></script>
   <script src="js/script.js" defer></script>
 
-  
   <script defer>
-   
+
   </script>
 </body>
+
 </html>
