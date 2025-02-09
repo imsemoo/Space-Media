@@ -3,72 +3,43 @@ $(document).ready(function () {
     $(".navbar").toggleClass("fixed-nav", $(window).scrollTop() > 50);
   });
 
-  var commonOptions = {
-    rtl: true,
-    loop: true,
-    nav: true,
-    dots: false,
-    navText: [
-      '<i class="fa-solid fa-chevron-right"></i>',
-      '<i class="fa-solid fa-chevron-left"></i>',
-    ]
-  };
-
-  $(".studies-carousel").owlCarousel($.extend({}, commonOptions, {
-    margin: 0,
-    responsive: {
-      0: { stagePadding: 50, items: 1 },
-      576: { items: 2 },
-      992: { items: 3 }
-    }
-  }));
-
-  $(".research-carousel").owlCarousel($.extend({}, commonOptions, {
-    margin: 20,
-    responsive: {
-      0: { stagePadding: 50, items: 1 },
-      768: { items: 2 },
-      992: { items: 3 }
-    }
-  }));
-
-  $(".reports-carousel").owlCarousel($.extend({}, commonOptions, {
-    margin: 20,
-    responsive: {
-      0: { stagePadding: 50, items: 1 },
-      992: { items: 1 }
-    }
-  }));
-
-  $(".courses-carousel").owlCarousel($.extend({}, commonOptions, {
-    margin: 20,
-    responsive: {
-      0: { stagePadding: 50, items: 1 },
-      576: { items: 2 },
-      768: { items: 3 },
-      992: { items: 4 }
-    }
-  }));
-
-
-  $(".owl-carousel2").owlCarousel($.extend({}, commonOptions, {
-    margin: 20,
-    responsive: {
-      0: { stagePadding: 50, items: 1 },
-      576: { items: 1 },
-      768: { items: 1 },
-      992: { items: 2 }
-    }
-  }));
-
-  $(".team-slider").owlCarousel($.extend({}, commonOptions, {
-    margin: 10,
-    responsive: {
-      0: { stagePadding: 50, items: 1 },
-      600: { items: 4 },
-      1000: { items: 6 }
-    }
-
-    
-  }));
+  
 });
+
+
+// GSAP Animations for a Magical Entrance 
+
+  // Animate the brand logo with a bounce effect
+  gsap.from(".navbar-brand", {
+    duration: 1,
+    y: -50,
+    opacity: 0,
+    ease: "bounce.out"
+  });
+  // Animate each navigation link sequentially
+  gsap.from(".nav-link", {
+    duration: 1,
+    y: -20,
+    opacity: 0,
+    stagger: 0.2,
+    delay: 0.5,
+    ease: "power2.out"
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Create a timeline with a default easing function.
+    const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+    
+    // Animate the header overlay fade-in
+    tl.from(".header .overlay", { duration: 1, opacity: 0 })
+      // Animate the headline sliding in from above
+      .from(".header h1", { duration: 1, opacity: 0, y: -50 }, "-=0.5")
+      // Animate the description sliding in from below
+      .from(".header p", { duration: 1, opacity: 0, y: 50 }, "-=0.7")
+      // Animate the search filter form sliding up
+      .from(".search-filter", { duration: 1, opacity: 0, y: 50 }, "-=0.7")
+      // Animate the Featured Media section header (title & subtitle)
+      .from(".featured-media-section .section-header", { duration: 1, opacity: 0, y: -30, delay: 0.3 })
+      // Animate each media card with a slight stagger
+      .from(".media-card", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
+  });
