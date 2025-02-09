@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تمكين - المقالات</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="تمكين: منصة المقالات التي تقدم محتوى قيم لتطوير المهارات وتمكين المرأة، وتسليط الضوء على تحديات هجرة الكفاءات النسائية." />
+    <meta name="keywords" content="تمكين, مقالات, تمكين المرأة, تطوير المهارات, هجرة الكفاءات, محتوى عربي" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tamkeen.com/articles.html" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/articles.css" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style" />
+    <link rel="preload" href="js/script.js" as="script" />
+ <!-- Favicon -->
+ <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "تمكين",
+            "url": "https://tamkeen.com",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://tamkeen.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="img/logo.png" alt="شعار تمكين" class="navbar-logo" />
+            </a>
+
+            <!-- Toggler Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <!-- Home Link -->
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">الرئيسية</a>
+                    </li>
+
+                    <!-- Studies Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallary.html">معرض الصور</a>
+                    </li>
+
+                    <!-- Articles Link -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="articles.html">المقالات</a>
+                    </li>
+
+                    <!-- Studies Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="single-article.html">المقال مفرد</a>
+                    </li>
+
+                    <!-- Courses Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">الدورات</a>
+                    </li>
+
+                    <!-- About Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us.html">عن تمكين</a>
+                    </li>
+
+                    <!-- Contact Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">تواصل معنا</a>
+                    </li>
+                </ul>
+
+                <!-- Join Now Button -->
+                <a href="#" class="btn btn-primary">
+                    <i class="fa-solid fa-user-plus"></i>
+                    انضم الآن
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Articles Hero Section -->
+     <section class="hero-section2">
+       <div class="container">
+            <div class="row">
+                <!-- Text Content -->
+                <div class="col-md-12 text-center">
+                    <h1>المقالات</h1>
+                    <h4>اكتشف محتوى يثري عقلك ويدعم تطورك المهني</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Articles Filter Section -->
+    <section class="articles-filter py-4">
+        <div class="container">
+            <!-- Advanced Filter Form -->
+            <form class="advanced-filter-form" action="#" method="GET">
+                <div class="row g-3">
+                    <!-- Search by Title -->
+                    <div class="col-md-4">
+                        <input type="text" name="q" class="form-control" placeholder="ابحث عن مقال بالعنوان..."
+                            aria-label="Search by title">
+                    </div>
+                    <!-- Category Filter -->
+                    <div class="col-md-3">
+                        <select name="category" class="form-select" aria-label="Select category">
+                            <option value="">اختر التصنيف</option>
+                            <option value="tech">تكنولوجيا</option>
+                            <option value="lifestyle">أسلوب الحياة</option>
+                            <option value="education">تعليم</option>
+                            <option value="health">صحة</option>
+                        </select>
+                    </div>
+                    <!-- Date Filter -->
+                    <div class="col-md-3">
+                        <input type="date" name="date" class="form-control" aria-label="Filter by date">
+                    </div>
+                    <!-- Search Button -->
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary w-100">
+                            بحث
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Horizontal Articles List Section -->
+    <section class="articles-list section">
+        <div class="container">
+            <!-- Each article is presented in a horizontal card layout -->
+            <div class="row justify-content-center">
+                <!-- Article Card #1 -->
+                <div class="col-10 mb-4">
+                    <div class="card horizontal-card">
+                        <div class="row g-0">
+                            <!-- Article Image -->
+                            <div class="col-md-4">
+                                <img src="https://dummyimage.com/400x250/bbb/000" class="img-fluid"
+                                    alt="مقاربة جديدة لهجرة الكفاءات النسائية" loading="lazy">
+                            </div>
+                            <!-- Article Content -->
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title">مقاربة جديدة لهجرة الكفاءات النسائية</h3>
+                                    <p class="card-text text-muted">
+                                        تواجه العديد من المناطق تحديات في احتفاظها بالكفاءات النسائية المميزة بسبب قلة
+                                        الفرص المحلية. تتناول هذه المقالة استراتيجيات خلق فرص محلية متكاملة تُراعي
+                                        الأعباء الأسرية وتُتيح للمرأة التطور في مجالاتها.
+                                    </p>
+                                    <div class="d-flex align-items-center justify-content-between mt-3">
+                                        <div class="text-muted small date">
+                                            <img src="img/icons/calendar.png" alt="Calendar icon" style="width: 14px;">
+                                            09:00 صباحاً | 05 يناير 2025
+                                        </div>
+                                        <a href="#" class="read-more"
+                                            aria-label="اقرأ المزيد عن مقاربة جديدة لهجرة الكفاءات النسائية">اقرأ
+                                            المزيد</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Card #2 -->
+                <div class="col-10 mb-4">
+                    <div class="card horizontal-card">
+                        <div class="row g-0">
+                            <!-- Article Image -->
+                            <div class="col-md-4">
+                                <img src="https://dummyimage.com/400x250/ccc/000" class="img-fluid"
+                                    alt="فرص التطور المهني في الوطن" loading="lazy">
+                            </div>
+                            <!-- Article Content -->
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title">فرص التطور المهني في الوطن</h3>
+                                    <p class="card-text text-muted">
+                                        مع انعدام الفرص المقنعة في بعض الدول، نجد أن توفير بيئة داعمة ومحفزة للنمو
+                                        المهني يمكن أن يسهم في تقليل هجرة الكفاءات، خاصةً للمرأة التي تتحمل أعباء أسرية
+                                        إضافية.
+                                    </p>
+                                    <div class="d-flex align-items-center justify-content-between mt-3">
+                                        <div class="text-muted small date">
+                                            <img src="img/icons/calendar.png" alt="Calendar icon" style="width: 14px;">
+                                            03:30 مساءً | 12 فبراير 2025
+                                        </div>
+                                        <a href="#" class="read-more"
+                                            aria-label="اقرأ المزيد عن فرص التطور المهني في الوطن">اقرأ المزيد</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Card #3 -->
+                <div class="col-10 mb-4">
+                    <div class="card horizontal-card">
+                        <div class="row g-0">
+                            <!-- Article Image -->
+                            <div class="col-md-4">
+                                <img src="https://dummyimage.com/400x250/ddd/000" class="img-fluid"
+                                    alt="حلول مبتكرة لمشكلة الإمكانية والمكان" loading="lazy">
+                            </div>
+                            <!-- Article Content -->
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title">حلول مبتكرة لمشكلة الإمكانية والمكان</h3>
+                                    <p class="card-text text-muted">
+                                        تبرز المقالة التحديات المزدوجة التي تواجه المرأة في الحصول على فرص تتناسب مع
+                                        قدراتها وظروفها. وتقدم مقترحات لتحسين البيئة المحلية بما يوازن بين إمكانية
+                                        التطور والمكان المناسب لتحقيق النجاح.
+                                    </p>
+                                    <div class="d-flex align-items-center justify-content-between mt-3">
+                                        <div class="text-muted small date">
+                                            <img src="img/icons/calendar.png" alt="Calendar icon" style="width: 14px;">
+                                            05:15 مساءً | 20 مارس 2025
+                                        </div>
+                                        <a href="#" class="read-more"
+                                            aria-label="اقرأ المزيد عن حلول مبتكرة لمشكلة الإمكانية والمكان">اقرأ
+                                            المزيد</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional horizontal article cards can be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Social Media & Logo -->
+                <div class="footer-section social">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="شعار تمكين" />
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- Useful Links -->
+                <div class="footer-section links">
+                    <h4>روابط مفيدة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="courses.html">الدورات</a></li>
+                        <li><a href="studies.html">الدراسات</a></li>
+                        <li><a href="about-us.html">من نحن</a></li>
+                        <li><a href="articles.html">المقالات</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <!-- About Section -->
+                <div class="footer-section about">
+                    <p>
+                        استطاعت النساء تحقيق طموحها وخلق مشاريعها الخاصة مع الظروف التي أتاحت لهن التعلم وكسب التنمية
+                        الذاتية.
+                    </p>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2025 منصة تمكين</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
+    <script src="js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="js/animation.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript" defer></script>
+</body>
+
+</html>

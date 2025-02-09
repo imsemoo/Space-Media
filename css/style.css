@@ -1,0 +1,420 @@
+:root {
+  --primary-color: #322b83; /* Jaffa */
+  --secondary-color: #f68e3a; /* Minsk */
+  --text-color: #3c3c9c; /* Gigas */
+  --text-muted-color: #44345c; /* Martinique */
+  --link-color: #322b83; /* Minsk */
+  --hover-color: #f68e3a; /* Jaffa */
+  --border-color: #44345c; /* Martinique */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "cairo-Regular";
+  src: url(../fonts/Cairo-Regular.ttf);
+}
+
+@font-face {
+  font-family: "cairo-SemiBold";
+  src: url(../fonts/Cairo-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "cairo-Bold";
+  src: url(../fonts/Cairo-Bold.ttf);
+}
+
+@font-face {
+  font-family: "barada";
+  src: url(../fonts/barada-reqa.ttf);
+}
+
+body {
+  font-size: 1rem;
+  line-height: 150%;
+  font-family: "cairo-Regular", sans-serif;
+}
+
+.rounded {
+  border-radius: 12px !important;
+  -webkit-border-radius: 12px !important;
+  -moz-border-radius: 12px !important;
+  -ms-border-radius: 12px !important;
+  -o-border-radius: 12px !important;
+}
+
+section {
+  padding: 90px 0;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "cairo-Bold";
+  margin: 0;
+  line-height: 150%;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+h5 {
+  font-size: 1.3rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 150%;
+  color: var(--text-muted-color);
+}
+
+input::placeholder {
+  text-align: right;
+  font-size: 1rem;
+}
+
+a,
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+a:active,
+a:focus,
+a:hover {
+  outline: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  grid-gap: 8px;
+  justify-content: center;
+  width: max-content;
+
+  padding: 8px 20px;
+  font-size: 1rem;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--text-color);
+}
+
+.pagination {
+  background-color: transparent !important;
+  --bs-pagination-bg: transparent;
+}
+
+.pagination li a {
+  background-color: #fff;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.active > .page-link,
+.page-link.active {
+  background-color: var(--link-color);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}
+
+.pagination li:first-child a,
+.pagination li:last-child a {
+  background-color: transparent;
+  color: inherit !important;
+}
+
+.pagination .page-item a {
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.page-item:first-child .page-link {
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.page-item:last-child .page-link {
+  border-radius: 50%;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-outline-primary {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 50px;
+  font-size: 16px;
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+.dedcription-btn,
+.dedcription-btn-blue {
+  text-decoration: none;
+  width: 130px;
+  border: none;
+  border-radius: 25px;
+  background-color: #fcfcfc;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 0;
+  transition: all 0.3s;
+  margin: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 30px;
+}
+
+.dedcription-btn .btn-icon,
+.dedcription-btn-blue .btn-icon-blue {
+  background-color: var(--primary-color);
+  width: 45px;
+  height: 100%;
+  float: left;
+  border-radius: 25px 25px 0 25px;
+  left: 0;
+  top: 0;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.dedcription-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.dedcription-btn-blue .btn-icon-blue {
+  background-color: var(--secondary-color);
+}
+
+.dedcription-btn-blue {
+  color: var(--secondary-color);
+}
+
+.dedcription-btn-blue:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+.dedcription-btn-blue:hover .btn-icon-blue,
+.dedcription-btn:hover .btn-icon {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.name-descripeion {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-icon,
+.btn-icon-blue {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+}
+
+.btn-icon i,
+.btn-icon-blue i {
+  color: #fff;
+}
+
+.dedcription-btn:hover .btn-icon,
+.dedcription-btn-blue:hover .btn-icon-blue {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+}
+/* Custom Navbar Styles */
+.navbar {
+  position: relative; /* for pseudo-element placement */
+  background: #fefefe; /* Light background for logo clarity */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+}
+
+/* Magical particle background effect using a CSS radial-gradient */
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Use a radial gradient based on the primary color with reduced opacity */
+  background: radial-gradient(
+    circle,
+    rgba(246, 142, 58, 0.3) 1px,
+    transparent 1px
+  );
+  background-size: 30px 30px;
+  opacity: 0.2;
+  pointer-events: none;
+  animation: moveParticles 30s linear infinite;
+}
+
+@keyframes moveParticles {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 1000px;
+  }
+}
+
+/* Logo styling with a rotation on hover */
+.navbar-brand img {
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+/* Navigation link styling */
+.nav-link {
+  color: var(--primary-color) !important;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.navbar-expand-lg .navbar-nav {
+  gap: 10px;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--secondary-color) !important;
+}
+/* Underline animation on hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+  border: none;
+  margin: 0;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown customization */
+.dropdown-menu {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+}
+.dropdown-item {
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+.dropdown-item:hover {
+  background-color: var(--hover-color);
+}
+
+/* Centering navigation items */
+.navbar-expand-lg .navbar-nav {
+  margin: 0 auto;
+}
+
+.buttons-group {
+  display: flex;
+  align-items: center;
+  grid-gap: 15px;
+}
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+  .navbar .dropdown:hover > a.nav-link {
+    color: var(--secondary-color) !important;
+  }
+  /* Open dropdown on hover for desktop devices */
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+  /* Highlight the dropdown toggle link on hover */
+  .navbar .dropdown:hover > a.nav-link {
+    color: var(--secondary-color) !important;
+  }
+
+}
+
+

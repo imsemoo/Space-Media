@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تمكين - معرض الصور والفيديوهات</title>
+
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="استكشف معرض الصور والفيديوهات الخاص بمنصة تمكين مع تصنيفات جذابة، تأثيرات تفاعلية وميزات متقدمة لتجربة بصرية احترافية." />
+  <meta name="keywords" content="تمكين, معرض, صور, فيديوهات, تصنيفات, تصميم احترافي, تجربة بصرية" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tamkeen.com/gallery.html" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Custom CSS for Gallery Page -->
+  <style>
+ 
+  </style>
+</head>
+
+<body>
+  <!-- Navbar (as per your project) -->
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="img/logo.png" alt="شعار تمكين" class="navbar-logo" loading="lazy" />
+      </a>
+      <!-- Toggler Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallary.html">معرض الصور</a></li>
+          <li class="nav-item"><a class="nav-link" href="articles.html">المقالات</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">الدورات</a></li>
+          <li class="nav-item"><a class="nav-link" href="about-us.html">عن تمكين</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">تواصل معنا</a></li>
+        </ul>
+        <a href="#" class="btn btn-primary">
+          <i class="fa-solid fa-user-plus"></i>
+          انضم الآن
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section for Gallery -->
+  <section class="hero-section2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1>معرض الصور والفيديوهات</h1>
+          <h4>استكشف تصنيفات المحتوى مع تأثيرات تفاعلية مذهلة</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section class="filter-section py-4">
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="nature">الطبيعة</button>
+        <button class="filter-btn" data-filter="city">المدينة</button>
+        <button class="filter-btn" data-filter="training">تدريب</button>
+        <button class="filter-btn" data-filter="events">فعاليات</button>
+        <button class="filter-btn" data-filter="workshops">ورش عمل</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title">تصنيفات المعرض</h2>
+          <p class="section-description">استكشف مجموعاتنا المتنوعة من الصور والفيديوهات المصنفة لتجربة بصرية لا مثيل لها.</p>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <!-- Gallery Item: Image - Nature -->
+        <div class="gallery-item" data-category="nature">
+          <div class="overlay-label">الطبيعة</div>
+          <img src="https://dummyimage.com/600x400/66bb6a/ffffff" alt="صورة طبيعية" loading="lazy">
+        </div>
+        <!-- Gallery Item: Image - City -->
+        <div class="gallery-item" data-category="city">
+          <div class="overlay-label">المدينة</div>
+          <img src="https://dummyimage.com/600x400/42a5f5/ffffff" alt="صورة مدينة" loading="lazy">
+        </div>
+        <!-- Gallery Item: Video - Training -->
+        <div class="gallery-item" data-category="training">
+          <div class="overlay-label">تدريب</div>
+          <video controls poster="https://dummyimage.com/600x400/ab47bc/ffffff" loading="lazy">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+        </div>
+        <!-- Gallery Item: Image - Events -->
+        <div class="gallery-item" data-category="events">
+          <div class="overlay-label">فعاليات</div>
+          <img src="https://dummyimage.com/600x400/ff7043/ffffff" alt="صورة فعالية" loading="lazy">
+        </div>
+        <!-- Gallery Item: Video - Workshops -->
+        <div class="gallery-item" data-category="workshops">
+          <div class="overlay-label">ورش عمل</div>
+          <video controls poster="https://dummyimage.com/600x400/26c6da/ffffff" loading="lazy">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+        </div>
+        <!-- Additional Gallery Items can be added here -->
+      </div>
+      <!-- Load More Button -->
+      <div class="load-more-container">
+        <button id="loadMoreBtn">تحميل المزيد</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="custom-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section social">
+          <div class="logo">
+            <img src="img/logo.png" alt="شعار تمكين" loading="lazy">
+          </div>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-section links">
+          <h4>روابط مفيدة</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="courses.html">الدورات</a></li>
+            <li><a href="studies.html">الدراسات</a></li>
+            <li><a href="about-us.html">من نحن</a></li>
+            <li><a href="articles.html">المقالات</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-section about">
+          <p>
+            نعمل معاً لإحداث تغيير حقيقي في مجتمعنا من خلال تمكين المرأة وتطوير الكفاءات، مما يفتح آفاقاً جديدة للتقدم والازدهار.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة © 2025 منصة تمكين</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/jquery-3.7.1.min.js" defer></script>
+  <script src="js/owl.carousel.min.js" defer></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/script.js" defer></script>
+
+  <!-- GSAP and ScrollTrigger Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+</body>
+
+</html>
