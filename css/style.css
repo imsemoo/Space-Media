@@ -1191,3 +1191,86 @@ ul {
 .about-us .content {
   flex: 1;
 }
+
+
+/* ===================== Team Section Styles ===================== */
+.team-section {
+  background-color: var(--secondary-background-color, #f7f7f7);
+}
+
+
+
+/* Team Grid Layout */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Team Card */
+.team-card {
+  background: var(--background-color, #ffffff);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Team Image */
+.team-img {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.team-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-img img {
+  transform: scale(1.05);
+}
+
+/* Team Info */
+.team-info {
+  padding: 15px;
+}
+
+.team-name {
+  font-size: 1.75rem;
+  margin: 10px 0 5px;
+  color: var(--primary-color);
+}
+
+.team-role {
+  font-size: 1rem;
+  color: var(--text-muted-color);
+  margin-bottom: 10px;
+}
+
+/* Social Icons */
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.team-social a {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.team-social a:hover {
+  color: var(--hover-color);
+}

@@ -12,6 +12,20 @@ $(document).ready(function(){
       600: { items: 2 },
       1000: { items: 3 }
     }
+  }); $(".team-slider").owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: true,
+    dots: false,
+    navText: [
+      '<i class="fas fa-arrow-left"></i>',
+      '<i class="fas fa-arrow-right"></i>'
+    ],
+    responsive: {
+      0: { items: 1 },
+      600: { items: 2 },
+      1000: { items: 3 }
+    }
   });
 });
 
