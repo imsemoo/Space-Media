@@ -236,11 +236,11 @@ ul {
   background: var(--secondary-color);
   border-color: var(--secondary-color);
 }
-.btn-secondary{
+.btn-secondary {
   background: var(--secondary-color);
   border-color: var(--secondary-color);
 }
-.btn-secondary:hover{
+.btn-secondary:hover {
   background: var(--primary-color);
   border-color: var(--primary-color);
 }
@@ -1060,13 +1060,18 @@ ul {
 .owl-carousel .owl-nav.disabled {
   display: block;
 }
-.owl-prev, .owl-next {
+.owl-prev,
+.owl-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 45px;
   height: 45px;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: #fff;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -1078,7 +1083,8 @@ ul {
   z-index: 1000;
 }
 
-.owl-prev:hover, .owl-next:hover {
+.owl-prev:hover,
+.owl-next:hover {
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -1090,7 +1096,98 @@ ul {
   right: -20px;
 }
 
-/* إخفاء نقاط التنقل إن وجدت */
 .owl-dots {
   display: none;
+}
+
+.breadcrumb-section {
+  padding: 0;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "\f105"; /* FontAwesome icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #555;
+}
+
+.breadcrumb li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: normal;
+}
+
+.breadcrumb li {
+  color: var(--info-color) !important;
+
+  font-weight: bold;
+}
+
+.breadcrumb {
+  justify-content: center;
+  margin: 0 ;
+  padding: 20px 0;
+}
+
+.name-page {
+  padding: 20px;
+  background: var(--neutral-light);
+  text-align: center;
+}
+
+.name-page h5 {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+/* ===================== About Us Section Styles ===================== */
+.about-us {
+}
+
+/* Flex layout for image and content */
+.about-us .d-flex {
+  gap: 3rem; /* Increase gap between image and content */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Image Container */
+.about-us .image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.about-us .image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.about-us .section-title {
+  margin: 0 0 20px 0;
+}
+.about-us .section-title span {
+  font-size: 2.5rem;
+}
+/* 
+/* Paragraph Styling */
+.about-us .content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--text-color, #3c3c9c);
+}
+
+/* List Styling */
+.about-us .about-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+.about-us .about-list li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--text-muted-color, #44345c);
+}
+
+.about-us .content {
+  flex: 1;
 }
