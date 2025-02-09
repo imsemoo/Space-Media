@@ -236,7 +236,14 @@ ul {
   background: var(--secondary-color);
   border-color: var(--secondary-color);
 }
-
+.btn-secondary{
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+.btn-secondary:hover{
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
 /* Outline Primary Button Styles */
 .btn-outline-primary {
   border-color: var(--primary-color);
@@ -937,7 +944,8 @@ ul {
   margin-bottom: 20px;
 }
 .read-more {
-  display: inline-flex;
+  display: flex;
+  gap: 6px;
   align-items: center;
   font-weight: bold;
   color: var(--secondary-color);
