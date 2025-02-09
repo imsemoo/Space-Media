@@ -1,45 +1,87 @@
+
+/* Color Variables: Define your website’s color scheme */
+/* --primary-color: Primary brand color (used for headers, nav links, primary buttons, etc.) */
 :root {
-  --primary-color: #322b83; /* Jaffa */
-  --secondary-color: #f68e3a; /* Minsk */
-  --text-color: #3c3c9c; /* Gigas */
-  --text-muted-color: #44345c; /* Martinique */
-  --link-color: #322b83; /* Minsk */
-  --hover-color: #f68e3a; /* Jaffa */
-  --border-color: #44345c; /* Martinique */
+  --primary-color: #322b83;
+  /* --secondary-color: Secondary accent color (used for hover effects, secondary buttons, etc.) */
+  --secondary-color: #f68e3a;
+  /* --text-color: Main text color for body copy and primary text elements */
+  --text-color: #212121;;
+  /* --text-muted-color: Muted text color for secondary text or captions */
+  --text-muted-color: #44345c;
+  /* --link-color: Color used for hyperlinks */
+  --link-color: #322b83;
+  /* --hover-color: Color applied to interactive elements on hover */
+  --hover-color: #f68e3a;
+  /* --border-color: Color used for borders, dividers, and outlines */
+  --border-color: #44345c;
+  
+  /* Additional Colors */
+  /* --background-color: Main background color of the website */
+  --background-color: #ffffff;
+  /* --secondary-background-color: Used for sections, cards, or content blocks */
+  --secondary-background-color: #f7f7f7;
+  /* --neutral-light: Light neutral tone for subtle backgrounds */
+  --neutral-light: #f7f7f7;
+  /* --neutral-medium: Medium neutral tone for soft borders or separators */
+  --neutral-medium: #e0e0e0;
+  /* --neutral-dark: Dark neutral tone for icons or text when needed */
+  --neutral-dark: #666666;
+  
+  /* Status Colors */
+  /* --success-color: Color for success messages or indicators */
+  --success-color: #28a745;
+  /* --warning-color: Color for warnings */
+  --warning-color: #ffc107;
+  /* --danger-color: Color for errors or critical alerts */
+  --danger-color: #dc3545;
+  /* --info-color: Color for informational messages */
+  --info-color: #17a2b8;
+  
+  /* Accent and Gradient */
+  /* --accent-color: Accent color used to highlight key elements */
+  --accent-color: #ffd700;
+  /* --gradient-primary: Gradient combining the primary and secondary colors (ideal for backgrounds or buttons) */
+  --gradient-primary: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
 }
 
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Font Face Definitions */
 @font-face {
-  font-family: "cairo-Regular";
-  src: url(../fonts/Cairo-Regular.ttf);
+  font-family: "Poppins-Light";
+  src: url(../fonts/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url(../fonts/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url(../fonts/Poppins-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url(../fonts/Poppins-Bold.ttf);
 }
 
-@font-face {
-  font-family: "cairo-SemiBold";
-  src: url(../fonts/Cairo-SemiBold.ttf);
-}
-
-@font-face {
-  font-family: "cairo-Bold";
-  src: url(../fonts/Cairo-Bold.ttf);
-}
-
-@font-face {
-  font-family: "barada";
-  src: url(../fonts/barada-reqa.ttf);
-}
-
+/* Base Body Styles */
 body {
   font-size: 1rem;
   line-height: 150%;
-  font-family: "cairo-Regular", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
+/* Utility Classes */
 .rounded {
   border-radius: 12px !important;
   -webkit-border-radius: 12px !important;
@@ -48,10 +90,12 @@ body {
   -o-border-radius: 12px !important;
 }
 
+/* Section Padding */
 section {
   padding: 90px 0;
 }
 
+/* Headings: Bold font for all heading elements */
 .h1,
 .h2,
 .h3,
@@ -64,168 +108,148 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "cairo-Bold";
+  font-family: "Poppins-Bold";
   margin: 0;
   line-height: 150%;
 }
 
-h1 {
-  font-size: 4rem;
-}
+h1 { font-size: 4rem; }
+h2 { font-size: 3rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.8rem; }
+h5 { font-size: 1.3rem; }
 
-h2 {
-  font-size: 3rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-h4 {
-  font-size: 1.8rem;
-}
-
-h5 {
-  font-size: 1.3rem;
-}
-
+/* Paragraph Styles */
 p {
   font-size: 1rem;
   line-height: 150%;
-  color: var(--text-muted-color);
+  color: var(--text-muted-color); /* Use muted text color for paragraphs */
+  margin: 0;
 }
 
+/* Input Placeholder Styles */
 input::placeholder {
-  text-align: right;
+  text-align: start;
   font-size: 1rem;
 }
 
+/* Anchor Link Styles */
 a,
 a:active,
 a:focus,
 a:hover {
   text-decoration: none;
 }
-
 a:active,
 a:focus,
 a:hover {
   outline: 0;
 }
 
+/* Image Styles */
 img {
   max-width: 100%;
   height: auto;
 }
 
+/* Unordered List Reset */
 ul {
-  list-style: none none;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-p {
-  margin: 0;
-}
-
+/* Button Base Styles */
 .btn {
   display: flex;
   align-items: center;
   grid-gap: 8px;
   justify-content: center;
   width: max-content;
-
   padding: 8px 20px;
   font-size: 1rem;
 }
 
+/* Overlay Element Styles */
 .overlay {
   background: rgba(0, 0, 0, 0.6);
-  color: var(--text-color);
+  color: var(--text-color); /* Use main text color */
 }
 
+/* Pagination Styles */
 .pagination {
   background-color: transparent !important;
   --bs-pagination-bg: transparent;
 }
-
 .pagination li a {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--background-color); /* Use main background color */
+  color: var(--text-color); /* Use main text color */
   width: 40px;
   height: 40px;
   text-align: center;
 }
-
 .active > .page-link,
 .page-link.active {
-  background-color: var(--link-color);
+  background-color: var(--link-color); /* Use link color for active pages */
   color: #fff;
   border: none;
   font-weight: bold;
 }
-
 .pagination li:first-child a,
 .pagination li:last-child a {
   background-color: transparent;
   color: inherit !important;
 }
-
 .pagination .page-item a {
   margin-left: 10px;
   border-radius: 50%;
 }
-
 .page-item:first-child .page-link {
   margin-left: 10px;
   border-radius: 50%;
   background-color: transparent;
 }
-
 .page-item:last-child .page-link {
   border-radius: 50%;
 }
 
+/* Primary Button Styles */
 .btn-primary {
   background: var(--primary-color);
   border-color: var(--primary-color);
   border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
   font-size: 16px;
 }
-
 .btn-primary:hover {
   background: var(--secondary-color);
   border-color: var(--secondary-color);
 }
 
+/* Outline Primary Button Styles */
 .btn-outline-primary {
   border-color: var(--primary-color);
   color: var(--primary-color);
   border-radius: 50px;
   font-size: 16px;
 }
-
 .btn-outline-primary:hover {
   background: var(--primary-color);
   border-color: var(--primary-color);
   color: #fff;
 }
 
+/* Description Button Styles (Primary & Orange Variants) */
 .dedcription-btn,
-.dedcription-btn-blue {
+.dedcription-btn-orange {
   text-decoration: none;
   width: 130px;
   border: none;
   border-radius: 25px;
-  background-color: #fcfcfc;
-  color: var(--primary-color);
+  background-color: var(--background-color); /* Use main background color */
+  color: var(--primary-color); /* Default to primary color for text */
   text-align: center;
   font-size: 14px;
-  padding: 10px 0;
+  padding: 7px 0;
   transition: all 0.3s;
   margin: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -234,10 +258,11 @@ p {
   align-items: center;
   justify-content: center;
   padding-left: 30px;
-}
+  border: 1px solid var(--primary-color)
 
+}
 .dedcription-btn .btn-icon,
-.dedcription-btn-blue .btn-icon-blue {
+.dedcription-btn-orange .btn-icon-orange {
   background-color: var(--primary-color);
   width: 45px;
   height: 100%;
@@ -250,24 +275,22 @@ p {
   align-items: center;
   padding: 10px 15px;
 }
-
 .dedcription-btn:hover {
   background-color: var(--primary-color);
   color: #fff;
 }
-.dedcription-btn-blue .btn-icon-blue {
+.dedcription-btn-orange .btn-icon-orange {
   background-color: var(--secondary-color);
 }
-
-.dedcription-btn-blue {
+.dedcription-btn-orange {
+  border: 1px solid var(--secondary-color);
   color: var(--secondary-color);
 }
-
-.dedcription-btn-blue:hover {
+.dedcription-btn-orange:hover {
   background-color: var(--secondary-color);
   color: #fff;
 }
-.dedcription-btn-blue:hover .btn-icon-blue,
+.dedcription-btn-orange:hover .btn-icon-orange,
 .dedcription-btn:hover .btn-icon {
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -275,39 +298,36 @@ p {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
-.name-descripeion {
+.dedcription-btn-orange .name-descripeion,
+.dedcription-btn .name-descripeion {
   position: relative;
   z-index: 1;
+  font-family: "Poppins-Medium";
 }
-
 .btn-icon,
-.btn-icon-blue {
+.btn-icon-orange {
   position: absolute;
   left: 15px;
   top: 10px;
 }
-
 .btn-icon i,
-.btn-icon-blue i {
+.btn-icon-orange i {
   color: #fff;
 }
-
 .dedcription-btn:hover .btn-icon,
-.dedcription-btn-blue:hover .btn-icon-blue {
+.dedcription-btn-orange:hover .btn-icon-orange {
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-}
-/* Custom Navbar Styles */
+/* Navbar Styles */
 .navbar {
-  position: relative; /* for pseudo-element placement */
-  background: #fefefe; /* Light background for logo clarity */
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  position: relative; /* For pseudo-element placement */
+  background: var(--background-color); /* Use main background color for logo clarity */
+  border-bottom: 2px solid var(--border-color); /* Use defined border color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
 }
 
-/* Magical particle background effect using a CSS radial-gradient */
+/* Magical Particle Background using a CSS Radial Gradient */
 .navbar::before {
   content: "";
   position: absolute;
@@ -315,18 +335,17 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  /* Use a radial gradient based on the primary color with reduced opacity */
+  /* Radial gradient based on secondary color (using its rgba value) with reduced opacity */
   background: radial-gradient(
     circle,
     rgba(246, 142, 58, 0.3) 1px,
     transparent 1px
   );
   background-size: 30px 30px;
-  opacity: 0.2;
+  opacity: 0.6;
   pointer-events: none;
   animation: moveParticles 30s linear infinite;
 }
-
 @keyframes moveParticles {
   from {
     background-position: 0 0;
@@ -336,16 +355,16 @@ p {
   }
 }
 
-/* Logo styling with a rotation on hover */
+/* Logo Styling with Hover Rotation */
 .navbar-brand img {
-  height: 50px;
+  height: 60px;
   transition: transform 0.3s ease;
 }
 
-/* Navigation link styling */
+/* Navigation Link Styling */
 .nav-link {
   color: var(--primary-color) !important;
-  font-size: 1.1rem;
+  font-size: 1rem;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -355,13 +374,15 @@ p {
 .nav-link:hover,
 .nav-link.active {
   color: var(--secondary-color) !important;
+  font-family: "Poppins-Medium";
+
 }
-/* Underline animation on hover */
+/* Underline Animation on Hover for Links */
 .nav-link::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: 0;
   width: 0%;
   height: 2px;
   background-color: var(--secondary-color);
@@ -373,7 +394,7 @@ p {
   width: 100%;
 }
 
-/* Dropdown customization */
+/* Dropdown Menu Customization */
 .dropdown-menu {
   background-color: var(--primary-color);
   border: none;
@@ -387,16 +408,19 @@ p {
   background-color: var(--hover-color);
 }
 
-/* Centering navigation items */
+/* Centering Navigation Items */
 .navbar-expand-lg .navbar-nav {
   margin: 0 auto;
 }
 
+/* Buttons Group Layout */
 .buttons-group {
   display: flex;
   align-items: center;
   grid-gap: 15px;
 }
+
+/* Dropdown Hover Effect for Desktop Devices */
 @media (min-width: 992px) {
   .navbar .dropdown:hover .dropdown-menu {
     display: block;
@@ -405,16 +429,263 @@ p {
   .navbar .dropdown:hover > a.nav-link {
     color: var(--secondary-color) !important;
   }
-  /* Open dropdown on hover for desktop devices */
-  .navbar .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
-  }
-  /* Highlight the dropdown toggle link on hover */
-  .navbar .dropdown:hover > a.nav-link {
-    color: var(--secondary-color) !important;
-  }
+}
 
+@media screen and (max-width: 768px) {
+  /* Responsive adjustments if needed */
 }
 
 
+/* ========== Hero Section Styles ========== */
+
+/* Main header section with background image */
+.header {
+  position: relative;
+  background: url('../img/bg-header.png') no-repeat center center;
+  background-size: cover;
+  padding: 120px 0;
+}
+
+/* Dark overlay for better text contrast */
+.header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Container positioned above the overlay */
+.header .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Headline styling */
+.header h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* Description styling */
+.header p {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: auto;
+
+  margin-bottom: 40px;
+}
+
+/* ========== Search Filter Styles ========== */
+
+/* Container for the advanced search filter */
+.search-filter {
+  margin-top: 40px;
+}
+
+/* Card style for the search filter with subtle shadow and rounded corners */
+.search-filter .card {
+  max-width: 1000px;
+  margin: auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+
+}
+
+/* Input group for consistent styling of icons with inputs and selects */
+.search-filter .input-group {
+  margin-bottom: 0;
+}
+
+/* Style for the input group icon container */
+.search-filter .input-group-text {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-right: none;
+  font-size: 1.1rem;
+}
+
+/* Styling for text inputs and select fields in the search filter */
+.search-filter .form-control,
+.search-filter .form-select {
+  border: 1px solid #ced4da;
+  font-size: 1rem;
+}
+
+/* Remove default focus shadow and apply primary color border on focus */
+.search-filter .form-control:focus,
+.search-filter .form-select:focus {
+  box-shadow: none;
+  border-color: var(--primary-color);
+}
+
+/* Style for the search button */
+.search-filter button.btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--bs-border-radius);
+  width: max-content;
+}
+
+
+/* Section Title Container */
+.section-title {
+  position: relative;
+  text-align: center;
+  width: max-content;
+  margin: auto;
+}
+
+/* Title Text with Background Highlight */
+.section-title span {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--text-color);
+  
+  z-index: 1;
+  /* Optional subtle text shadow for extra depth */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Pseudo-element creates a soft background block behind the title text */
+.section-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  width: 50%;
+  height: 40%;
+  background: var(--secondary-color);
+  z-index: 0;
+
+}
+.section-description
+
+{
+  margin-top: 10px;
+  margin-bottom: 40px;
+  color: var(--text-muted-color);
+  font-size: 18px;
+
+}
+
+/* ========== Featured Media Section ========== */
+
+.featured-media-section {
+  padding: 80px 0;
+  background: var(--secondary-background-color, #f7f7f7);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-media-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted-color);
+  margin-top: 10px;
+}
+
+/* Media Grid Layout */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Media Card Styles */
+.media-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Image Container */
+.media-img {
+  position: relative;
+  width: 100%;
+  padding-bottom: 65%; /* Aspect ratio control */
+  overflow: hidden;
+}
+
+.media-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.media-card:hover .media-img img {
+  transform: scale(1.05);
+}
+
+/* Overlay with Media Info */
+.media-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(50, 43, 131, 0.7); /* Semi-transparent overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.media-card:hover .media-overlay {
+  opacity: 1;
+}
+
+/* Media Info Text */
+.media-info {
+  color: #fff;
+}
+
+.media-info h3 {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.media-info p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--neutral-light);
+}

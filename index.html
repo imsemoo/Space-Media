@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Character encoding -->
   <meta charset="UTF-8" />
@@ -48,11 +47,14 @@
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
 
+  <!-- Preconnect to improve connection time for external resources -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/all.min.css" />
   <link rel="stylesheet" href="css/owl.carousel.min.css" />
-  <!-- Using standard Bootstrap CSS for LTR languages -->
+  <!-- Standard Bootstrap CSS for LTR languages -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 
@@ -81,7 +83,7 @@
     <div class="container">
       <!-- Brand Logo -->
       <a class="navbar-brand" href="index.html">
-        <img src="./img/logo.webp" alt="SPACE MEDIA Logo" />
+        <img src="./img/logo.png" alt="SPACE MEDIA Logo" />
       </a>
       <!-- Navbar Toggler for Mobile -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -124,9 +126,9 @@
         </ul>
         <!-- Action Buttons -->
         <div class="d-flex buttons-group">
-          <a href="login.html" class="dedcription-btn-blue">
+          <a href="login.html" class="dedcription-btn-orange">
             <span class="name-descripeion">Login</span>
-            <div class="btn-icon-blue">
+            <div class="btn-icon-orange">
               <i class="fas fa-sign-in-alt"></i>
             </div>
           </a>
@@ -140,20 +142,182 @@
       </div>
     </div>
   </nav>
-  
+
+  <header class="header">
+    <!-- Dark overlay for improved text readability -->
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <!-- SEO-Optimized Headline -->
+          <h1 class="text-white">Discover Premium Stock Media</h1>
+          <!-- SEO-Optimized Description -->
+          <p class="text-white">
+            Download high-quality, royalty-free photos and videos from top creators — perfect for your next project.
+          </p>
+          <!-- Advanced Product Filter Form -->
+          <form class="search-filter mt-5" role="search" aria-label="Stock media search">
+            <div class="card">
+              <div class="d-flex g-3 align-items-center gap-2">
+                <!-- Keyword Search Field with Icon -->
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fas fa-search"></i>
+                  </span>
+                  <input type="text" class="form-control" placeholder="Search stock media..." aria-label="Search keywords">
+                </div>
+                <!-- Media Type Selector with Icon -->
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fas fa-photo-video"></i>
+                  </span>
+                  <select class="form-select" aria-label="Select media type">
+                    <option value="">Media Type</option>
+                    <option value="photo">Photo</option>
+                    <option value="video">Video</option>
+                  </select>
+                </div>
+                <!-- Category Selector with Icon -->
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fas fa-th-large"></i>
+                  </span>
+                  <select class="form-select" aria-label="Select category">
+                    <option value="">Category</option>
+                    <option value="business">Business</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="nature">Nature</option>
+                    <option value="technology">Technology</option>
+                    <option value="abstract">Abstract</option>
+                  </select>
+                </div>
+                <!-- Sort By Selector with Icon -->
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fas fa-sort"></i>
+                  </span>
+                  <select class="form-select" aria-label="Sort results">
+                    <option value="">Sort By</option>
+                    <option value="latest">Latest</option>
+                    <option value="popular">Popular</option>
+                    <option value="relevance">Relevance</option>
+                    <option value="price">Price</option>
+                  </select>
+                </div>
+                <!-- Search Button with Icon -->
+                <button type="submit" class="btn btn-primary" aria-label="Submit search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
   
 
-  <!-- JavaScript Libraries -->
-  <script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
-  <script src="js/owl.carousel.min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
-  <script src="js/script.js" type="text/javascript" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  
+  <section id="featured-media" class="featured-media-section">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="section-title"><span>Featured Media</span></h2>
+        <p class="section-subtitle">
+          Discover exclusive, high-quality stock photos and videos curated by industry experts.
+        </p>
+      </div>
+      <!-- Media Grid -->
+      <div class="media-grid">
+        <!-- Media Card 1 -->
+        <a href="media-details.html?id=1" class="media-card">
+          <div class="media-img">
+            <img src="./img/media/1.jpg" alt="Stunning Landscape by Top Photographer">
+            <div class="media-overlay">
+              <div class="media-info">
+                <h3>Stunning Landscape</h3>
+                <p>Breathtaking views captured by renowned professionals.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Media Card 2 -->
+        <a href="media-details.html?id=2" class="media-card">
+          <div class="media-img">
+            <img src="./img/media/2.jpg" alt="Dynamic Urban Energy">
+            <div class="media-overlay">
+              <div class="media-info">
+                <h3>Urban Energy</h3>
+                <p>Experience the vibrant pulse of modern cityscapes.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Media Card 3 -->
+        <a href="media-details.html?id=3" class="media-card">
+          <div class="media-img">
+            <img src="./img/media/3.jpg" alt="Serene Nature Escape">
+            <div class="media-overlay">
+              <div class="media-info">
+                <h3>Serene Nature</h3>
+                <p>Immerse yourself in the tranquility of pristine environments.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Media Card 4 -->
+        <a href="media-details.html?id=4" class="media-card">
+          <div class="media-img">
+            <img src="./img/media/4.jpg" alt="Historic Jerusalem at Dawn">
+            <div class="media-overlay">
+              <div class="media-info">
+                <h3>Historic Jerusalem</h3>
+                <p>Witness the timeless charm of ancient Jerusalem’s stone alleys.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Media Card 5 -->
+        <a href="media-details.html?id=5" class="media-card">
+          <div class="media-img">
+            <img src="./img/media/5.jpg" alt="Vibrant Markets in Ramallah">
+            <div class="media-overlay">
+              <div class="media-info">
+                <h3>Vibrant Markets</h3>
+                <p>Experience the rich colors and lively energy of Palestinian markets.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Media Card 6 -->
+        <a href="media-details.html?id=6" class="media-card">
+          <div class="media-img">
+            <img src="./img/media/6.jpg" alt="Cultural Festival in Palestine">
+            <div class="media-overlay">
+              <div class="media-info">
+                <h3>Cultural Traditions</h3>
+                <p>Celebrate heritage with dynamic festivals and timeless traditions.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  <!-- JavaScript Libraries with 'defer' for non-blocking execution -->
+  <script src="js/jquery-3.7.1.min.js" defer></script>
+  <script src="js/owl.carousel.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/script.js" defer></script>
 
   <!-- GSAP Animations for a Magical Entrance -->
-  <script>
+  <script defer>
     // Animate the brand logo with a bounce effect
     gsap.from(".navbar-brand", {
       duration: 1,
@@ -170,8 +334,6 @@
       delay: 0.5,
       ease: "power2.out"
     });
-    // Animate action buttons with a slight delay
   </script>
 </body>
-
 </html>
