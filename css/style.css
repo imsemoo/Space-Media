@@ -1056,6 +1056,57 @@ ul {
 .read-more:hover {
   color: var(--info-color);
 }
+ /* ===================== Collections Section Styles ===================== */
+ .collections-container {
+  display: flex;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.collection-panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  -webkit-transition: all 700ms ease-in;
+}
+
+.collection-panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.collection-panel.active {
+  flex: 5;
+}
+
+.collection-panel.active h3 {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .collections-container {
+    width: 100vw;
+  }
+
+  .collection-panel:nth-of-type(4),
+  .collection-panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
 
 /* ----------------------- Footer Section ----------------------- */
 .footer {
@@ -2394,3 +2445,5 @@ ul {
 .articles-grid-section .article-card {
   margin: 0;
 }
+
+

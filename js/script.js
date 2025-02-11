@@ -42,9 +42,24 @@ $(document).ready(function(){
       '<i class="fas fa-arrow-right"></i>'
     ]
   });
+
+  
 });
 
+const collectionPanels = document.querySelectorAll(".collection-panel");
+    
+collectionPanels.forEach((panel) => {
+  panel.addEventListener("click", () => {
+    removeActiveClasses();
+    panel.classList.add("active");
+  });
+});
 
+const removeActiveClasses = () => {
+  collectionPanels.forEach((panel) => {
+    panel.classList.remove("active");
+  });
+}; 
 document.addEventListener("DOMContentLoaded", function () {
   // Fixed Navbar Animation (unchanged)
   window.addEventListener("scroll", function () {
