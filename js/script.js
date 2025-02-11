@@ -113,6 +113,18 @@ document.addEventListener("DOMContentLoaded", function () {
     .from("#thematic-galleries .section-header", { duration: 1, opacity: 0, y: -30, delay: 0.3 })
     .from("#thematic-galleries .gallery-card", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
 
+
+    // Animate Latest Updates Section (unchanged)
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: "#collections",
+      start: "top 80%"
+    }
+  })
+    .from("#collections .section-header", { duration: 1, opacity: 0, y: -30, delay: 0.3 })
+    .from("#collections .collections-container", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
+
+
   // Animate Articles Section Slider Container Only
   gsap.timeline({
     scrollTrigger: {
@@ -123,15 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })
     .from(".articles-slider", { duration: 1, opacity: 0, y: 30, ease: "power2.out" });
 
-  // Animate Latest Updates Section (unchanged)
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: "#latest-updates",
-      start: "top 80%"
-    }
-  })
-    .from("#latest-updates .section-header", { duration: 1, opacity: 0, y: -30, delay: 0.3 })
-    .from("#latest-updates .update-card", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
+  
 
   // Animate Footer Section (optional)
   gsap.from("footer.footer", {
