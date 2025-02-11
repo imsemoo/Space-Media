@@ -14,7 +14,6 @@ $(document).ready(function(){
     }
   }); $(".team-slider").owlCarousel({
     loop: true,
-    margin: 30,
     nav: true,
     dots: false,
     navText: [
@@ -26,6 +25,22 @@ $(document).ready(function(){
       600: { items: 2 },
       1000: { items: 3 }
     }
+  });
+  $(".testimonial-slider").owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: true,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    smartSpeed: 800,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    items: 1,  // display one testimonial slide at a time
+    navText: [
+      '<i class="fas fa-arrow-left"></i>',
+      '<i class="fas fa-arrow-right"></i>'
+    ]
   });
 });
 
@@ -113,5 +128,22 @@ document.addEventListener("DOMContentLoaded", function () {
     opacity: 0,
     y: 30,
     ease: "power2.out"
+  });
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const videoCards = document.querySelectorAll(".video-card video");
+
+  videoCards.forEach(video => {
+    video.addEventListener("mouseenter", function() {
+      video.play();
+    });
+    video.addEventListener("mouseleave", function() {
+      video.pause();
+      video.currentTime = 0; // Optionally reset the video to the beginning
+    });
   });
 });

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character Encoding -->
+    <meta charset="UTF-8" />
+    <!-- Responsive Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page Title -->
+    <title>SPACE MEDIA - Advanced Search</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description"
+        content="Search premium stock photos and videos on SPACE MEDIA. Use our advanced filters to quickly find the perfect visual content for your creative projects." />
+    <meta name="keywords"
+        content="SPACE MEDIA, advanced search, stock photos, stock videos, digital media, creative content" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://spacemedia.ps/search.html" />
+    <meta name="author" content="SPACE MEDIA" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SPACE MEDIA - Advanced Search" />
+    <meta property="og:description"
+        content="Search premium stock photos and videos on SPACE MEDIA. Use our advanced filters to quickly find the perfect visual content for your creative projects." />
+    <meta property="og:image" content="img/og-image.png" />
+    <meta property="og:url" content="https://spacemedia.ps/search.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SPACE MEDIA - Advanced Search" />
+    <meta name="twitter:description"
+        content="Search premium stock photos and videos on SPACE MEDIA. Use our advanced filters to quickly find the perfect visual content for your creative projects." />
+    <meta name="twitter:image" content="img/twitter-image.png" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style" />
+    <link rel="preload" href="js/script.js" as="script" />
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "SPACE MEDIA",
+            "url": "https://spacemedia.ps",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://spacemedia.ps/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigation (reuse your existing navigation code) -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <!-- Brand Logo -->
+          <a class="navbar-brand" href="index.html">
+            <img src="./img/logo.png" alt="SPACE MEDIA Logo" />
+          </a>
+          <!-- Navbar Toggler for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar Content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <!-- Home Link -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+                  <!-- About Us Link -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                  </li>
+              <!-- Photos Link -->
+              <li class="nav-item">
+                <a class="nav-link" href="photos.html">Photos</a>
+              </li>
+              <!-- Videos Dropdown (opens on hover on desktop) -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Videos <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="videos-trending.html">Trending Videos</a></li>
+                  <li><a class="dropdown-item" href="videos-latest.html">Latest Videos</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="videos-popular.html">Popular Videos</a></li>
+                </ul>
+              </li>
+          
+              <!-- Contact Us Link -->
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+            <!-- Action Buttons -->
+            <div class="d-flex buttons-group">
+              <a href="login.html" class="dedcription-btn-orange">
+                <span class="name-descripeion">Login</span>
+                <div class="btn-icon-orange">
+                  <i class="fas fa-sign-in-alt"></i>
+                </div>
+              </a>
+              <a href="register.html" class="dedcription-btn me-2">
+                <span class="name-descripeion">Register</span>
+                <div class="btn-icon">
+                  <i class="fas fa-plus"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!-- Search Page Section -->
+    <section class="search-page">
+        <div class="container">
+            <div class="row">
+                <!-- Advanced Filter Sidebar -->
+                <div class="col-md-3">
+                    <div class="filter-sidebar">
+
+                        <!-- Asset Type Filter Section -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" href="#filterAssetType">
+                                <span><i class="fas fa-image"></i> Asset Type</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div id="filterAssetType" class="collapse filter-content">
+                                <div class="grid-container">
+                                    <a href="#" class="btn-filter">Photo</a>
+                                    <a href="#" class="btn-filter">Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price Filter Section -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" href="#filterPrice">
+                                <span><i class="fas fa-dollar-sign"></i> Price</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div id="filterPrice" class="collapse filter-content">
+                                <div class="grid-container">
+                                    <a href="#" class="btn-filter">Free</a>
+                                    <a href="#" class="btn-filter">Less than $10</a>
+                                    <a href="#" class="btn-filter">$10 - $50</a>
+                                    <a href="#" class="btn-filter">More than $50</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date Filter Section -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" href="#filterDate">
+                                <span><i class="fas fa-calendar"></i> Date</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div id="filterDate" class="collapse filter-content">
+                                <div class="grid-container">
+                                    <a href="#" class="btn-filter">Today</a>
+                                    <a href="#" class="btn-filter">This week</a>
+                                    <a href="#" class="btn-filter">This month</a>
+                                    <a href="#" class="btn-filter">This year</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resolution Filter Section (New) -->
+                        <div class="filter-section">
+                            <!-- The header toggles the collapse element -->
+                            <div class="filter-header" data-bs-toggle="collapse" href="#filterResolution">
+                                <span><i class="fas fa-tv"></i> Resolution</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div id="filterResolution" class="collapse filter-content">
+                                <div class="grid-container">
+                                    <!-- Resolution options -->
+                                    <a href="#" class="btn-filter">HD</a>
+                                    <a href="#" class="btn-filter">Full HD</a>
+                                    <a href="#" class="btn-filter">4K</a>
+                                    <a href="#" class="btn-filter">8K</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Color Filter Section -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" href="#filterColor">
+                                <span><i class="fa-solid fa-palette"></i> Color</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div id="filterColor" class="collapse filter-content">
+                                <!-- Grid container with buttons having different colors -->
+                                <div class="grid-container">
+                                    <a href="#" class="btn-color btn-red"></a>
+                                    <a href="#" class="btn-color btn-blue"></a>
+                                    <a href="#" class="btn-color btn-green"></a>
+                                    <a href="#" class="btn-color btn-yellow"></a>
+                                    <a href="#" class="btn-color btn-orange"></a>
+                                    <a href="#" class="btn-color btn-purple"></a>
+                                    <a href="#" class="btn-color btn-pink"></a>
+                                    <a href="#" class="btn-color btn-brown"></a>
+                                    <a href="#" class="btn-color btn-gray"></a>
+                                    <a href="#" class="btn-color btn-cyan"></a>
+                                    <a href="#" class="btn-color btn-magenta"></a>
+                                    <a href="#" class="btn-color btn-lime"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- End of filter-sidebar -->
+                </div>
+                    <!-- Search Results and Search Box -->
+                    <div class="col-md-9">
+                        <div class="search-box mb-4">
+                            <input type="text" placeholder="Search for images or videos..." class="form-control">
+                        </div>
+                        <div class="results-area">
+                            <div class="results-grid">
+
+                                <div class="result-card image-card">
+                                    <img src="img/results/1.jpg" alt="Stunning Landscape">
+                                    <div class="result-overlay">
+                                        <div class="overlay-content">
+                                            <div class="right-content">
+                                                <div class="premium">
+                                                    <img src="./img/icons/crown.png" alt="">
+                                                </div>
+
+                                                <div class="photographer-info">
+                                                    <img src="img/team/1.jpg" alt="John Doe">
+                                                    <span>John Doe</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="left-content">
+                                                <div class="overlay-icons">
+                                                    <a href="download-image.jpg" class="download-btn"
+                                                        aria-label="Download">
+                                                        <i class="fas fa-download"></i>
+                                                    </a>
+                                                    <a href="#" class="favorite-btn" aria-label="Add to Favorites">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                    <div class="media-quality">
+                                                        <span>4K</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="result-card video-card">
+                                    <!-- The video element has no controls and is muted -->
+                                    <video src="img/results/video.mp4" muted loop playsinline></video>
+                                    <div class="result-overlay">
+
+                                        <div class="overlay-content">
+                                            <div class="photographer-info">
+                                                <img src="img/team/1.jpg" alt="John Doe">
+                                                <span>John Doe</span>
+                                            </div>
+                                            <div class="left-content">
+                                                <div class="overlay-icons">
+                                                    <a href="download-image.jpg" class="download-btn"
+                                                        aria-label="Download">
+                                                        <i class="fas fa-download"></i>
+                                                    </a>
+                                                    <a href="#" class="favorite-btn" aria-label="Add to Favorites">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                    <div class="media-quality">
+                                                        <span>1080p</span>
+                                                    </div>
+                                                    <div class="video-duration">
+                                                        <span>120s</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="result-card image-card">
+                                    <img src="img/results/2.jpg" alt="Stunning Landscape">
+                                    <div class="result-overlay">
+                                        <div class="overlay-content">
+                                            <div class="right-content">
+                                                <div class="premium">
+                                                    <img src="./img/icons/crown.png" alt="">
+                                                </div>
+
+                                                <div class="photographer-info">
+                                                    <img src="img/team/1.jpg" alt="John Doe">
+                                                    <span>John Doe</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="left-content">
+                                                <div class="overlay-icons">
+                                                    <a href="download-image.jpg" class="download-btn"
+                                                        aria-label="Download">
+                                                        <i class="fas fa-download"></i>
+                                                    </a>
+                                                    <a href="#" class="favorite-btn" aria-label="Add to Favorites">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                    <div class="media-quality">
+                                                        <span>4K</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="result-card image-card">
+                                    <img src="img/results/3.jpg" alt="Stunning Landscape">
+                                    <div class="result-overlay">
+                                        <div class="overlay-content">
+                                            <div class="right-content">
+                                                <div class="premium">
+                                                    <img src="./img/icons/crown.png" alt="">
+                                                </div>
+
+                                                <div class="photographer-info">
+                                                    <img src="img/team/1.jpg" alt="John Doe">
+                                                    <span>John Doe</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="left-content">
+                                                <div class="overlay-icons">
+                                                    <a href="download-image.jpg" class="download-btn"
+                                                        aria-label="Download">
+                                                        <i class="fas fa-download"></i>
+                                                    </a>
+                                                    <a href="#" class="favorite-btn" aria-label="Add to Favorites">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                    <div class="media-quality">
+                                                        <span>4K</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="result-card image-card">
+                                    <img src="img/results/4.jpg" alt="Stunning Landscape">
+                                    <div class="result-overlay">
+                                        <div class="overlay-content">
+                                            <div class="right-content">
+                                                <div class="premium">
+                                                    <img src="./img/icons/crown.png" alt="">
+                                                </div>
+
+                                                <div class="photographer-info">
+                                                    <img src="img/team/1.jpg" alt="John Doe">
+                                                    <span>John Doe</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="left-content">
+                                                <div class="overlay-icons">
+                                                    <a href="download-image.jpg" class="download-btn"
+                                                        aria-label="Download">
+                                                        <i class="fas fa-download"></i>
+                                                    </a>
+                                                    <a href="#" class="favorite-btn" aria-label="Add to Favorites">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                    <div class="media-quality">
+                                                        <span>4K</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="result-card image-card">
+                                    <img src="img/results/5.jpg" alt="Stunning Landscape">
+                                    <div class="result-overlay">
+                                        <div class="overlay-content">
+                                            <div class="right-content">
+                                                <div class="premium">
+                                                    <img src="./img/icons/crown.png" alt="">
+                                                </div>
+
+                                                <div class="photographer-info">
+                                                    <img src="img/team/1.jpg" alt="John Doe">
+                                                    <span>John Doe</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="left-content">
+                                                <div class="overlay-icons">
+                                                    <a href="download-image.jpg" class="download-btn"
+                                                        aria-label="Download">
+                                                        <i class="fas fa-download"></i>
+                                                    </a>
+                                                    <a href="#" class="favorite-btn" aria-label="Add to Favorites">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                    <div class="media-quality">
+                                                        <span>4K</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="result-card image-card">
+                                    <img src="img/results/6.jpg" alt="Stunning Landscape">
+                                    <div class="result-overlay">
+                                        <div class="overlay-content">
+                                            <div class="right-content">
+                                                <div class="premium">
+                                                    <img src="./img/icons/crown.png" alt="">
+                                                </div>
+
+                                                <div class="photographer-info">
+                                                    <img src="img/team/1.jpg" alt="John Doe">
+                                                    <span>John Doe</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="left-content">
+                                                <div class="overlay-icons">
+                                                    <a href="download-image.jpg" class="download-btn"
+                                                        aria-label="Download">
+                                                        <i class="fas fa-download"></i>
+                                                    </a>
+                                                    <a href="#" class="favorite-btn" aria-label="Add to Favorites">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                    <div class="media-quality">
+                                                        <span>4K</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="result-card image-card">
+                                    <img src="img/results/7.jpg" alt="Stunning Landscape">
+                                    <div class="result-overlay">
+                                        <div class="overlay-content">
+                                            <div class="right-content">
+                                                <div class="premium">
+                                                    <img src="./img/icons/crown.png" alt="">
+                                                </div>
+
+                                                <div class="photographer-info">
+                                                    <img src="img/team/1.jpg" alt="John Doe">
+                                                    <span>John Doe</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="left-content">
+                                                <div class="overlay-icons">
+                                                    <a href="download-image.jpg" class="download-btn"
+                                                        aria-label="Download">
+                                                        <i class="fas fa-download"></i>
+                                                    </a>
+                                                    <a href="#" class="favorite-btn" aria-label="Add to Favorites">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                    <div class="media-quality">
+                                                        <span>4K</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="result-card image-card">
+                                    <img src="img/results/8.jpg" alt="Stunning Landscape">
+                                    <div class="result-overlay">
+                                        <div class="overlay-content">
+                                            <div class="right-content">
+                                                <div class="premium">
+                                                    <img src="./img/icons/crown.png" alt="">
+                                                </div>
+
+                                                <div class="photographer-info">
+                                                    <img src="img/team/1.jpg" alt="John Doe">
+                                                    <span>John Doe</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="left-content">
+                                                <div class="overlay-icons">
+                                                    <a href="download-image.jpg" class="download-btn"
+                                                        aria-label="Download">
+                                                        <i class="fas fa-download"></i>
+                                                    </a>
+                                                    <a href="#" class="favorite-btn" aria-label="Add to Favorites">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                    <div class="media-quality">
+                                                        <span>4K</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- Additional result cards can be added in a similar structure -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-columns">
+          <!-- About Column -->
+          <div class="footer-column about">
+            <a href="#" class="mb-3 d-block">
+              <img src="./img/logo-white.png" alt="" style="height: 80px;">
+            </a>
+            <p>
+              SPACE MEDIA is your premier marketplace for premium stock photos and videos, empowering creators and
+              brands with exclusive media content.
+            </p>
+          </div>
+          <!-- Quick Links Column -->
+          <div class="footer-column links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="photos.html">Photos</a></li>
+              <li><a href="videos.html">Videos</a></li>
+              <li><a href="articles.html">Articles</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Support Column -->
+          <div class="footer-column support">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="support.html">Customer Support</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+          <!-- Social & Newsletter Column -->
+          <div class="footer-column social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <h3>Newsletter</h3>
+            <form class="footer-newsletter" role="form" aria-label="Footer Newsletter Subscription">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 SPACE MEDIA. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="js/jquery-3.7.1.min.js" defer></script>
+    <script src="js/owl.carousel.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>

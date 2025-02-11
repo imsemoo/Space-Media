@@ -644,6 +644,7 @@ ul {
   position: relative;
   width: 100%;
   padding-bottom: 65%; /* Aspect ratio control */
+  height: 100%;
   overflow: hidden;
 }
 
@@ -698,7 +699,17 @@ ul {
   line-height: 1.4;
   color: var(--neutral-light);
 }
-
+/* Variation Pattern: For every group of 9 items, make specific items taller */
+/* Pattern: First item of first row, second item of second row, and third item of third row are larger */
+.media-grid > a:nth-child(9n + 1) {
+  grid-row: span 2;
+}
+.media-grid > a:nth-child(9n + 5) {
+  grid-row: span 2;
+}
+.media-grid > a:nth-child(9n + 9) {
+  grid-row: span 2;
+}
 /* ========== Thematic Galleries Section Styles ========== */
 
 .thematic-galleries-section {
@@ -737,7 +748,7 @@ ul {
 .gallery-img {
   position: relative;
   width: 100%;
-  padding-bottom: 65%; /* Maintain aspect ratio */
+  height: 100%;
 }
 
 .gallery-img img {
@@ -791,6 +802,95 @@ ul {
   color: #fff;
   line-height: 1.4;
 }
+/* ===================== Thematic Galleries Section ===================== */
+
+/* Galleries Grid using CSS Grid with custom areas */
+.galleries-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto;
+  /* Define grid areas:
+       Row 1: "large" (left) and "smallTop" (right)
+       Row 2: "large" (left) and "smallBottom" (right)
+       Row 3: "bottom1" and "bottom2" across full width
+  */
+  grid-template-areas:
+    "large smallTop"
+    "large smallBottom"
+    "bottom1 bottom2";
+  gap: 15px;
+}
+
+/* Assign grid areas */
+.gallery-card.large {
+  grid-area: large;
+}
+
+.gallery-card.small-top {
+  grid-area: smallTop;
+}
+
+.gallery-card.small-bottom {
+  grid-area: smallBottom;
+}
+
+.gallery-card.bottom1 {
+  grid-area: bottom1;
+}
+
+.gallery-card.bottom2 {
+  grid-area: bottom2;
+}
+
+/* Gallery Card Base Style */
+.gallery-card {
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Set explicit heights for each area to maintain an organized layout */
+.gallery-card.large {
+  height: 420px; /* large image spans two rows */
+}
+.gallery-card.small-top,
+.gallery-card.small-bottom {
+  height: 205px; /* combined they roughly equal the large image height */
+}
+.gallery-card.bottom1,
+.gallery-card.bottom2 {
+  height: 200px; /* small images below large one */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .galleries-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "large"
+      "smallTop"
+      "smallBottom"
+      "bottom1"
+      "bottom2";
+  }
+  .gallery-card {
+    height: auto;
+  }
+}
+
 /* ===================== Articles Section Styles ===================== */
 .articles-section {
   padding: 80px 0;
@@ -1060,6 +1160,10 @@ ul {
 .owl-carousel .owl-nav.disabled {
   display: block;
 }
+
+.owl-carousel {
+  padding: 0 30px;
+}
 .owl-prev,
 .owl-next {
   position: absolute;
@@ -1124,7 +1228,7 @@ ul {
 
 .breadcrumb {
   justify-content: center;
-  margin: 0 ;
+  margin: 0;
   padding: 20px 0;
 }
 
@@ -1192,13 +1296,10 @@ ul {
   flex: 1;
 }
 
-
 /* ===================== Team Section Styles ===================== */
 .team-section {
   background-color: var(--secondary-background-color, #f7f7f7);
 }
-
-
 
 /* Team Grid Layout */
 .team-grid {
@@ -1216,6 +1317,7 @@ ul {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
   padding-bottom: 20px;
+  margin: 15px;
 }
 
 .team-card:hover {
@@ -1273,4 +1375,604 @@ ul {
 
 .team-social a:hover {
   color: var(--hover-color);
+}
+
+/* ===================== Testimonials Section Styles ===================== */
+.testimonials-section {
+}
+
+/* Owl Carousel Slider for Testimonials */
+.owl-carousel.testimonial-slider {
+  position: relative;
+  padding: 20px 60px;
+}
+
+/* Testimonial Slide */
+.testimonial-slide {
+  padding: 20px;
+}
+
+/* Testimonial Content Split Layout */
+.testimonial-content {
+  display: flex;
+  gap: 30px;
+
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image Half */
+.testimonial-image {
+  flex: 1 1 40%;
+  max-width: 40%;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.testimonial-image img {
+  width: 400px !important;
+  height: 390px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.testimonial-image::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: var(--secondary-color);
+  width: 400px;
+  height: 390px;
+  border-radius: 12px;
+  z-index: -1;
+}
+
+/* Text Half */
+.testimonial-text {
+  flex: 1 1 55%;
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.testimonial-text p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.testimonial-text h4 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 0 0 5px;
+}
+
+.testimonial-text span {
+  font-size: 1rem;
+  color: var(--text-muted-color);
+}
+
+/* Custom Owl Carousel Arrow Styles */
+.testimonial-slider .owl-prev,
+.testimonial-slider .owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background: var(--secondary-color) !important;
+  color: #fff !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+.testimonial-slider .owl-prev:hover,
+.testimonial-slider .owl-next:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+.testimonial-slider .owl-prev {
+  left: -20px;
+}
+.testimonial-slider .owl-next {
+  right: -20px;
+}
+
+/* Responsive: Stack image and text vertically on small screens */
+@media (max-width: 768px) {
+  .testimonial-content {
+    flex-direction: column;
+  }
+  .testimonial-image,
+  .testimonial-text {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .testimonial-image {
+    height: 250px;
+  }
+}
+
+/* ===================== Contact Section Styles ===================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Both columns styling */
+.contact-info,
+.contact-form {
+  background: #fefefe;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+  height: 100%;
+}
+
+/* Section Header */
+.contact-section .section-header {
+  margin-bottom: 2rem;
+}
+.contact-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact-section .section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted-color);
+}
+.contact-section span {
+  font-size: 2.5rem;
+}
+/* Contact Info Column */
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+.info-list li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color);
+}
+.info-list li i {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+}
+.social-links a {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+.social-links a:hover {
+  color: var(--hover-color);
+}
+.contact-info p {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: var(--text-muted-color);
+  margin-bottom: 20px;
+}
+/* Contact Form Column */
+.contact-form h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+.contact-form p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted-color);
+}
+.contact-form form .form-control {
+  margin-bottom: 15px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+.contact-form form .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(50, 43, 131, 0.2);
+}
+.contact-form form button {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+.contact-form form button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================== Results Section ===================== */
+.results-section {
+  padding: 80px 0;
+  background-color: var(--secondary-background-color, #f7f7f7);
+}
+
+.results-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* ===================== Result Card Base Styles ===================== */
+
+/* Image Card */
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Video Card */
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.video-card:hover video {
+  transform: scale(1.05);
+}
+
+/* ===================== Overlay Styles ===================== */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* Overlay Icons for Image Cards */
+.premium,
+.overlay-icons a {
+  color: #fff;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.overlay-icons a:hover {
+  background: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* Video Info Overlay */
+.video-info {
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.video-info .video-quality,
+.video-info .video-duration {
+  display: block;
+}
+
+/* ===================== Card Footer with Creator Info ===================== */
+.card-footer {
+  padding: 10px 15px;
+  background: #fff;
+  border-top: 1px solid var(--secondary-background-color);
+}
+.creator-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.creator-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.creator-name {
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+/* Base result card style */
+.result-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Media (image or video) fills the card */
+.result-card img,
+.result-card video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Slight zoom on hover */
+.result-card:hover img,
+.result-card:hover video {
+  transform: scale(1.05);
+}
+
+/* Overlay that appears on hover */
+.result-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.result-card:hover .result-overlay {
+  opacity: 1;
+}
+
+/* Content inside overlay */
+.overlay-content {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.overlay-content .left-content {
+  height: 100%;
+}
+
+.overlay-content .right-content {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 100%;
+}
+/* Overlay icons for download & favorite */
+.overlay-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 10px;
+}
+
+/* Photographer info styling */
+.photographer-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.photographer-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--secondary-color, #f68e3a);
+}
+
+.photographer-info span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Media quality and video duration styling */
+.media-quality,
+.video-duration {
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  cursor: default;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: max-content;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Additional spacing for video duration if needed */
+.video-duration {
+  margin-top: 5px;
+}
+/* ======================================================================
+   Advanced Accordion Filter Styles - Enhanced Version
+====================================================================== */
+
+.filter-sidebar {
+  background: #ffffff; /* Cleaner background */
+  border-radius: 10px; /* Smoother edges */
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for better depth */
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px 0;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.filter-header span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-header:hover {
+  color: var(--secondary-color); /* Highlight on hover */
+}
+
+.filter-section {
+  padding: 0 10px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.3s ease;
+}
+
+.filter-section:last-child {
+  border: none;
+}
+
+.filter-content {
+  padding: 10px 0 15px;
+}
+
+.filter-content .grid-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Icon rotation animation */
+.filter-header i {
+  transition: transform 0.3s ease;
+  font-size: 16px;
+}
+
+.filter-header[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+/* Filter buttons */
+.btn-filter {
+  background: #f8f9fa;
+  color: #333;
+  border-radius: 6px;
+  padding: 6px 16px;
+  border: 1px solid #d8d8d8;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-filter:hover {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  border-color: var(--secondary-color);
+}
+
+/* Color selection buttons */
+.btn-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.btn-color:hover {
+  transform: scale(1.2);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Color styles */
+.btn-red { background-color: red; }
+.btn-blue { background-color: blue; }
+.btn-green { background-color: green; }
+.btn-yellow { background-color: yellow; }
+.btn-orange { background-color: orange; }
+.btn-purple { background-color: purple; }
+.btn-pink { background-color: pink; }
+.btn-brown { background-color: brown; }
+.btn-gray { background-color: gray; }
+.btn-cyan { background-color: cyan; }
+.btn-magenta { background-color: magenta; }
+.btn-lime { background-color: lime; }
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .filter-sidebar {
+    padding: 10px;
+  }
+  .btn-filter {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+  .btn-color {
+    width: 20px;
+    height: 20px;
+  }
 }
