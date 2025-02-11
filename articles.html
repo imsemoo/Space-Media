@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character Encoding -->
+    <meta charset="UTF-8" />
+    <!-- Responsive Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page Title -->
+    <title>SPACE MEDIA - Articles</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description"
+        content="Discover the latest articles, insights, and creative inspiration at SPACE MEDIA. Stay updated with trends in digital media and design." />
+    <meta name="keywords" content="SPACE MEDIA, Articles, Digital Media, Design, Creative Inspiration" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://spacemedia.ps/articles.html" />
+    <meta name="author" content="SPACE MEDIA" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SPACE MEDIA - Articles" />
+    <meta property="og:description"
+        content="Discover the latest articles, insights, and creative inspiration at SPACE MEDIA." />
+    <meta property="og:image" content="img/og-image.png" />
+    <meta property="og:url" content="https://spacemedia.ps/articles.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SPACE MEDIA - Articles" />
+    <meta name="twitter:description"
+        content="Discover the latest articles, insights, and creative inspiration at SPACE MEDIA." />
+    <meta name="twitter:image" content="img/twitter-image.png" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Your main stylesheet should include your CSS variables and global styles -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style" />
+    <link rel="preload" href="js/script.js" as="script" />
+
+    <!-- Custom CSS for the Articles Page -->
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation (Reuse your existing navigation code) -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="SPACE MEDIA Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="articles.html">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="d-flex buttons-group">
+                    <a href="login.html" class="dedcription-btn-orange">
+                        <span class="name-descripeion">Login</span>
+                        <div class="btn-icon-orange"><i class="fas fa-sign-in-alt"></i></div>
+                    </a>
+                    <a href="register.html" class="dedcription-btn me-2">
+                        <span class="name-descripeion">Register</span>
+                        <div class="btn-icon"><i class="fas fa-plus"></i></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="breadcrumb-section">
+        <div class="container">
+          <ol class="breadcrumb text-center">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Articles </li>
+          </ol>
+        </div>
+    
+        <div class="name-page">
+          <h5>Articles </h5>
+          <p>Insights, trends, and creative inspiration from SPACE MEDIA.</p>
+
+        </div>
+      </section>
+ 
+
+    <!-- Articles Grid Section -->
+    <section class="articles-grid-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">
+                    <span>Latest Articles</span>
+                </h2>
+                <p class="section-subtitle">Stay updated with the latest news, trends, and insights in digital media and
+                    creative inspiration.</p>
+            </div>
+
+            <!-- Filter Bar Section -->
+            <section class="articles-filter-bar">
+                <div class="container">
+                    <form class="d-flex gap-2 align-items-center">
+                        <!-- Filter by Name -->
+                        <div class="form-area">
+                            <label for="filterName" class="visually-hidden">Search by Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                <input type="text" class="form-control" id="filterName" placeholder="Search by Name">
+                            </div>
+                        </div>
+                        <!-- Filter by Date -->
+                        <div class="form-area">
+                            <label for="filterDate" class="visually-hidden">Filter by Date</label>
+                            <select class="form-select" id="filterDate">
+                                <option value="">All Dates</option>
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="this_week">This Week</option>
+                                <option value="this_month">This Month</option>
+                            </select>
+                        </div>
+                        <!-- Filter by Category -->
+                        <div class="form-area">
+                            <label for="filterCategory" class="visually-hidden">Filter by Category</label>
+                            <select class="form-select" id="filterCategory">
+                                <option value="">All Categories</option>
+                                <option value="design">Design</option>
+                                <option value="trends">Trends</option>
+                                <option value="tutorials">Tutorials</option>
+                                <option value="inspiration">Inspiration</option>
+                            </select>
+                        </div>
+                        <!-- Filter Button -->
+                        <div class="">
+                            <button type="submit" class="btn btn-primary w-100"><i class="fas fa-filter"></i> Search</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <div class="articles-grid ">
+                <!-- Article Card 1 -->
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="./img/articles/1.jpg" alt="Understanding Visual Storytelling">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Understanding Visual Storytelling</h3>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="fas fa-calendar-alt"></i> April 1, 2025</span>
+                            <span class="article-readtime"><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p class="article-excerpt">
+                            Learn how compelling visuals can transform your storytelling and captivate audiences.
+                        </p>
+                        <a href="article-details.html?id=1" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Article Card 2 -->
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="./img/articles/2.jpg" alt="Understanding Visual Storytelling">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Understanding Visual Storytelling</h3>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="fas fa-calendar-alt"></i> April 1, 2025</span>
+                            <span class="article-readtime"><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p class="article-excerpt">
+                            Learn how compelling visuals can transform your storytelling and captivate audiences.
+                        </p>
+                        <a href="article-details.html?id=1" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Article Card 3 -->
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="./img/articles/3.jpg" alt="Understanding Visual Storytelling">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Understanding Visual Storytelling</h3>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="fas fa-calendar-alt"></i> April 1, 2025</span>
+                            <span class="article-readtime"><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p class="article-excerpt">
+                            Learn how compelling visuals can transform your storytelling and captivate audiences.
+                        </p>
+                        <a href="article-details.html?id=1" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Article Card 1 -->
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="./img/articles/1.jpg" alt="Understanding Visual Storytelling">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Understanding Visual Storytelling</h3>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="fas fa-calendar-alt"></i> April 1, 2025</span>
+                            <span class="article-readtime"><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p class="article-excerpt">
+                            Learn how compelling visuals can transform your storytelling and captivate audiences.
+                        </p>
+                        <a href="article-details.html?id=1" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Article Card 2 -->
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="./img/articles/2.jpg" alt="Understanding Visual Storytelling">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Understanding Visual Storytelling</h3>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="fas fa-calendar-alt"></i> April 1, 2025</span>
+                            <span class="article-readtime"><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p class="article-excerpt">
+                            Learn how compelling visuals can transform your storytelling and captivate audiences.
+                        </p>
+                        <a href="article-details.html?id=1" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Article Card 3 -->
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="./img/articles/3.jpg" alt="Understanding Visual Storytelling">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Understanding Visual Storytelling</h3>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="fas fa-calendar-alt"></i> April 1, 2025</span>
+                            <span class="article-readtime"><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p class="article-excerpt">
+                            Learn how compelling visuals can transform your storytelling and captivate audiences.
+                        </p>
+                        <a href="article-details.html?id=1" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Article Card 1 -->
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="./img/articles/1.jpg" alt="Understanding Visual Storytelling">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Understanding Visual Storytelling</h3>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="fas fa-calendar-alt"></i> April 1, 2025</span>
+                            <span class="article-readtime"><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p class="article-excerpt">
+                            Learn how compelling visuals can transform your storytelling and captivate audiences.
+                        </p>
+                        <a href="article-details.html?id=1" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Article Card 2 -->
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="./img/articles/2.jpg" alt="Understanding Visual Storytelling">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Understanding Visual Storytelling</h3>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="fas fa-calendar-alt"></i> April 1, 2025</span>
+                            <span class="article-readtime"><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p class="article-excerpt">
+                            Learn how compelling visuals can transform your storytelling and captivate audiences.
+                        </p>
+                        <a href="article-details.html?id=1" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Article Card 3 -->
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="./img/articles/3.jpg" alt="Understanding Visual Storytelling">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Understanding Visual Storytelling</h3>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="fas fa-calendar-alt"></i> April 1, 2025</span>
+                            <span class="article-readtime"><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <p class="article-excerpt">
+                            Learn how compelling visuals can transform your storytelling and captivate audiences.
+                        </p>
+                        <a href="article-details.html?id=1" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Additional Article Cards as needed -->
+            </div>
+            <!-- Pagination -->
+            <div class="pagination-container text-center mt-4">
+                <nav aria-label="Article Pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+      <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-columns">
+          <!-- About Column -->
+          <div class="footer-column about">
+            <a href="#" class="mb-3 d-block">
+              <img src="./img/logo-white.png" alt="" style="height: 80px;">
+            </a>
+            <p>
+              SPACE MEDIA is your premier marketplace for premium stock photos and videos, empowering creators and
+              brands with exclusive media content.
+            </p>
+          </div>
+          <!-- Quick Links Column -->
+          <div class="footer-column links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="photos.html">Photos</a></li>
+              <li><a href="videos.html">Videos</a></li>
+              <li><a href="articles.html">Articles</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Support Column -->
+          <div class="footer-column support">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="support.html">Customer Support</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+          <!-- Social & Newsletter Column -->
+          <div class="footer-column social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <h3>Newsletter</h3>
+            <form class="footer-newsletter" role="form" aria-label="Footer Newsletter Subscription">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 SPACE MEDIA. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+    <!-- JavaScript Libraries with 'defer' -->
+    <script src="js/jquery-3.7.1.min.js" defer></script>
+    <script src="js/owl.carousel.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
