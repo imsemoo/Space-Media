@@ -13,7 +13,7 @@
   /* --hover-color: Color applied to interactive elements on hover */
   --hover-color: #f68e3a;
   /* --border-color: Color used for borders, dividers, and outlines */
-  --border-color: #44345c;
+  --border-color: rgba(50, 43, 131, 0.08);
 
   /* Additional Colors */
   /* --background-color: Main background color of the website */
@@ -344,7 +344,6 @@ ul {
     --background-color
   ); /* Use main background color for logo clarity */
   border-bottom: 2px solid var(--border-color); /* Use defined border color */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
 }
 
 /* Magical Particle Background using a CSS Radial Gradient */
@@ -417,7 +416,7 @@ ul {
 .dropdown-menu {
   background-color: var(--primary-color);
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 .dropdown-item {
   color: #fff;
@@ -524,7 +523,7 @@ ul {
 /* Style for the input group icon container */
 .search-filter .input-group-text {
   background-color: #fff;
-  border: 1px solid #ced4da;
+  border: 1px solid var(--border-color);
   border-right: none;
   font-size: 1.1rem;
 }
@@ -532,7 +531,7 @@ ul {
 /* Styling for text inputs and select fields in the search filter */
 .search-filter .form-control,
 .search-filter .form-select {
-  border: 1px solid #ced4da;
+  border: 1px solid var(--border-color);
   font-size: 1rem;
 }
 
@@ -846,7 +845,7 @@ ul {
 .gallery-card {
   display: block;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -907,7 +906,7 @@ ul {
 /* Article Card */
 .article-card {
   background-color: var(--background-color);
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -985,7 +984,7 @@ ul {
 /* Update Card */
 .update-card {
   background-color: var(--background-color);
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1221,7 +1220,7 @@ ul {
 }
 
 .breadcrumb li {
-  color: var(--info-color) !important;
+  color: var(--secondary-color) !important;
 
   font-weight: bold;
 }
@@ -1262,7 +1261,7 @@ ul {
 .about-us .image img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 .about-us .section-title {
   margin: 0 0 20px 0;
@@ -1311,7 +1310,7 @@ ul {
 /* Team Card */
 .team-card {
   background: var(--background-color, #ffffff);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1516,7 +1515,7 @@ ul {
 .contact-form {
   background: #fefefe;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #eee;
   height: 100%;
@@ -1740,7 +1739,7 @@ ul {
 .result-card {
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
 }
 
@@ -2042,7 +2041,7 @@ ul {
 }
 .guide-card {
   background: var(--background-color);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
@@ -2070,4 +2069,105 @@ ul {
 .accordion-button:focus {
   outline: none;
   box-shadow: none;
+}
+.accordion-button::after{
+  color: var(--text-color);
+}
+
+/* Custom arrow icon for FAQ accordion (blue arrow) */
+.accordion-button::after {
+  content: "\f107"; /* Font Awesome down arrow */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color:var(--text-color); /* Set arrow color to blue */
+  font-size: 1.2rem;
+  transition: transform 0.2s ease-in-out;
+  background-image: none;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: none;
+  transform: rotate(180deg);
+}
+
+
+/* Terms of Service Page Custom Styles */
+.terms-of-service {
+  color: var(--text-color, #322b83);
+}
+
+
+.terms-of-service article {
+  background: var(--background-color, #ffffff);
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.terms-of-service h3 {
+  font-size: 1.75rem;
+  font-family: "Poppins-Bold", sans-serif;
+  color: var(--primary-color, #322b83);
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--secondary-color, #f68e3a);
+  padding-bottom: 5px;
+}
+
+.terms-of-service p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--text-color, #322b83);
+}
+
+.terms-of-service a {
+  color: var(--secondary-color, #f68e3a);
+  text-decoration: underline;
+}
+
+.terms-of-service a:hover {
+  color: var(--primary-color, #322b83);
+}
+
+
+/* Privacy Policy Page Custom Styles */
+.privacy-policy {
+  background-color: #ffffff; /* White background for the main section */
+  color: var(--text-color, #322b83);
+}
+
+.privacy-policy article {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+.privacy-policy h3 {
+  font-size: 1.8rem;
+  font-family: "Poppins-Bold", sans-serif;
+  color: var(--primary-color, #322b83);
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--secondary-color, #f68e3a);
+  padding-bottom: 5px;
+}
+.privacy-policy p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.privacy-policy ul {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+.privacy-policy li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+.privacy-policy a {
+  color: var(--secondary-color, #f68e3a);
+  text-decoration: underline;
+}
+.privacy-policy a:hover {
+  color: var(--primary-color, #322b83);
 }
