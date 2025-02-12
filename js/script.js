@@ -172,15 +172,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartIcon = document.getElementById("shoppingCartIcon");
   const cartDropdown = document.getElementById("shoppingCartDropdown");
 
+  // Toggle cart dropdown on icon click
   cartIcon.addEventListener("click", function (e) {
     e.preventDefault();
     cartDropdown.classList.toggle("active");
   });
 
-  // Close dropdown if clicking outside of the shopping cart
+  // Close dropdown when clicking outside
   document.addEventListener("click", function (e) {
     if (!cartIcon.contains(e.target) && !cartDropdown.contains(e.target)) {
       cartDropdown.classList.remove("active");
     }
+  });
+
+  // Remove item functionality (for demonstration, simply remove the item from DOM)
+  document.querySelectorAll(".remove-item").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const item = this.closest(".cart-item");
+      if (item) {
+        item.remove();
+        // Optionally, update the cart count and total here
+      }
+    });
   });
 });

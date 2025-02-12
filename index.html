@@ -98,10 +98,10 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
           </li>
-              <!-- About Us Link -->
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
+          <!-- About Us Link -->
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
           <!-- Photos Link -->
           <li class="nav-item">
             <a class="nav-link" href="photos.html">Photos</a>
@@ -120,7 +120,7 @@
               <li><a class="dropdown-item" href="videos-popular.html">Popular Videos</a></li>
             </ul>
           </li>
-      
+
           <!-- Contact Us Link -->
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact Us</a>
@@ -128,54 +128,71 @@
         </ul>
         <!-- Action Buttons -->
         <!-- Existing action buttons -->
-<div class="d-flex buttons-group">
-  <a href="login.html" class="dedcription-btn-orange">
-    <span class="name-descripeion">Login</span>
-    <div class="btn-icon-orange">
-      <i class="fas fa-sign-in-alt"></i>
-    </div>
-  </a>
-  <a href="register.html" class="dedcription-btn me-2">
-    <span class="name-descripeion">Register</span>
-    <div class="btn-icon">
-      <i class="fas fa-plus"></i>
-    </div>
-  </a>
-  <!-- Shopping Cart Icon -->
-  <div class="shopping-cart-wrapper">
-    <a href="#" id="shoppingCartIcon" class="shopping-cart-icon">
-      <i class="fas fa-shopping-cart"></i>
-      <span class="cart-count">3</span>
-    </a>
-    <div class="shopping-cart-dropdown" id="shoppingCartDropdown">
-      <h4>Your Cart</h4>
-      <ul class="cart-items">
-        <li class="cart-item">
-          <img src="https://dummyimage.com/50x50/dddddd/000000/" alt="Item 1">
-          <div class="item-info">
-            <p>Item Name 1</p>
-            <span>$19.99</span>
+        <div class="d-flex buttons-group">
+          <a href="login.html" class="dedcription-btn-orange">
+            <span class="name-descripeion">Login</span>
+            <div class="btn-icon-orange">
+              <i class="fas fa-sign-in-alt"></i>
+            </div>
+          </a>
+          <a href="register.html" class="dedcription-btn me-2">
+            <span class="name-descripeion">Register</span>
+            <div class="btn-icon">
+              <i class="fas fa-plus"></i>
+            </div>
+          </a>
+          <!-- Shopping Cart Icon -->
+          <div class="shopping-cart-wrapper">
+            <!-- Shopping Cart Icon -->
+            <a href="#" id="shoppingCartIcon" class="shopping-cart-icon">
+              <i class="fas fa-shopping-bag"></i>
+              <span class="cart-count">3</span>
+            </a>
+            <!-- Shopping Cart Dropdown -->
+            <div class="shopping-cart-dropdown" id="shoppingCartDropdown">
+              <div class="cart-header">
+                <h4>Your Cart</h4>
+                <a href="checkout.html" class="checkout-btn">Checkout</a>
+              </div>
+              <ul class="cart-items">
+                <!-- Cart Item 1 -->
+                <li class="cart-item">
+                  <img src="https://dummyimage.com/50x50/dddddd/000000/" alt="Item 1">
+                  <div class="item-info">
+                    <h5>Item Name 1</h5>
+                    <p>Price: $19.99</p>
+                    <p>Qty: 1</p>
+                  </div>
+                  <button class="remove-item" aria-label="Remove Item"><i class="fas fa-trash"></i></button>
+                </li>
+                <!-- Cart Item 2 -->
+                <li class="cart-item">
+                  <img src="https://dummyimage.com/50x50/dddddd/000000/" alt="Item 2">
+                  <div class="item-info">
+                    <h5>Item Name 2</h5>
+                    <p>Price: $9.99</p>
+                    <p>Qty: 1</p>
+                  </div>
+                  <button class="remove-item" aria-label="Remove Item"><i class="fas fa-trash"></i></button>
+                </li>
+                <!-- Cart Item 3 -->
+                <li class="cart-item">
+                  <img src="https://dummyimage.com/50x50/dddddd/000000/" alt="Item 3">
+                  <div class="item-info">
+                    <h5>Item Name 3</h5>
+                    <p>Price: $14.99</p>
+                    <p>Qty: 1</p>
+                  </div>
+                  <button class="remove-item" aria-label="Remove Item"><i class="fas fa-trash"></i></button>
+                </li>
+              </ul>
+              <div class="cart-footer">
+                <p class="cart-total">Total: $44.97</p>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="cart-item">
-          <img src="https://dummyimage.com/50x50/dddddd/000000/" alt="Item 2">
-          <div class="item-info">
-            <p>Item Name 2</p>
-            <span>$9.99</span>
-          </div>
-        </li>
-        <li class="cart-item">
-          <img src="https://dummyimage.com/50x50/dddddd/000000/" alt="Item 3">
-          <div class="item-info">
-            <p>Item Name 3</p>
-            <span>$14.99</span>
-          </div>
-        </li>
-      </ul>
-      <a href="checkout.html" class="checkout-btn">Checkout</a>
-    </div>
-  </div>
-</div>
+
+        </div>
 
       </div>
     </div>
@@ -259,7 +276,7 @@
     <div class="container">
       <!-- Section Header -->
       <div class="section-header">
-        <h2 class="section-title">  <span><i class="fas fa-photo-video me-2"></i>Featured Media</span>
+        <h2 class="section-title"> <span><i class="fas fa-photo-video me-2"></i>Featured Media</span>
         </h2>
         <p class="section-subtitle">
           Discover exclusive, high-quality stock photos and videos curated by industry experts.
@@ -339,18 +356,18 @@
             </div>
           </div>
         </a>
-          <!-- Media Card 1 -->
-          <a href="media-details.html?id=1" class="media-card">
-            <div class="media-img">
-              <img src="./img/media/1.jpg" alt="Stunning Landscape by Top Photographer">
-              <div class="media-overlay">
-                <div class="media-info">
-                  <h3>Stunning Landscape</h3>
-                  <p>Breathtaking views captured by renowned professionals.</p>
-                </div>
+        <!-- Media Card 1 -->
+        <a href="media-details.html?id=1" class="media-card">
+          <div class="media-img">
+            <img src="./img/media/1.jpg" alt="Stunning Landscape by Top Photographer">
+            <div class="media-overlay">
+              <div class="media-info">
+                <h3>Stunning Landscape</h3>
+                <p>Breathtaking views captured by renowned professionals.</p>
               </div>
             </div>
-          </a>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -431,7 +448,7 @@
       </div>
     </div>
   </section>
-  
+
   <section id="collections" class="collections-section">
     <div class="container">
       <!-- Section Header -->
@@ -444,29 +461,25 @@
         </p>
       </div>
       <!-- Collections Grid -->
-     <div class="collections-container">
-    <div class="collection-panel active" style="background-image: url('./img/galleries/1.jpg')">
-      <h3>Explore the World</h3>
-    </div>
-    <div class="collection-panel" style="background-image: url('./img/galleries/2.jpg')">
-      <h3>Discover Urban Life</h3>
-    </div>
-    <div class="collection-panel" style="background-image: url('./img/galleries/3.jpg')">
-      <h3>Embrace Nature</h3>
-    </div>
-    <div class="collection-panel" style="background-image: url('./img/galleries/4.jpg')">
-      <h3>Abstract Expressions</h3>
-    </div>
-    <div class="collection-panel" style="background-image: url('./img/galleries/1.jpg')">
-      <h3>Fashion & Style</h3>
-    </div>
-  </div>
+      <div class="collections-container">
+        <div class="collection-panel active" style="background-image: url('./img/galleries/1.jpg')">
+          <h3>Explore the World</h3>
+        </div>
+        <div class="collection-panel" style="background-image: url('./img/galleries/2.jpg')">
+          <h3>Discover Urban Life</h3>
+        </div>
+        <div class="collection-panel" style="background-image: url('./img/galleries/3.jpg')">
+          <h3>Embrace Nature</h3>
+        </div>
+        <div class="collection-panel" style="background-image: url('./img/galleries/4.jpg')">
+          <h3>Abstract Expressions</h3>
+        </div>
+        <div class="collection-panel" style="background-image: url('./img/galleries/1.jpg')">
+          <h3>Fashion & Style</h3>
+        </div>
+      </div>
     </div>
   </section>
-  
-
-
-  
 
   <!-- Articles Section -->
   <section id="articles" class="articles-section">
@@ -543,9 +556,6 @@
       </div>
     </div>
   </section>
-  
-
-  
 
   <!-- Footer Section -->
   <footer class="footer">

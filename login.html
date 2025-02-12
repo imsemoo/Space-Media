@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8" />
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page Title -->
+    <title>SPACE MEDIA - Palestinian Digital Marketplace for Stock Photos &amp; Videos</title>
+
+    <!-- Meta Description for SEO -->
+    <meta name="description"
+        content="SPACE MEDIA is a leading Palestinian platform offering premium stock photos and videos for creative projects. Explore our extensive collection to boost your creativity." />
+
+    <!-- Keywords for SEO -->
+    <meta name="keywords"
+        content="SPACE MEDIA, stock photos, stock videos, digital media, Palestinian photography, creative content" />
+
+    <!-- Robots Meta -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="https://spacemedia.ps" />
+
+    <!-- Additional Meta Tags -->
+    <meta name="author" content="SPACE MEDIA" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Open Graph Meta Tags for social media sharing -->
+    <meta property="og:title" content="SPACE MEDIA - Palestinian Digital Marketplace for Stock Photos &amp; Videos" />
+    <meta property="og:description"
+        content="Discover a premium collection of stock photos and videos tailored for creative professionals on SPACE MEDIA." />
+    <meta property="og:image" content="img/og-image.png" />
+    <meta property="og:url" content="https://spacemedia.ps" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SPACE MEDIA - Palestinian Digital Marketplace for Stock Photos &amp; Videos" />
+    <meta name="twitter:description"
+        content="Explore our premium collection of stock photos and videos designed for creative projects at SPACE MEDIA." />
+    <meta name="twitter:image" content="img/twitter-image.png" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+
+    <!-- Preconnect to improve connection time for external resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <!-- Standard Bootstrap CSS for LTR languages -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Preload Critical Resources for Performance -->
+    <link rel="preload" href="css/style.css" as="style" />
+    <link rel="preload" href="js/script.js" as="script" />
+
+    <style>
+        body {
+            height: 100vh;
+            background: #e9ebee;
+            color: #1d2129;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1500px;
+        }
+
+        #registrationContainer h1 {
+            font-weight: 700;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .forget,
+        .remember {
+            font-size: 14px;
+            color: var(--text-muted-color);
+
+        }
+
+        .title-login {
+            font-size: 2rem;
+        }
+
+        #registrationContainer form input {
+            background: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+            font-size: 1.4em;
+            height: 50px;
+            border-radius: 8px;
+        }
+
+        input[type="checkbox"] {
+            width: 20px !important;
+            height: 20px !important;
+            margin: 0 !important;
+        }
+
+        #registrationContainer span {
+            color: #333;
+            font-size: 1.4em;
+            display: inline-block;
+            margin: 15px auto;
+            font-weight: 100;
+        }
+
+
+
+        #registrationContainer span.loginwith {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1em;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        #registrationContainer span.loginwith::before {
+            content: "";
+            display: inline-block;
+            width: 42%;
+            height: 1px;
+            background: #aaa;
+            vertical-align: middle;
+            margin-right: 5%;
+        }
+
+        #registrationContainer span.loginwith::after {
+            content: "";
+            display: inline-block;
+            width: 45%;
+            height: 1px;
+            background: #aaa;
+            vertical-align: middle;
+            margin-left: 5%;
+        }
+
+        #registrationContainer span.copy {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            font-size: 1em;
+        }
+
+        #registrationContainer .btn-google {
+            background: var(--Cool-Gray);
+            background: #F9F9F9;
+            color: var(--Dark-Gray);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-gap: 10px;
+            height: 50px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        #registrationContainer button {
+            margin: 1em auto;
+            height: 50px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+
+        #registrationContainer button:hover {
+            cursor: pointer;
+        }
+
+        #registrationContainer button:active {
+            transform: scale(.95);
+        }
+
+        #registrationContainer button:focus {
+            outline: none;
+        }
+
+        /* ===================== Registration Flip Card Styles ===================== */
+        #registrationContainer {
+            width: 95%;
+            max-width: 900px;
+            height: 550px;
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 14px 28px -10px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.02);
+            transform-style: preserve-3d;
+        }
+
+        #registrationContainer>div {
+            position: absolute;
+            width: 50%;
+            min-width: 350px;
+            height: 100%;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reg-content {
+            width: 100%;
+            padding: 2em 3em;
+            text-align: center;
+        }
+
+        .reg-content .icon-login {
+            margin-bottom: 20px;
+        }
+
+        .back-panel .reg-content {
+            transform: rotateY(180deg);
+
+        }
+
+        /* Login Panel */
+        .login-panel {
+            left: 0;
+            background: #FAFAFA;
+            border-radius: 20px 0 0 20px;
+        }
+
+        .login-panel button {
+            border-radius: 0;
+            width: 100%;
+        }
+
+        .login-panel svg {
+            margin: 1em;
+            stroke: #999;
+        }
+
+        /* Register Panel */
+        .register-panel {
+            right: 0;
+            z-index: 1;
+            border-radius: 0 20px 20px 0;
+            background: #FAFAFA;
+        }
+
+        .register-panel button {
+            border-radius: 0;
+            width: 100%;
+        }
+
+        .register-panel svg {
+            margin: 1em;
+            stroke: #999;
+        }
+
+        /* Flip Panels */
+        .flip-panel {
+            right: 0;
+            color: #fff;
+            border-radius: 0 20px 20px 0;
+            transform-origin: left center;
+            transition: animation 1s linear;
+        }
+
+        .flip-panel button {
+            border-color: #fff;
+            background: transparent;
+        }
+
+        .flip-panel button:hover {
+            border-color: #fff;
+            background: #fff;
+            color: var(--secondary-color);
+
+        }
+
+        .flip-panel p {
+            margin: 2em auto;
+        }
+
+        .front-panel {
+            background: var(--secondary-color);
+
+            background-size: 200%;
+            z-index: 3;
+        }
+
+        .back-panel {
+            background: var(--secondary-color);
+            background-size: 200%;
+            z-index: 2;
+        }
+
+        /* Flip Animations */
+        @keyframes flipFront {
+            from {
+                transform: translateZ(2px) rotateY(0deg);
+            }
+
+            to {
+                transform: translateZ(1px) rotateY(-180deg);
+            }
+        }
+
+        @keyframes unflipFront {
+            from {
+                transform: translateZ(1px) rotateY(-180deg);
+            }
+
+            to {
+                transform: translateZ(2px) rotateY(0deg);
+            }
+        }
+
+        @keyframes flipBack {
+            from {
+                transform: translateZ(1px) rotateY(0deg);
+            }
+
+            to {
+                transform: translateZ(2px) rotateY(-180deg);
+            }
+        }
+
+        @keyframes unflipBack {
+            from {
+                transform: translateZ(2px) rotateY(-180deg);
+            }
+
+            to {
+                transform: translateZ(1px) rotateY(0deg);
+            }
+        }
+
+        .active .front-panel {
+            animation: flipFront 0.6s ease-in-out forwards;
+        }
+
+        .active .back-panel {
+            animation: flipBack 0.6s ease-in-out forwards;
+        }
+
+        .close .front-panel {
+            animation: unflipFront 0.6s ease-in-out forwards;
+        }
+
+        .close .back-panel {
+            animation: unflipBack 0.6s ease-in-out forwards;
+        }
+
+        /* Content Animation */
+        @keyframes showContent {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 0.99;
+                transform: scale(0.99);
+            }
+        }
+
+        @keyframes hideContent {
+            from {
+                opacity: 0.99;
+                transform: scale(0.99);
+            }
+
+            to {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        }
+
+        .active .register-panel .reg-content {
+            animation: showContent 0.7s ease-in-out forwards;
+        }
+
+        .close .register-panel .reg-content {
+            animation: hideContent 0.7s ease-in-out forwards;
+        }
+
+        .active .login-panel .reg-content {
+            animation: hideContent 0.7s ease-in-out forwards;
+        }
+
+        .close .login-panel .reg-content {
+            animation: showContent 0.7s ease-in-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="registrationContainer">
+        <!-- Login Panel -->
+        <div class="login-panel">
+            <div class="reg-content">
+                <h1 class="title-login">Access Your Creative Space</h1>
+                <form>
+                    <input type="email" placeholder="Enter your email address" required>
+                    <input type="password" placeholder="Enter your secure password" required>
+                    <div class="d-flex align-items-center gap-2 justify-content-between">
+                        <a href="#" class="remember">Remember me</a>
+                        <a class="forget" href="#">Need help?</a>
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="return false;">Log In</button>
+                </form>
+                <span class="loginwith">Or Connect with</span>
+                <a href="#" class="btn btn-google">
+                    <img src="/img/icons/icons-google.png" alt="Google Icon">
+                    Login with Google
+                </a>
+            </div>
+        </div>
+        <!-- Flip Panel for Login/Register Switch -->
+        <div class="flip-panel front-panel">
+            <div class="reg-content">
+                <img src="./img/icons/login.png" alt="Creative Login Icon" class="icon-login">
+                <h1>Welcome, Visionary!</h1>
+                <p>Share your passion – log in to unlock a world of creative possibilities.</p>
+                <button type="button" id="showRegister" class="btn btn-primary">
+                    Join the Revolution <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="flip-panel back-panel">
+            <div class="reg-content">
+                <img src="./img/icons/add.png" alt="Creative Login Icon" class="icon-login">
+
+                <h1>Welcome Back, Innovator!</h1>
+                <p>Reconnect with your creative journey by logging in with your credentials.</p>
+                <button class="btn btn-primary" type="button" id="showLogin">
+                    Sign In <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Register Panel -->
+        <div class="register-panel">
+            <div class="reg-content">
+                <h1 class="title-login">Join the Creative Revolution</h1>
+                <form>
+                    <input type="text" placeholder="Your Full Name" required>
+                    <input type="email" placeholder="Your Email Address" required>
+                    <input type="password" placeholder="Create a Secure Password" required>
+                    <label class="remember d-flex align-items-center gap-2 mb-2 mt-2">
+                        <input type="checkbox" required>
+                        I agree to the Terms &amp; Conditions
+                    </label>
+
+                    <button class="btn btn-secondary" type="button" onclick="return false;">Complete
+                        Registration</button>
+                    <span class="loginwith">Or Register with</span>
+                    <a href="#" class="btn btn-google">
+                        <img src="/img/icons/icons-google.png" alt="Google Icon">
+                        Register with Google
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Libraries with 'defer' for non-blocking execution -->
+    <script src="js/jquery-3.7.1.min.js" defer></script>
+    <script src="js/owl.carousel.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Animate the registration container
+            gsap.from("#registrationContainer", {
+                duration: 1,
+                opacity: 0,
+                y: -50,
+                ease: "power2.out"
+            });
+            // Stagger animation for each panel's content
+            gsap.from(".reg-content", {
+                duration: 0.8,
+                opacity: 0,
+                y: 20,
+                stagger: 0.2,
+                ease: "power2.out",
+                delay: 0.5
+            });
+        });
+        const registerButton = document.getElementById('showRegister');
+        const loginButton = document.getElementById('showLogin');
+        const regContainer = document.getElementById('registrationContainer');
+        registerButton.onclick = function () {
+            regContainer.className = 'active';
+        }
+        loginButton.onclick = function () {
+            regContainer.className = 'close';
+        }
+    </script>
+</body>
+
+</html>
