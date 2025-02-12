@@ -166,3 +166,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const cartIcon = document.getElementById("shoppingCartIcon");
+  const cartDropdown = document.getElementById("shoppingCartDropdown");
+
+  cartIcon.addEventListener("click", function (e) {
+    e.preventDefault();
+    cartDropdown.classList.toggle("active");
+  });
+
+  // Close dropdown if clicking outside of the shopping cart
+  document.addEventListener("click", function (e) {
+    if (!cartIcon.contains(e.target) && !cartDropdown.contains(e.target)) {
+      cartDropdown.classList.remove("active");
+    }
+  });
+});

@@ -454,6 +454,104 @@ ul {
   /* Responsive adjustments if needed */
 }
 
+
+/* Shopping Cart Icon */
+.shopping-cart-wrapper {
+  position: relative;
+  margin-left: 20px;
+}
+
+.shopping-cart-icon {
+  position: relative;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: var(--secondary-color);
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+/* Shopping Cart Dropdown */
+.shopping-cart-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 300px;
+  background: #fff;
+  border: 1px solid var(--neutral-medium, #e0e0e0);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 15px;
+}
+
+.shopping-cart-dropdown.active {
+  display: block;
+}
+
+.shopping-cart-dropdown h4 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.item-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.item-info span {
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
+}
+
+.checkout-btn {
+  display: block;
+  text-align: center;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background: var(--secondary-color);
+}
+
+
 /* ========== Hero Section Styles ========== */
 
 /* Main header section with background image */
