@@ -66,8 +66,8 @@
     <style>
         body {
             height: 100vh;
-            background: #e9ebee;
-            color: #1d2129;
+            background: var( --secondary-background-color);
+            color: var(--text-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -75,7 +75,7 @@
         }
 
         #registrationContainer h1 {
-            font-weight: 700;
+     
             font-size: 2.5em;
             text-align: center;
         }
@@ -92,7 +92,7 @@
         }
 
         #registrationContainer form input {
-            background: #eee;
+            background: var(--secondary-background-color);
             border: none;
             padding: 12px 15px;
             margin: 8px 0;
@@ -100,6 +100,7 @@
             font-size: 1.4em;
             height: 50px;
             border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
 
         input[type="checkbox"] {
@@ -110,7 +111,7 @@
 
         #registrationContainer span {
             color: #333;
-            font-size: 1.4em;
+            font-size: 1em;
             display: inline-block;
             margin: 15px auto;
             font-weight: 100;
