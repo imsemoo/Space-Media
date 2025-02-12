@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Character encoding -->
+  <meta charset="UTF-8" />
+  <!-- Responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Dashboard - SPACE MEDIA</title>
+  <meta name="description"
+    content="Seller Dashboard for SPACE MEDIA. Manage your listings, sales, and revenue with our professional interface." />
+  <meta name="keywords" content="seller dashboard, SPACE MEDIA, stock photos, listings, sales, revenue, charts" />
+  <link rel="canonical" href="https://spacemedia.ps" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+
+  <!-- External CSS Files -->
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+
+</head>
+
+<body>
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="img/logo.png" alt="SPACE MEDIA Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fas fa-images"></i> Listings</a></li>
+        <li><a href="#"><i class="fas fa-shopping-cart"></i> Sales</a></li>
+        <li><a href="#"><i class="fas fa-dollar-sign"></i> Revenue</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Dashboard Content -->
+  <main class="main-content">
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+      <div class="header-container ">
+
+        <!-- Left Section: Title and Search Box -->
+        <div class="header-left">
+          <div class="search-box">
+            <input type="text" placeholder="Search listings, sales, messages..." />
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+          </div>
+
+        </div>
+
+        <!-- Right Section: Icons and User Actions -->
+        <div class="header-right">
+          <!-- Notifications Icon & Dropdown -->
+          <div class="icon-wrapper notifications">
+            <a href="#" class="notifications-icon">
+              <i class="fas fa-bell"></i>
+              <span class="badge">3</span>
+            </a>
+            <div class="dropdown notifications-dropdown">
+              <div class="dropdown-header">Notifications</div>
+              <ul class="notifications-list">
+                <li class="notification-item">
+                  <img src="img/users/user1.jpg" alt="John Doe" class="notification-avatar">
+                  <div class="notification-content">
+                    <p class="notification-text">John Doe placed a new order.</p>
+                    <span class="notification-time">5 min ago</span>
+                  </div>
+                </li>
+                <li class="notification-item">
+                  <img src="img/users/user2.jpg" alt="Jane Smith" class="notification-avatar">
+                  <div class="notification-content">
+                    <p class="notification-text">Your photo was approved.</p>
+                    <span class="notification-time">20 min ago</span>
+                  </div>
+                </li>
+                <li class="notification-item">
+                  <img src="img/users/user3.jpg" alt="Alice" class="notification-avatar">
+                  <div class="notification-content">
+                    <p class="notification-text">Alice commented on your listing.</p>
+                    <span class="notification-time">1 hour ago</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Messages Icon & Dropdown -->
+          <div class="icon-wrapper messages">
+            <a href="#" class="messages-icon">
+              <i class="fas fa-envelope"></i>
+              <span class="badge">2</span>
+            </a>
+            <div class="dropdown messages-dropdown">
+              <div class="dropdown-header">Messages</div>
+              <ul class="messages-list">
+                <li class="message-item">
+                  <img src="img/users/user4.jpg" alt="Alice Johnson" class="message-avatar">
+                  <div class="message-content">
+                    <p class="message-sender">Alice Johnson</p>
+                    <p class="message-snippet">Hi, your recent upload looks fantastic! Can we discuss...</p>
+                    <span class="message-time">10 min ago</span>
+                  </div>
+                </li>
+                <li class="message-item">
+                  <img src="img/users/user5.jpg" alt="Mark Wilson" class="message-avatar">
+                  <div class="message-content">
+                    <p class="message-sender">Mark Wilson</p>
+                    <p class="message-snippet">I have a question about the pricing...</p>
+                    <span class="message-time">30 min ago</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- User Actions -->
+          <!-- <div class="user-actions">
+            <span class="welcome-text">Welcome, SellerName</span>
+            <a href="#" class="btn logout-btn">Logout</a>
+          </div> -->
+        </div>
+      </div>
+    </header>
+
+    <section id="statistics" class="statistics-section">
+      <h2 class="section-title-dahsboard">
+        Balance Details
+      </h2>
+      <!-- Statistics Cards Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-images"></i></div>
+          <div class="stat-info">
+            <h3>Total Listings</h3>
+            <p>125</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-shopping-cart"></i></div>
+          <div class="stat-info">
+            <h3>Total Sales</h3>
+            <p>87</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+          <div class="stat-info">
+            <h3>Total Revenue</h3>
+            <p>$5,420</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-eye"></i></div>
+          <div class="stat-info">
+            <h3>Total Views</h3>
+            <p>32,100</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Overview with Charts -->
+    <section class="charts-container">
+
+      <div>
+        <h2 class="section-title-dahsboard">
+          Monthly Revenue
+        </h2>
+        <div class="chart-card">
+          <canvas id="revenueChart"></canvas>
+        </div>
+      </div>
+     
+      <div>
+        <h2 class="section-title-dahsboard">
+          Sales Trend
+        </h2>
+        <div class="chart-card">
+          <canvas id="salesChart"></canvas>
+        </div>
+      </div>
+    
+    </section>
+
+    <!-- Recent Activity Section -->
+    <section class="recent-activity">
+      <h2>Recent Activity</h2>
+      <ul>
+        <li>Photo "Sunset Over City" sold on April 3, 2025 for $19.99.</li>
+        <li>New listing "Mountain Vista" added on April 2, 2025.</li>
+        <li>Photo "Forest Walk" viewed 450 times on April 1, 2025.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- External JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/jquery-3.7.1.min.js" defer></script>
+  <script src="js/owl.carousel.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/script.js" defer></script>
+
+</body>
+
+</html>

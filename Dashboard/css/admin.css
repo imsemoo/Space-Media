@@ -1,0 +1,537 @@
+/* Color Variables: Define your website’s color scheme */
+/* --primary-color: Primary brand color (used for headers, nav links, primary buttons, etc.) */
+:root {
+  --primary-color: #322b83;
+  /* --secondary-color: Secondary accent color (used for hover effects, secondary buttons, etc.) */
+  --secondary-color: #f68e3a;
+  /* --text-color: Main text color for body copy and primary text elements */
+  --text-color: #322b83;
+  /* --text-muted-color: Muted text color for secondary text or captions */
+  --text-muted-color: #44345c;
+  /* --link-color: Color used for hyperlinks */
+  --link-color: #322b83;
+  /* --hover-color: Color applied to interactive elements on hover */
+  --hover-color: #f68e3a;
+  /* --border-color: Color used for borders, dividers, and outlines */
+  --border-color: rgba(50, 43, 131, 0.08);
+
+  /* Additional Colors */
+  /* --background-color: Main background color of the website */
+  --background-color: #ffffff;
+  /* --secondary-background-color: Used for sections, cards, or content blocks */
+  --secondary-background-color: #f8f7fc;
+  /* --neutral-light: Light neutral tone for subtle backgrounds */
+  --neutral-light: #f7f7f7;
+  /* --neutral-medium: Medium neutral tone for soft borders or separators */
+  --neutral-medium: #e0e0e0;
+  /* --neutral-dark: Dark neutral tone for icons or text when needed */
+  --neutral-dark: #666666;
+
+  /* Status Colors */
+  /* --success-color: Color for success messages or indicators */
+  --success-color: #28a745;
+  /* --warning-color: Color for warnings */
+  --warning-color: #ffc107;
+  /* --danger-color: Color for errors or critical alerts */
+  --danger-color: #dc3545;
+  /* --info-color: Color for informational messages */
+  --info-color: #17a2b8;
+
+  /* Accent and Gradient */
+  /* --accent-color: Accent color used to highlight key elements */
+  --accent-color: #ffd700;
+  /* --gradient-primary: Gradient combining the primary and secondary colors (ideal for backgrounds or buttons) */
+  --gradient-primary: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--secondary-background-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  background: var(--background-color);
+  padding: 20px;
+  color: var(--text-color);
+  overflow-y: auto;
+}
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.sidebar .logo img {
+  max-width: 100%;
+  height: auto;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar nav ul li {
+  margin-bottom: 20px;
+}
+.sidebar nav ul li a {
+  color: var(--text-color);
+
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+.sidebar nav ul li a i {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+.sidebar nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 250px;
+  padding: 20px 40px;
+}
+/* Dashboard Header Container */
+.dashboard-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-container > div {
+  flex: 1;
+}
+
+/* Left Section: Title & Search */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-title {
+  font-size: 1.8rem;
+  color: var(--primary-color, #322b83);
+  margin-right: 20px;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.search-box input {
+  padding: 8px 40px 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+}
+
+/* Right Section: Icons and User Actions */
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.icon-wrapper {
+  position: relative;
+  margin-right: 20px;
+}
+
+.icon-wrapper a {
+  color: var(--primary-color, #322b83);
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 280px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown ul li {
+  padding: 10px 20px;
+}
+
+.dropdown ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.dropdown ul li a:hover {
+  color: var(--secondary-color, #f68e3a);
+}
+
+.icon-wrapper.active .dropdown {
+  display: block;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.welcome-text {
+  margin-right: 15px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.logout-btn {
+  text-decoration: none;
+  color: var(--primary-color, #322b83);
+  border: 1px solid var(--primary-color, #322b83);
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: var(--primary-color, #322b83);
+  color: #fff;
+}
+/* Dashboard Header Styles */
+.dashboard-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.dashboard-title {
+  font-size: 1.8rem;
+  color: var(--primary-color, #322b83);
+  margin-right: 20px;
+}
+.search-box {
+  position: relative;
+}
+
+.search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Right Section */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.icon-wrapper {
+  position: relative;
+  margin-right: 20px;
+}
+.icon-wrapper a {
+  color: var(--primary-color, #322b83);
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: var(--secondary-color, #f68e3a);
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+/* Dropdowns */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 320px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000000;
+  padding: 10px 0;
+}
+.dropdown .dropdown-header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+  color: var(--primary-color, #322b83);
+}
+.notifications-dropdown ul,
+.messages-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Notification Item */
+.notification-item,
+.message-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+}
+.notification-item:last-child,
+.message-item:last-child {
+  border-bottom: none;
+}
+.notification-avatar,
+.message-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.notification-content,
+.message-content {
+  flex: 1;
+}
+.notification-text,
+.message-sender {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-color, #322b83);
+  margin: 0;
+}
+.notification-time,
+.message-time,
+.message-snippet {
+  font-size: 0.85rem;
+  color: var(--text-muted-color, #44345c);
+}
+.message-content p {
+  margin: 2px 0;
+}
+
+/* Show dropdown when active */
+.icon-wrapper.active .dropdown {
+  display: block;
+}
+
+/* User Actions */
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+.welcome-text {
+  margin-right: 15px;
+  font-size: 1.1rem;
+  color: #333;
+}
+.logout-btn {
+  text-decoration: none;
+  color: var(--primary-color, #322b83);
+  border: 1px solid var(--primary-color, #322b83);
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.logout-btn:hover {
+  background: var(--primary-color, #322b83);
+  color: #fff;
+}
+
+.header-actions {
+  font-size: 1.1rem;
+}
+.header-actions a.btn {
+  margin-left: 20px;
+}
+
+/* Charts Section */
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+.charts-container > div {
+  flex: 1;
+}
+.chart-card {
+  background: var(--background-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 1 1 calc(45% - 30px);
+  min-width: 300px;
+}
+.chart-card h3 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+/* Recent Activity */
+.recent-activity {
+  margin-top: 40px;
+}
+.recent-activity h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+.recent-activity ul {
+  list-style: none;
+  padding: 0;
+}
+.recent-activity ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+.recent-activity ul li::before {
+  content: "\f005";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+  .sidebar {
+    width: 100%;
+    position: relative;
+  }
+}
+
+/* ===================== Statistics Section Styles ===================== */
+.statistics-section {
+  padding: 20px 0;
+  background-color: var(--secondary-background-color, #f7f7f7);
+}
+
+
+/* Section Header */
+.section-header.text-center {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title-dahsboard {
+  font-size: 1.6rem;
+  color: var(--text-muted-color);
+  display: inline-block;
+  padding-bottom: 10px ;
+  
+  position: relative;
+  text-align: start;
+}
+
+/* Statistics Cards Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Statistic Card */
+.stat-card {
+  background: var(--background-color, #fff);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styling */
+.stat-icon {
+  font-size: 3rem;
+  color: var(--secondary-color, #f68e3a);
+  margin-bottom: 10px;
+}
+
+/* Statistic Info */
+.stat-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: var(--primary-color, #322b83);
+}
+
+.stat-info p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-color, #f68e3a);
+  margin: 0;
+}
