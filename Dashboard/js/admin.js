@@ -1,4 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Select the required elements
+  const hamburger = document.querySelector('.hamburger');
+  const sidebar = document.querySelector('.sidebar');
+  const mainContent = document.querySelector('.main-content');
+
+  // Ensure required elements exist to avoid errors
+  if (!hamburger || !sidebar || !mainContent) {
+    console.error("Required elements (.hamburger, .sidebar, .main-content) not found.");
+    return;
+  }
+
+  // Set the initial width of the sidebar to 80px (if not already set via CSS)
+  gsap.set(sidebar, { width: "250px" });
+
+  // Add click event listener to the hamburger icon
+  hamburger.addEventListener('click', function () {
+    // Toggle the active class on sidebar and main content
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('active');
+
+    // Animate the sidebar's width using GSAP based on its active state
+    if (sidebar.classList.contains('active')) {
+      // Expand sidebar to full width (250px)
+      gsap.to(sidebar, { duration: 0.3, width: "250px", ease: "power2.out" });
+    } else {
+      // Collapse sidebar back to 80px width
+      gsap.to(sidebar, { duration: 0.3, width: "70px", ease: "power2.in" });
+    }
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
   // Initialize the modal using Bootstrap's Modal API
   const transactionModalEl = document.getElementById('transactionModal');
   const transactionModal = new bootstrap.Modal(transactionModalEl);

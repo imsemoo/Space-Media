@@ -63,9 +63,9 @@ body {
   bottom: 0;
   width: 250px;
   background: var(--background-color);
-  padding: 20px;
+  padding: 16px;
   color: var(--text-color);
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 .sidebar .logo {
   text-align: center;
@@ -90,21 +90,47 @@ body {
   font-size: 1.1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   transition: color 0.3s ease;
+  gap: 10px;
+}
+.sidebar.active nav ul li a {
+  justify-content: start;
+}
+.sidebar nav ul li a span {
+  display: none;
+}
+
+.sidebar.active nav ul li a span {
+  display: block;
 }
 .sidebar nav ul li a i {
-  margin-right: 10px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .sidebar nav ul li a:hover {
   color: var(--secondary-color);
 }
-
+.icon-side {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(252 45% 96% / 1);
+}
 /* Main Content Styles */
 .main-content {
-  margin-left: 250px;
+  margin-left: 70px;
   padding: 20px 40px;
+  /* Smooth transition for margin-left changes */
+  transition: margin-left 0.3s ease;
 }
+
+.main-content.active {
+  margin-left: 250px;
+}
+
 /* Dashboard Header Container */
 .dashboard-header {
   background-color: #fff;
@@ -113,13 +139,6 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .header-container > div {
   flex: 1;
 }
@@ -128,6 +147,7 @@ body {
 .header-left {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .dashboard-title {
@@ -234,8 +254,6 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -273,12 +291,11 @@ body {
 }
 .icon-wrapper {
   position: relative;
-  margin-right: 20px;
+  margin-left: 20px;
   width: 50px;
   height: 50px;
   border-radius: 8px;
-  display: flex
-;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--secondary-background-color);
@@ -461,16 +478,30 @@ canvas {
   color: var(--secondary-color);
 }
 
+.sidebar.active .show-in-mobile {
+  display: none;
+}
+.sidebar .show-in-mobile {
+  display: block;
+  margin: auto;
+
+}
+
+.sidebar.active .show-in-desktop {
+    display: block;
+
+  }
+  .sidebar .show-in-desktop {
+    display: none;
+
+  }
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .main-content {
-    margin-left: 0;
+    margin-left: 70px;
     padding: 20px;
   }
-  .sidebar {
-    width: 100%;
-    position: relative;
-  }
+
 }
 
 /* ===================== Statistics Section Styles ===================== */
@@ -568,87 +599,87 @@ canvas {
 }
 /* Enhanced Table Styles for Deposit & Withdrawal Operations */
 .operations-section .table-responsive table {
-    border-collapse: separate;
-    border-spacing: 0;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .operations-section thead {
-    background: linear-gradient(90deg, #322b83, #f68e3a);
-    color: #fff;
-    font-weight: bold;
-  }
-  
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.operations-section thead {
+  background: linear-gradient(90deg, #322b83, #f68e3a);
+  color: #fff;
+  font-weight: bold;
+}
+
+.operations-section thead th {
+  padding: 15px;
+  border: none;
+}
+
+.operations-section tbody td {
+  padding: 15px;
+  border-top: 1px solid #eee;
+  font-size: 1rem;
+  color: #333;
+  vertical-align: middle;
+}
+
+.operations-section tbody tr {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.operations-section tbody tr:hover {
+  background: #f7f7f7;
+  transform: translateY(-2px);
+}
+
+.operations-section tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status Badge Styles */
+.status {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.status i {
+  margin-right: 5px;
+}
+
+/* Completed: Green Badge */
+.status.completed {
+  color: #155724;
+  background-color: #d4edda;
+}
+
+/* Pending: Amber Badge */
+.status.pending {
+  color: #856404;
+  background-color: #fff3cd;
+}
+
+/* Failed: Red Badge */
+.status.failed {
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .operations-section tbody td,
   .operations-section thead th {
-    padding: 15px;
-    border: none;
-  }
-  
-  .operations-section tbody td {
-    padding: 15px;
-    border-top: 1px solid #eee;
-    font-size: 1rem;
-    color: #333;
-    vertical-align: middle;
-  }
-  
-  .operations-section tbody tr {
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-  
-  .operations-section tbody tr:hover {
-    background: #f7f7f7;
-    transform: translateY(-2px);
-  }
-  
-  .operations-section tbody tr:last-child td {
-    border-bottom: none;
-  }
-  
-  /* Status Badge Styles */
-  .status {
-    display: inline-flex;
-    align-items: center;
-    font-weight: 600;
-    padding: 4px 8px;
-    border-radius: 12px;
+    padding: 10px;
     font-size: 0.9rem;
   }
-  
-  .status i {
-    margin-right: 5px;
-  }
-  
-  /* Completed: Green Badge */
-  .status.completed {
-    color: #155724;
-    background-color: #d4edda;
-  }
-  
-  /* Pending: Amber Badge */
-  .status.pending {
-    color: #856404;
-    background-color: #fff3cd;
-  }
-  
-  /* Failed: Red Badge */
-  .status.failed {
-    color: #721c24;
-    background-color: #f8d7da;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 576px) {
-    .operations-section tbody td, 
-    .operations-section thead th {
-      padding: 10px;
-      font-size: 0.9rem;
-    }
-  }
-  
+}
+
 /* Custom Modal Styles */
 .modal-content {
   border-radius: 10px;
@@ -715,5 +746,3 @@ canvas {
 .modal-footer .btn-secondary:hover {
   background: #f68e3a;
 }
-
-
