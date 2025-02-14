@@ -1,4 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Initialize the modal using Bootstrap's Modal API
+  const transactionModalEl = document.getElementById('transactionModal');
+  const transactionModal = new bootstrap.Modal(transactionModalEl);
+
+  // Add click event listener to each transaction row
+  document.querySelectorAll('.transaction-row').forEach(row => {
+    row.addEventListener('click', function () {
+      const date = this.getAttribute('data-date');
+      const id = this.getAttribute('data-id');
+      const type = this.getAttribute('data-type');
+      const amount = this.getAttribute('data-amount');
+      const status = this.getAttribute('data-status');
+      const details = this.getAttribute('data-details');
+      
+      // Populate modal fields
+      document.getElementById('modalDate').textContent = date;
+      document.getElementById('modalId').textContent = id;
+      document.getElementById('modalType').textContent = type;
+      document.getElementById('modalAmount').textContent = amount;
+      document.getElementById('modalStatus').textContent = status;
+      document.getElementById('modalDetails').textContent = details;
+      
+      // Show the modal
+      transactionModal.show();
+    });
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
   // Toggle notifications dropdown
   const notificationsIcon = document.querySelector(".notifications-icon");
   const notificationsWrapper = document.querySelector(".icon-wrapper.notifications");
@@ -32,43 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function(){
-  // Animate Dashboard Header
-
-  // GSAP Animation for header (optional)
-  gsap.from(".dashboard-header", {
-    duration: 1,
-    opacity: 0,
-    y: -50,
-    ease: "power2.out"
-  });
-  // Animate Sidebar Links (if desired)
-  gsap.from(".sidebar nav ul li", {
-    duration: 1,
-    opacity: 0,
-    x: -20,
-    stagger: 0.2,
-    delay: 0.5,
-    ease: "power2.out"
-  });
-  // Animate Main Content
-  gsap.from(".main-content", {
-    duration: 1,
-    opacity: 0,
-    y: 50,
-    ease: "power2.out",
-    delay: 0.8
-  });
-  // Animate Dashboard Cards
-  gsap.from(".chart-card", {
-    duration: 1,
-    opacity: 0,
-    y: 30,
-    stagger: 0.2,
-    delay: 1,
-    ease: "power2.out"
-  });
-});
 
 // Chart.js - Revenue Chart
 const revenueCtx = document.getElementById('revenueChart').getContext('2d');
@@ -120,3 +114,6 @@ const salesChart = new Chart(salesCtx, {
     }
   }
 });
+
+
+
