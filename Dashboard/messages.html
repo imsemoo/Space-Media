@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages - Seller Dashboard | SPACE MEDIA</title>
+    <meta name="description"
+        content="View and manage your messages on SPACE MEDIA. Communicate with customers, view conversation history, and send replies through a modern, interactive interface." />
+    <meta name="keywords" content="messages, seller dashboard, SPACE MEDIA, inbox, communication" />
+    <link rel="canonical" href="https://spacemedia.ps/messages" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:title" content="Messages - Seller Dashboard | SPACE MEDIA" />
+    <meta property="og:description"
+        content="View and manage your messages on SPACE MEDIA. Communicate with customers and track conversation history in a modern interface." />
+    <meta property="og:url" content="https://spacemedia.ps/messages" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/logo.png" />
+
+    <!-- External CSS Files (Reused) -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <!-- Additional CSS for Messages Page Enhancements -->
+    <style>
+        /* Overall messages container (two-column layout) */
+        .messages-container {
+            display: flex;
+            gap: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 650px;
+        }
+
+        /* Conversation List Panel */
+        .conversation-list {
+            width: 35%;
+            background: #fff;
+            padding: 15px;
+            overflow-y: auto;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .conversation-list .list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .conversation-list .list-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #322b83;
+        }
+
+        .conversation-list .list-header .compose-btn {
+            font-size: 0.9rem;
+            padding: 5px 10px;
+        }
+
+        .conversation-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .conversation-item:last-child {
+            border-bottom: none;
+        }
+
+        .conversation-item:hover,
+        .conversation-item.active {
+            background: #e0e0e0;
+        }
+
+        .conversation-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .conversation-info h5 {
+            margin: 0;
+            font-size: 1rem;
+            color: #322b83;
+        }
+
+        .conversation-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .conversation-meta {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .conversation-time {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .unread-badge {
+            background: var(--danger-color);
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 5px;
+        }
+
+        /* Conversation Details Panel */
+        .conversation-details {
+            width: 65%;
+            background: #fff;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        /* Conversation Header */
+        .conversation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+        .conversation-header .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .conversation-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .conversation-header .header-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #322b83;
+        }
+
+        .conversation-header .header-info span {
+            font-size: 0.8rem;
+            color: #28a745;
+        }
+
+        .conversation-header .header-actions button {
+            font-size: 0.9rem;
+            border-radius: 50%;
+            padding: 10px;
+            height: 40px;
+            width: 40px;
+        }
+
+        /* Messages Thread */
+        .messages-thread {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-bottom: 15px;
+            overflow-y: auto;
+        }
+
+        .message-bubble {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            position: relative;
+            line-height: 1.4;
+            display: inline-block;
+        }
+
+        .message-bubble::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+        }
+
+        .message-bubble.receiver {
+            background: #f1f1f1;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+        }
+
+        .message-bubble.receiver::after {
+            left: -16px;
+            border-right-color: #f1f1f1;
+        }
+
+        .message-bubble.sender {
+            background: #322b83;
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+
+        .message-bubble.sender::after {
+            right: -16px;
+            border-left-color: #322b83;
+        }
+
+        .message-time {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.75rem;
+            color: inherit;
+            opacity: 0.8;
+        }
+
+        .message-attachment {
+            margin-top: 5px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* Reply Form */
+        .reply-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 10px;
+        }
+
+        .reply-form input {
+            flex: 1;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 10px 15px;
+        }
+
+        .reply-form button {
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+
+        .attachment-btn,
+        .emoji-btn {
+            background: transparent;
+            border: none;
+            font-size: 1.2rem;
+            color: #322b83;
+            cursor: pointer;
+        }
+
+        .reply-form button:focus,
+        .attachment-btn:focus,
+        .emoji-btn:focus {
+            outline: none;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .messages-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .conversation-list,
+            .conversation-details {
+                width: 100%;
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar Navigation (Reused) -->
+    <aside class="sidebar active" aria-label="Sidebar Navigation">
+        <div class="logo">
+            <img src="img/logo.png" alt="SPACE MEDIA Logo" class="show-in-desktop" />
+            <img src="img/favicon.png" alt="SPACE MEDIA Logo" class="show-in-mobile" loading="lazy" />
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <div class="icon-side"><i class="fas fa-tachometer-alt"></i></div>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="listings.html">
+                        <div class="icon-side"><i class="fas fa-images"></i></div>
+                        <span>Listings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="sales.html">
+                        <div class="icon-side"><i class="fas fa-shopping-cart"></i></div>
+                        <span>Sales</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="revenue.html">
+                        <div class="icon-side"><i class="fas fa-dollar-sign"></i></div>
+                        <span>Revenue</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="messages.html" class="active">
+                        <div class="icon-side"><i class="fas fa-envelope"></i></div>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html">
+                        <div class="icon-side"><i class="fas fa-cog"></i></div>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content active">
+        <!-- Dashboard Header (Reused) -->
+        <header class="dashboard-header">
+            <div class="header-container">
+                <!-- Left Section: Hamburger & Search Box -->
+                <div class="header-left">
+                    <button class="hamburger" aria-label="Toggle Sidebar"><i class="fas fa-bars"></i></button>
+                    <div class="search-box">
+                        <input type="search" placeholder="Search listings, sales, messages..."
+                            aria-label="Search Listings" />
+                        <button class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <!-- Right Section: Notifications & Messages -->
+                <div class="header-right">
+                    <div class="icon-wrapper notifications">
+                        <a href="#" class="notifications-icon" aria-haspopup="true" aria-expanded="false"
+                            aria-label="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </a>
+                        <div class="dropdown notifications-dropdown">
+                            <div class="dropdown-header">Notifications</div>
+                            <ul class="notifications-list">
+                                <li class="notification-item">
+                                    <img src="img/team/1.jpg" alt="John Doe" class="notification-avatar"
+                                        loading="lazy" />
+                                    <div class="notification-content">
+                                        <p class="notification-text">John Doe placed a new order.</p>
+                                        <span class="notification-time">5 min ago</span>
+                                    </div>
+                                </li>
+                                <!-- Additional notifications -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="icon-wrapper messages">
+                        <a href="#" class="messages-icon" aria-haspopup="true" aria-expanded="false"
+                            aria-label="Messages">
+                            <i class="fas fa-envelope"></i>
+                            <span class="badge">2</span>
+                        </a>
+                        <div class="dropdown messages-dropdown">
+                            <div class="dropdown-header">Messages</div>
+                            <ul class="messages-list">
+                                <li class="message-item">
+                                    <img src="img/team/4.jpg" alt="Alice Johnson" class="message-avatar"
+                                        loading="lazy" />
+                                    <div class="message-content">
+                                        <p class="message-sender">Alice Johnson</p>
+                                        <p class="message-snippet">Hi, your recent upload looks fantastic! Can we
+                                            discuss...</p>
+                                        <span class="message-time">10 min ago</span>
+                                    </div>
+                                </li>
+                                <!-- Additional messages -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Messages Section -->
+        <section id="messages" class="container my-5 p-0">
+            <div class="messages-container">
+                <!-- Conversation List -->
+                <div class="conversation-list">
+                    <div class="list-header">
+                        <h4>Inbox</h4>
+                        <button class="btn btn-primary compose-btn">Compose</button>
+                    </div>
+                    <!-- Conversation Item 1 (Active/Unread) -->
+                    <div class="conversation-item active">
+                        <img src="img/team/4.jpg" alt="Alice Johnson" loading="lazy">
+                        <div class="conversation-info">
+                            <h5>Alice Johnson</h5>
+                            <p>Re: Your latest upload looks amazing!</p>
+                        </div>
+                        <div class="conversation-meta">
+                            <span class="conversation-time">10m</span>
+                            <span class="unread-badge">2</span>
+                        </div>
+                    </div>
+                    <!-- Conversation Item 2 -->
+                    <div class="conversation-item">
+                        <img src="img/team/5.jpg" alt="Mark Wilson" loading="lazy">
+                        <div class="conversation-info">
+                            <h5>Mark Wilson</h5>
+                            <p>Inquiry about pricing...</p>
+                        </div>
+                        <div class="conversation-meta">
+                            <span class="conversation-time">25m</span>
+                        </div>
+                    </div>
+                    <!-- Conversation Item 3 -->
+                    <div class="conversation-item">
+                        <img src="img/team/2.jpg" alt="Jane Smith" loading="lazy">
+                        <div class="conversation-info">
+                            <h5>Jane Smith</h5>
+                            <p>Order confirmation</p>
+                        </div>
+                        <div class="conversation-meta">
+                            <span class="conversation-time">1h</span>
+                        </div>
+                    </div>
+                    <!-- Additional conversation items can be added here -->
+                </div>
+
+                <!-- Conversation Details -->
+                <div class="conversation-details">
+                    <!-- Conversation Header -->
+                    <div class="conversation-header">
+                        <div class="header-left">
+                            <img src="img/team/4.jpg" alt="Alice Johnson" loading="lazy">
+                            <div class="header-info">
+                                <h4>Alice Johnson</h4>
+                                <span class="online-status">Online • Last seen 5m ago</span>
+                            </div>
+                        </div>
+                        <div class="header-actions d-flex gap-2">
+                            <button class="btn btn-sm btn-outline-secondary" title="Archive Conversation">
+                                <i class="fas fa-archive"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" title="Delete Conversation">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Messages Thread -->
+                    <div class="messages-thread">
+                        <!-- Received Message with attachment example -->
+                        <div class="message-bubble receiver">
+                            <p>Hi, I have a question regarding the resolution of your uploaded image. Could you please
+                                provide more details?</p>
+                            <div class="message-attachment">
+                                <a href="#">View Attachment</a>
+                            </div>
+                            <span class="message-time">10:00 AM</span>
+                        </div>
+                        <!-- Sent Message -->
+                        <div class="message-bubble sender">
+                            <p>Hello Alice, the image is available in both 4K and 8K resolution. Let me know if you need
+                                any more info!</p>
+                            <span class="message-time">10:05 AM</span>
+                        </div>
+                        <!-- Another Received Message with reaction -->
+                        <div class="message-bubble receiver">
+                            <p>Great, thanks! Also, do you offer any discounts for bulk orders?</p>
+                            <span class="message-time">10:07 AM</span>
+                            <div class="message-attachment">
+                                <small>👍 3</small>
+                            </div>
+                        </div>
+                        <!-- More message bubbles can be added here -->
+                    </div>
+
+                    <!-- Reply Form -->
+                    <form class="reply-form">
+                        <button type="button" class="btn btn-light attachment-btn" title="Attach File">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button type="button" class="btn btn-light emoji-btn" title="Add Emoji">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        <input type="text" placeholder="Type your message..." aria-label="Type your message">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- External JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/jquery-3.7.1.min.js" defer></script>
+    <script src="js/owl.carousel.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/admin.js" defer></script>
+</body>
+
+</html>

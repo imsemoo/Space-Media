@@ -113,7 +113,7 @@ button {
 .sidebar nav ul li a i {
   font-size: 1.2rem;
 }
-.sidebar nav ul li a:active,
+.sidebar nav ul li a.active,
 .sidebar nav ul li a:hover {
   color: var(--secondary-color);
   background-color: hsl(252 45% 96% / 1);
@@ -752,7 +752,8 @@ canvas {
 }
 
 /* Enhanced Filter Section Styling */
-#sales .filter-section ,
+#revenue .filter-section,
+#sales .filter-section,
 .listings-section .filter-section {
   background: #fff;
   padding: 20px;
@@ -771,7 +772,7 @@ canvas {
   border: 1px solid var(--border-color);
   border-radius: 8px;
 }
-.top-selling .card-img-top ,
+.top-selling .card-img-top,
 .listings-section .card-img-top {
   height: 180px;
   object-fit: cover;
@@ -856,17 +857,16 @@ canvas {
   margin-bottom: 5px;
 }
 
-
-.table{
+.table {
   border-radius: 8px;
   overflow: hidden;
 }
 
-.table>:not(caption)>*>* {
+.table > :not(caption) > * > * {
   padding: 10px 15px;
 }
 
-table .btn{
+table .btn {
   font-size: 14px;
   height: 30px;
 }
@@ -905,17 +905,14 @@ table .btn{
 .recent-sales {
   margin-top: 40px;
   padding: 0;
-
 }
 
-.recent-sales-container{
+.recent-sales-container {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
-
 
 .timeline {
   list-style: none;
@@ -1009,86 +1006,90 @@ table .btn{
   margin: 0;
 }
 
+/* Preloader Styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
-    /* Preloader Styles */
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
+/* Loader from Uiverse.io by Shoh2008 */
+.loader {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
 
-    /* Loader from Uiverse.io by Shoh2008 */
-    .loader {
-      width: 64px;
-      height: 64px;
-      position: relative;
-      background: #fff;
-      border-radius: 4px;
-      overflow: hidden;
-    }
+.loader:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg) translate(30%, 40%);
+  background: #ff9371;
+  box-shadow: 32px -34px 0 5px #ff3d00;
+  animation: slide 2s infinite ease-in-out alternate;
+}
 
-    .loader:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 40px;
-      height: 40px;
-      transform: rotate(45deg) translate(30%, 40%);
-      background: #ff9371;
-      box-shadow: 32px -34px 0 5px #ff3d00;
-      animation: slide 2s infinite ease-in-out alternate;
-    }
+.loader:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff3d00;
+  transform: rotate(0deg);
+  transform-origin: 35px 145px;
+  animation: rotate 2s infinite ease-in-out;
+}
 
-    .loader:after {
-      content: "";
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #ff3d00;
-      transform: rotate(0deg);
-      transform-origin: 35px 145px;
-      animation: rotate 2s infinite ease-in-out;
-    }
+@keyframes slide {
+  0%,
+  100% {
+    bottom: -35px;
+  }
 
-    @keyframes slide {
-      0%,
-      100% {
-        bottom: -35px;
-      }
+  25%,
+  75% {
+    bottom: -2px;
+  }
 
-      25%,
-      75% {
-        bottom: -2px;
-      }
+  20%,
+  80% {
+    bottom: 2px;
+  }
+}
 
-      20%,
-      80% {
-        bottom: 2px;
-      }
-    }
+@keyframes rotate {
+  0% {
+    transform: rotate(-15deg);
+  }
 
-    @keyframes rotate {
-      0% {
-        transform: rotate(-15deg);
-      }
+  25%,
+  75% {
+    transform: rotate(0deg);
+  }
 
-      25%,
-      75% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(25deg);
-      }
-    }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+#revenueBreakdownChart {
+  width: 300px !important;
+  height: 300px !important;
+  margin: auto;
+}
