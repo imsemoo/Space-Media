@@ -200,19 +200,25 @@ ul {
   width: 40px;
   height: 40px;
   text-align: center;
+  line-height: 1.8;
 }
+
+.page-link:hover,
 .active > .page-link,
 .page-link.active {
-  background-color: var(--link-color); /* Use link color for active pages */
+  background-color: var(
+    --secondary-color
+  ); /* Use link color for active pages */
   color: #fff;
-  border: none;
   font-weight: bold;
 }
 .pagination li:first-child a,
 .pagination li:last-child a {
-  background-color: transparent;
+  background-color: #fff;
   color: inherit !important;
+  border: 1px solid var(--border-color);
 }
+
 .pagination .page-item a {
   margin-left: 10px;
   border-radius: 50%;
@@ -220,7 +226,7 @@ ul {
 .page-item:first-child .page-link {
   margin-left: 10px;
   border-radius: 50%;
-  background-color: transparent;
+  background-color: #fff;
 }
 .page-item:last-child .page-link {
   border-radius: 50%;
@@ -249,7 +255,7 @@ ul {
 .btn-outline-primary {
   border-color: var(--primary-color);
   color: var(--primary-color);
-  border-radius: 50px;
+
   font-size: 16px;
 }
 .btn-outline-primary:hover {
@@ -258,6 +264,17 @@ ul {
   color: #fff;
 }
 
+.btn-outline-secondary {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+
+  font-size: 16px;
+}
+.btn-outline-secondary:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #fff;
+}
 /* Description Button Styles (Primary & Orange Variants) */
 .dedcription-btn,
 .dedcription-btn-orange {
@@ -454,7 +471,6 @@ ul {
   /* Responsive adjustments if needed */
 }
 
-
 /* Shopping Cart Wrapper */
 .shopping-cart-wrapper {
   position: relative;
@@ -490,7 +506,7 @@ ul {
   background: #fff;
   border: 1px solid var(--neutral-medium, #e0e0e0);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   padding: 15px;
 }
@@ -600,7 +616,6 @@ ul {
   color: var(--primary-color);
   font-weight: bold;
 }
-
 
 /* ========== Hero Section Styles ========== */
 
@@ -1204,8 +1219,8 @@ ul {
 .read-more:hover {
   color: var(--info-color);
 }
- /* ===================== Collections Section Styles ===================== */
- .collections-container {
+/* ===================== Collections Section Styles ===================== */
+.collections-container {
   display: flex;
   width: 90vw;
   margin: 0 auto;
@@ -1254,7 +1269,6 @@ ul {
     display: none;
   }
 }
-
 
 /* ----------------------- Footer Section ----------------------- */
 .footer {

@@ -55,6 +55,11 @@ body {
   padding: 0;
   color: var(--text-color);
 }
+
+button {
+  border: none;
+  background: none;
+}
 /* Sidebar Styles */
 .sidebar {
   position: fixed;
@@ -72,7 +77,7 @@ body {
   margin-bottom: 30px;
 }
 .sidebar .logo img {
-  max-width: 100%;
+  max-width: 180px;
   height: auto;
 }
 .sidebar nav ul {
@@ -81,11 +86,12 @@ body {
   margin: 0;
 }
 .sidebar nav ul li {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .sidebar nav ul li a {
   color: var(--text-color);
-
+  border-radius: 12px;
+  padding: 5px;
   text-decoration: none;
   font-size: 1.1rem;
   display: flex;
@@ -107,8 +113,10 @@ body {
 .sidebar nav ul li a i {
   font-size: 1.2rem;
 }
+.sidebar nav ul li a:active,
 .sidebar nav ul li a:hover {
   color: var(--secondary-color);
+  background-color: hsl(252 45% 96% / 1);
 }
 .icon-side {
   width: 35px;
@@ -484,24 +492,20 @@ canvas {
 .sidebar .show-in-mobile {
   display: block;
   margin: auto;
-
 }
 
 .sidebar.active .show-in-desktop {
-    display: block;
-
-  }
-  .sidebar .show-in-desktop {
-    display: none;
-
-  }
+  display: block;
+}
+.sidebar .show-in-desktop {
+  display: none;
+}
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .main-content {
     margin-left: 70px;
     padding: 20px;
   }
-
 }
 
 /* ===================== Statistics Section Styles ===================== */
@@ -745,4 +749,126 @@ canvas {
 
 .modal-footer .btn-secondary:hover {
   background: #f68e3a;
+}
+
+/* Enhanced Filter Section Styling */
+#sales .filter-section ,
+.listings-section .filter-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+/* Additional spacing for Listings Grid */
+.listings-section .listings-grid .listing-card {
+  margin-bottom: 20px;
+}
+
+/* Listings Summary */
+.listings-section .listings-summary {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.listings-section .card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+.listing-card .card-body {
+  flex: 1;
+  padding: 15px;
+}
+
+.listing-card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.listing-card .card-text {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted-color);
+}
+
+/* Status Badge Styles */
+.listings-section .badge {
+  font-size: 0.85rem;
+  padding: 0.35em 0.65em;
+}
+
+.listings-section .badge.bg-success {
+  background-color: #28a745;
+}
+
+.listings-section .badge.bg-warning {
+  background-color: #ffc107;
+}
+
+.listings-section .badge.bg-secondary {
+  background-color: #6c757d;
+}
+
+/* Listing Stats Row */
+.listing-stats {
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #eaeaea;
+  padding-top: 8px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.listing-stats div {
+  display: flex;
+  color: var(--text-muted-color);
+  align-items: center;
+}
+
+.listing-stats i {
+  margin-right: 4px;
+}
+
+/* Card Footer with Actions */
+.listings-section .card-footer {
+  background: #f8f7fc;
+  border-top: 1px solid #eaeaea;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.filter-section .btn,
+.filter-section .form-select,
+.filter-section .form-control {
+  height: 45px;
+}
+.form-section {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-label {
+  margin-bottom: 5px;
+}
+#salesTrendChart{
+  height: 400px !important;
+}
+
+.table{
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table>:not(caption)>*>* {
+  padding: 10px 15px;
+}
+
+table .btn{
+  font-size: 14px;
+  height: 30px;
 }

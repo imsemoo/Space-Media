@@ -2,65 +2,94 @@
 <html lang="en">
 
 <head>
-  <!-- Character encoding -->
-  <meta charset="UTF-8" />
-  <!-- Responsive viewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seller Dashboard - SPACE MEDIA</title>
-  <meta name="description"
-    content="Seller Dashboard for SPACE MEDIA. Manage your listings, sales, and revenue with our professional interface." />
-  <meta name="keywords" content="seller dashboard, SPACE MEDIA, stock photos, listings, sales, revenue, charts" />
-  <link rel="canonical" href="https://spacemedia.ps" />
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+  <meta name="description" content="Seller Dashboard for SPACE MEDIA. Manage your listings, sales, and revenue with our professional interface.">
+  <meta name="keywords" content="seller dashboard, SPACE MEDIA, stock photos, listings, sales, revenue, charts">
+  <link rel="canonical" href="https://spacemedia.ps">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:title" content="Seller Dashboard - SPACE MEDIA">
+  <meta property="og:description" content="Seller Dashboard for SPACE MEDIA. Manage your listings, sales, and revenue with our professional interface.">
+  <meta property="og:url" content="https://spacemedia.ps">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/logo.png">
+
+  <!-- Preconnect (if using external fonts or resources) -->
+  <!--
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  -->
 
   <!-- External CSS Files -->
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/all.min.css" />
-  <link rel="stylesheet" href="css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/admin.css" />
-
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
   <!-- Sidebar Navigation -->
-  <aside class="sidebar active">
+  <aside class="sidebar active" aria-label="Sidebar Navigation">
     <div class="logo">
-      <img src="img/logo.png" alt="SPACE MEDIA Logo" class="show-in-desktop" />
-      <img src="img/favicon.png" alt="SPACE MEDIA Logo" class="show-in-mobile">
+      <img src="img/logo.png" alt="SPACE MEDIA Logo" class="show-in-desktop">
+      <img src="img/favicon.png" alt="SPACE MEDIA Logo" class="show-in-mobile" loading="lazy">
     </div>
     <nav>
       <ul>
         <li>
-          <a href="#">
+          <a href="index.html" class="active">
             <div class="icon-side">
               <i class="fas fa-tachometer-alt"></i>
             </div>
             <span>Dashboard</span>
           </a>
         </li>
-        <li><a href="#">
+        <li>
+          <a href="listings.html">
             <div class="icon-side">
               <i class="fas fa-images"></i>
             </div>
             <span>Listings</span>
-          </a></li>
-        <li><a href="#">
+          </a>
+        </li>
+        <li>
+          <a href="sales.html">
             <div class="icon-side">
               <i class="fas fa-shopping-cart"></i>
             </div>
-
             <span>Sales</span>
-          </a></li>
-        </div>
-        <li><a href="#">
-            <div class="icon-side"> <i class="fas fa-dollar-sign"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-side">
+              <i class="fas fa-dollar-sign"></i>
             </div>
             <span>Revenue</span>
-          </a></li>
-        <li><a href="#"><div class="icon-side"> <i class="fas fa-envelope"></i> </div><span>Messages</span></a></li>
-        <li><a href="#"><div class="icon-side"><i class="fas fa-cog"></i></div> <span>Settings</span></a></li>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-side">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <span>Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-side">
+              <i class="fas fa-cog"></i>
+            </div>
+            <span>Settings</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </aside>
@@ -69,15 +98,18 @@
   <main class="main-content active">
     <!-- Dashboard Header -->
     <header class="dashboard-header">
-      <div class="header-container ">
-
+      <div class="header-container">
         <!-- Left Section: Hamburger Icon and Search Box -->
         <div class="header-left">
           <!-- Hamburger Icon for Mobile -->
-          <span class="hamburger"><i class="fas fa-bars"></i></span>
+          <button class="hamburger" aria-label="Toggle Sidebar">
+            <i class="fas fa-bars"></i>
+          </button>
           <div class="search-box">
-            <input type="text" placeholder="Search listings, sales, messages..." />
-            <button class="search-btn"><i class="fas fa-search"></i></button>
+            <input type="search" placeholder="Search listings, sales, messages..." aria-label="Search">
+            <button class="search-btn" aria-label="Search">
+              <i class="fas fa-search"></i>
+            </button>
           </div>
         </div>
 
@@ -85,7 +117,7 @@
         <div class="header-right">
           <!-- Notifications Icon & Dropdown -->
           <div class="icon-wrapper notifications">
-            <a href="#" class="notifications-icon">
+            <a href="#" class="notifications-icon" aria-haspopup="true" aria-expanded="false" aria-label="Notifications">
               <i class="fas fa-bell"></i>
               <span class="badge">3</span>
             </a>
@@ -93,21 +125,21 @@
               <div class="dropdown-header">Notifications</div>
               <ul class="notifications-list">
                 <li class="notification-item">
-                  <img src="img/team/1.jpg" alt="John Doe" class="notification-avatar">
+                  <img src="img/team/1.jpg" alt="John Doe" class="notification-avatar" loading="lazy">
                   <div class="notification-content">
                     <p class="notification-text">John Doe placed a new order.</p>
                     <span class="notification-time">5 min ago</span>
                   </div>
                 </li>
                 <li class="notification-item">
-                  <img src="img/team/2.jpg" alt="Jane Smith" class="notification-avatar">
+                  <img src="img/team/2.jpg" alt="Jane Smith" class="notification-avatar" loading="lazy">
                   <div class="notification-content">
                     <p class="notification-text">Your photo was approved.</p>
                     <span class="notification-time">20 min ago</span>
                   </div>
                 </li>
                 <li class="notification-item">
-                  <img src="img/team/3.jpg" alt="Alice" class="notification-avatar">
+                  <img src="img/team/3.jpg" alt="Alice" class="notification-avatar" loading="lazy">
                   <div class="notification-content">
                     <p class="notification-text">Alice commented on your listing.</p>
                     <span class="notification-time">1 hour ago</span>
@@ -118,7 +150,7 @@
           </div>
           <!-- Messages Icon & Dropdown -->
           <div class="icon-wrapper messages">
-            <a href="#" class="messages-icon">
+            <a href="#" class="messages-icon" aria-haspopup="true" aria-expanded="false" aria-label="Messages">
               <i class="fas fa-envelope"></i>
               <span class="badge">2</span>
             </a>
@@ -126,7 +158,7 @@
               <div class="dropdown-header">Messages</div>
               <ul class="messages-list">
                 <li class="message-item">
-                  <img src="img/team/4.jpg" alt="Alice Johnson" class="message-avatar">
+                  <img src="img/team/4.jpg" alt="Alice Johnson" class="message-avatar" loading="lazy">
                   <div class="message-content">
                     <p class="message-sender">Alice Johnson</p>
                     <p class="message-snippet">Hi, your recent upload looks fantastic! Can we discuss...</p>
@@ -134,7 +166,7 @@
                   </div>
                 </li>
                 <li class="message-item">
-                  <img src="img/team/5.jpg" alt="Mark Wilson" class="message-avatar">
+                  <img src="img/team/5.jpg" alt="Mark Wilson" class="message-avatar" loading="lazy">
                   <div class="message-content">
                     <p class="message-sender">Mark Wilson</p>
                     <p class="message-snippet">I have a question about the pricing...</p>
@@ -144,19 +176,19 @@
               </ul>
             </div>
           </div>
-          <!-- User Actions -->
-          <!-- <div class="user-actions">
+          <!-- User Actions (commented out) -->
+          <!--
+          <div class="user-actions">
             <span class="welcome-text">Welcome, SellerName</span>
             <a href="#" class="btn logout-btn">Logout</a>
-          </div> -->
+          </div>
+          -->
         </div>
       </div>
     </header>
 
     <section id="statistics" class="statistics-section">
-      <h2 class="section-title-dahsboard">
-        Balance Details
-      </h2>
+      <h2 class="section-title-dahsboard">Balance Details</h2>
       <!-- Statistics Cards Grid -->
       <div class="stats-grid">
         <div class="stat-card">
@@ -187,47 +219,31 @@
             <p>32,100</p>
           </div>
         </div>
-        <!-- <div class="stat-card">
-          <div class="stat-icon"><i class="fas fa-users"></i></div>
-          <div class="stat-info">
-            <h3>Total Customers</h3>
-            <p>1,230</p>
-          </div>
-        </div> -->
+        <!-- Additional stat cards can be added here -->
       </div>
     </section>
 
     <!-- Dashboard Overview with Charts -->
     <section class="charts-container">
-
       <div>
-        <h2 class="section-title-dahsboard">
-          Monthly Revenue
-        </h2>
+        <h2 class="section-title-dahsboard">Monthly Revenue</h2>
         <div class="chart-card">
           <canvas id="revenueChart"></canvas>
         </div>
       </div>
-
       <div>
-        <h2 class="section-title-dahsboard">
-          Sales Trend
-        </h2>
+        <h2 class="section-title-dahsboard">Sales Trend</h2>
         <div class="chart-card">
           <canvas id="salesChart"></canvas>
         </div>
       </div>
-
     </section>
 
     <section id="operations">
-      <div class="">
+      <div>
         <!-- Section Header -->
         <h2 class="section-title-dahsboard">Deposit &amp; Withdrawal Operations</h2>
-
         <div class="operations-section">
-          <!-- Transactions Table -->
-          <!-- Transactions Table -->
           <div class="table-responsive">
             <table class="table table-striped table-hover">
               <thead class="thead-light">
@@ -279,13 +295,10 @@
             </table>
           </div>
         </div>
-
       </div>
 
       <!-- Transaction Details Modal -->
-      <!-- Transaction Details Modal -->
-      <div class="modal fade" id="transactionModal" tabindex="-1" aria-labelledby="transactionModalLabel"
-        aria-hidden="true">
+      <div class="modal fade" id="transactionModal" tabindex="-1" aria-labelledby="transactionModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -322,9 +335,7 @@
           </div>
         </div>
       </div>
-
     </section>
-
   </main>
 
   <!-- External JS Libraries -->
@@ -335,7 +346,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="js/bootstrap.bundle.min.js" defer></script>
   <script src="js/admin.js" defer></script>
-
 </body>
 
 </html>
