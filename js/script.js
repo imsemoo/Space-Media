@@ -45,7 +45,10 @@ $(document).ready(function(){
 
   
 });
-
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  preloader.style.display = "none";
+});
 const collectionPanels = document.querySelectorAll(".collection-panel");
     
 collectionPanels.forEach((panel) => {

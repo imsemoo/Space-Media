@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
       gsap.to(sidebar, { duration: 0.3, width: "70px", ease: "power2.in" });
     }
   });
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.style.display = "none";
+  });
 });
 
 
