@@ -771,7 +771,7 @@ canvas {
   border: 1px solid var(--border-color);
   border-radius: 8px;
 }
-
+.top-selling .card-img-top ,
 .listings-section .card-img-top {
   height: 180px;
   object-fit: cover;
@@ -855,9 +855,7 @@ canvas {
 .form-label {
   margin-bottom: 5px;
 }
-#salesTrendChart{
-  height: 400px !important;
-}
+
 
 .table{
   border-radius: 8px;
@@ -871,4 +869,142 @@ canvas {
 table .btn{
   font-size: 14px;
   height: 30px;
+}
+
+/* Top Selling Listings Section */
+.top-selling {
+  margin-top: 40px;
+}
+.top-selling .card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.top-selling .card:hover {
+  transform: translateY(-4px);
+}
+.top-selling .card-img-top {
+  object-fit: cover;
+  height: 150px;
+}
+.top-selling .card-body {
+  padding: 15px;
+}
+.top-selling .card-title {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #322b83;
+}
+.top-selling .card-text {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: #666;
+}
+
+/* Recent Sales Activity Timeline */
+.recent-sales {
+  margin-top: 40px;
+  padding: 0;
+
+}
+
+.recent-sales-container{
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #322b83;
+  opacity: 0.3;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-icon {
+  width: 60px;
+  flex-shrink: 0;
+  text-align: center;
+  position: relative;
+}
+
+.timeline-icon i {
+  font-size: 1.5rem;
+  color: #322b83;
+  background: #fff;
+  border: 2px solid #322b83;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.timeline-content {
+  flex-grow: 1;
+  padding-left: 20px;
+  background: #f8f7fc;
+  border-radius: 8px;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.timeline-content:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #f8f7fc;
+  border-bottom: 8px solid transparent;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.timeline-date {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #322b83;
+}
+
+.timeline-status {
+  font-size: 0.75rem;
+  padding: 0.25em 0.5em;
+}
+
+.timeline-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
 }
