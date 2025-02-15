@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPACE MEDIA - Article: The Art of Capturing Moments</title>
+  <meta name="description" content="Read our feature article 'The Art of Capturing Moments' on SPACE MEDIA, where creativity meets precision in photography." />
+  <meta name="keywords" content="article, photography, creative, SPACE MEDIA, photojournalism" />
+  <link rel="canonical" href="https://spacemedia.ps/articles/the-art-of-capturing-moments" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* --- Article Page Additional Styles --- */
+    .article-hero {
+      background: var(--secondary-background-color);
+      padding: 40px 0;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .article-hero h1 {
+      font-size: 2.8rem;
+      color: var(--primary-color, #322b83);
+      margin-bottom: 10px;
+    }
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--text-muted-color);
+      gap: 10px;
+    }
+    .article-container {
+      padding: 40px 0;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .article-main {
+      flex: 0 0 65.66%;
+    }
+    .article-main .featured {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .author-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .author-box img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .author-info .name {
+      font-size: 1.2rem;
+      color: var(--primary-color, #322b83);
+      font-weight: bold;
+    }
+    .article-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: var(--text-muted-color);
+    }
+    /* Sidebar for Related Articles */
+    .article-sidebar {
+      flex: 0 0 30.33%;
+      border-left: 1px solid #eee;
+      padding-left: 30px;
+    }
+    .related-articles h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--primary-color, #322b83);
+    }
+    .related-articles ul {
+      list-style: none;
+      padding: 0;
+    }
+    .related-articles ul li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .related-articles ul li img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-right: 15px;
+    }
+    .related-articles ul li a {
+      font-size: 1rem;
+      color: var(--primary-color, #322b83);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .related-articles ul li a:hover {
+      text-decoration: underline;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .article-container {
+        flex-direction: column;
+      }
+      .article-main, .article-sidebar {
+        flex: 1 1 100%;
+      }
+      .article-sidebar {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 30px;
+      }
+    }
+    /* -------------------- Newsletter Section -------------------- */
+    .newsletter-section {
+      padding: 60px 0;
+      background-color: var(--background-color, #ffffff);
+      border-top: 1px solid var(--border-color, #44345c);
+    }
+    .newsletter-section .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+   
+    .newsletter-form .input-group {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .newsletter-form .form-control {
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 30px 0 0 30px;
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+    .newsletter-form .btn {
+      border-radius: 0 30px 30px 0;
+      padding: 12px 20px;
+      font-size: 1rem;
+      background-color: var(--primary-color, #322b83);
+      border: 1px solid var(--primary-color, #322b83);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .newsletter-form .btn:hover {
+      background-color: var(--secondary-color, #f68e3a);
+      border-color: var(--secondary-color, #f68e3a);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar (Your existing site's navbar) -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="SPACE MEDIA Logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
+          <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+          <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="d-flex buttons-group">
+          <a href="login.html" class="dedcription-btn-orange">
+            <span class="name-descripeion">Login</span>
+            <div class="btn-icon-orange"><i class="fas fa-sign-in-alt"></i></div>
+          </a>
+          <a href="register.html" class="dedcription-btn me-2">
+            <span class="name-descripeion">Register</span>
+            <div class="btn-icon"><i class="fas fa-plus"></i></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Article Section -->
+  <main class="container my-4">
+    <!-- Article Hero -->
+    <section class="article-hero">
+      <h1>The Art of Capturing Moments</h1>
+      <div class="article-meta">
+        <span>By Jane Doe</span> | 
+        <span>April 10, 2025</span> | 
+        <span>Photography, Creativity</span>
+      </div>
+    </section>
+    <!-- Article Content Container -->
+    <div class="article-container">
+      <!-- Main Article Content -->
+      <div class="article-main">
+        <img src="https://dummyimage.com/900x400/dddddd/000000" alt="Featured Article Image" class="featured">
+        <div class="author-box">
+          <img src="https://dummyimage.com/100x100/dddddd/000000" alt="Jane Doe">
+          <div class="author-info">
+            <div class="name">Jane Doe</div>
+            <div class="designation">Senior Photojournalist, SPACE MEDIA</div>
+          </div>
+        </div>
+        <div class="article-text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum urna in porta dignissim. Nulla facilisi. Sed quis tincidunt magna. Morbi sollicitudin purus quis massa dictum, at dignissim nulla pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sagittis, erat sit amet volutpat vehicula, dui mauris fermentum ligula, id vulputate nisl justo at ipsum. Donec ut semper lacus, non condimentum nulla. Aenean volutpat aliquet fermentum. Donec eu interdum lectus. Nulla facilisi.</p>
+          <p>Aliquam erat volutpat. Suspendisse potenti. Mauris sit amet ex eget velit tempor interdum. Praesent pulvinar, purus at commodo porttitor, augue quam hendrerit velit, in vestibulum ligula libero non nisi.</p>
+        </div>
+      </div>
+      <!-- Sidebar: Related Articles -->
+      <aside class="article-sidebar">
+        <div class="related-articles">
+          <h3>Related Articles</h3>
+          <ul>
+            <li>
+              <img src="https://dummyimage.com/100x100/dddddd/000000" alt="Urban Landscapes">
+              <a href="#">Exploring Urban Landscapes</a>
+            </li>
+            <li>
+              <img src="https://dummyimage.com/100x100/dddddd/000000" alt="Nature Wonders">
+              <a href="#">The Wonders of Nature</a>
+            </li>
+            <li>
+              <img src="https://dummyimage.com/100x100/dddddd/000000" alt="Creative Tips">
+              <a href="#">Top Creative Photography Tips</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    
+    <!-- NEW: Newsletter Subscription Section -->
+    <section id="newsletter" class="newsletter-section">
+      <div class="container text-center">
+        <h2 class="section-title">
+          <span><i class="fas fa-envelope-open-text me-2"></i>Subscribe to Our Newsletter</span>
+        </h2>
+        <p class="section-subtitle">
+          Stay updated with the latest insights, creative inspiration, and exclusive offers from SPACE MEDIA.
+        </p>
+        <form class="newsletter-form mt-4">
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email" required>
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer (Use your existing site's footer) -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-columns">
+          <!-- About Column -->
+          <div class="footer-column about">
+            <a href="#" class="mb-3 d-block">
+              <img src="./img/logo-white.png" alt="" style="height: 80px;">
+            </a>
+            <p>
+              SPACE MEDIA is your premier marketplace for premium stock photos and videos, empowering creators and brands with exclusive media content.
+            </p>
+          </div>
+          <!-- Quick Links Column -->
+          <div class="footer-column links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="photos.html">Photos</a></li>
+              <li><a href="videos.html">Videos</a></li>
+              <li><a href="articles.html">Articles</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Support Column -->
+          <div class="footer-column support">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="support.html">Customer Support</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+          <!-- Social & Newsletter Column -->
+          <div class="footer-column social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <h3>Newsletter</h3>
+            <form class="footer-newsletter" role="form" aria-label="Footer Newsletter Subscription">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 SPACE MEDIA. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- GSAP Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      gsap.from(".article-hero", {
+        duration: 1,
+        opacity: 0,
+        y: -50,
+        ease: "power2.out"
+      });
+      gsap.from(".article-main", {
+        duration: 1,
+        opacity: 0,
+        y: 30,
+        ease: "power2.out",
+        delay: 0.5
+      });
+      gsap.from(".article-sidebar", {
+        duration: 1,
+        opacity: 0,
+        x: 30,
+        ease: "power2.out",
+        delay: 0.7
+      });
+      gsap.from(".newsletter-section", {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out",
+        delay: 0.5
+      });
+    });
+  </script>
+</body>
+</html>
