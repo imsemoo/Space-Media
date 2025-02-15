@@ -1,3 +1,21 @@
+$(document).ready(function () {
+  // Script to Toggle Credit Card Details 
+  $('#paymentMethod').on('change', function () {
+    let method = $(this).val();
+    // Hide all detail sections first
+    $('#creditCardDetails, #paypalDetails, #bankTransferDetails').slideUp();
+    // Show the selected one
+    if (method === 'creditCard') {
+      $('#creditCardDetails').slideDown();
+    } else if (method === 'paypal') {
+      $('#paypalDetails').slideDown();
+    } else if (method === 'bankTransfer') {
+      $('#bankTransferDetails').slideDown();
+    }
+  });
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
   // Select the required elements
   const hamburger = document.querySelector('.hamburger');

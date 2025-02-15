@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
   $(".articles-slider").owlCarousel({
     loop: true,
     nav: true,
@@ -43,14 +43,14 @@ $(document).ready(function(){
     ]
   });
 
-  
+
 });
 window.addEventListener("load", function () {
   const preloader = document.getElementById("preloader");
   preloader.style.display = "none";
 });
 const collectionPanels = document.querySelectorAll(".collection-panel");
-    
+
 collectionPanels.forEach((panel) => {
   panel.addEventListener("click", () => {
     removeActiveClasses();
@@ -62,7 +62,7 @@ const removeActiveClasses = () => {
   collectionPanels.forEach((panel) => {
     panel.classList.remove("active");
   });
-}; 
+};
 document.addEventListener("DOMContentLoaded", function () {
   // Fixed Navbar Animation (unchanged)
   window.addEventListener("scroll", function () {
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .from("#thematic-galleries .gallery-card", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
 
 
-    // Animate Latest Updates Section (unchanged)
+  // Animate Latest Updates Section (unchanged)
   gsap.timeline({
     scrollTrigger: {
       trigger: "#collections",
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })
     .from(".articles-slider", { duration: 1, opacity: 0, y: 30, ease: "power2.out" });
 
-  
+
 
   // Animate Footer Section (optional)
   gsap.from("footer.footer", {
@@ -156,14 +156,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const videoCards = document.querySelectorAll(".video-card video");
 
   videoCards.forEach(video => {
-    video.addEventListener("mouseenter", function() {
+    video.addEventListener("mouseenter", function () {
       video.play();
     });
-    video.addEventListener("mouseleave", function() {
+    video.addEventListener("mouseleave", function () {
       video.pause();
       video.currentTime = 0; // Optionally reset the video to the beginning
     });
@@ -200,3 +200,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
