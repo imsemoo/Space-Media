@@ -2677,3 +2677,44 @@ ul {
         transform: rotate(25deg);
       }
     }
+   /* Privacy Policy Page Custom Styles */
+   .privacy-policy {
+    background-color: #ffffff; /* White background for the main section */
+    color: var(--text-color, #322b83);
+  }
+ 
+  .privacy-policy article {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+  .privacy-policy h3 {
+    font-size: 1.8rem;
+    font-family: "Poppins-Bold", sans-serif;
+    color: var(--primary-color, #322b83);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-color, #f68e3a);
+    padding-bottom: 5px;
+  }
+  .privacy-policy p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .privacy-policy ul {
+    margin: 20px 0;
+    padding-left: 20px;
+  }
+  .privacy-policy li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  .privacy-policy a {
+    color: var(--secondary-color, #f68e3a);
+    text-decoration: underline;
+  }
+  .privacy-policy a:hover {
+    color: var(--primary-color, #322b83);
+  }
