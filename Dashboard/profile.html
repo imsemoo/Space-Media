@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - SPACE MEDIA</title>
+  <meta name="description" content="Manage your profile and account settings on SPACE MEDIA. Update your personal information, change your password, and connect your social accounts in our professional dashboard.">
+  <meta name="keywords" content="profile, dashboard, SPACE MEDIA, account settings, personal info">
+  <link rel="canonical" href="https://spacemedia.ps/profile.html">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:title" content="Profile - SPACE MEDIA">
+  <meta property="og:description" content="Manage your profile and account settings on SPACE MEDIA with our professional dashboard interface.">
+  <meta property="og:url" content="https://spacemedia.ps/profile.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/logo.png">
+
+  <!-- External CSS Files -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Sidebar Navigation (Reused) -->
+  <aside class="sidebar active" aria-label="Sidebar Navigation">
+    <div class="logo">
+      <img src="img/logo.png" alt="SPACE MEDIA Logo" class="show-in-desktop">
+      <img src="img/favicon.png" alt="SPACE MEDIA Logo" class="show-in-mobile" loading="lazy">
+    </div>
+    <nav>
+      <ul>
+        <!-- Dashboard -->
+        <li>
+          <a href="index.html">
+            <div class="icon-side"><i class="fas fa-tachometer-alt"></i></div>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- Listings -->
+        <li class="sidebar-section-title">Listings</li>
+        <li>
+          <a href="listings.html">
+            <div class="icon-side"><i class="fas fa-images"></i></div>
+            <span>All Listings</span>
+          </a>
+        </li>
+        <li>
+          <a href="add-listing.html">
+            <div class="icon-side"><i class="fas fa-plus-circle"></i></div>
+            <span>Add New Listing</span>
+          </a>
+        </li>
+        <!-- Sales & Purchases -->
+        <li class="sidebar-section-title">Sales & Purchases</li>
+        <li>
+          <a href="sales.html">
+            <div class="icon-side"><i class="fas fa-shopping-cart"></i></div>
+            <span>Sales</span>
+          </a>
+        </li>
+        <li>
+          <a href="purchases.html">
+            <div class="icon-side"><i class="fas fa-shopping-basket"></i></div>
+            <span>Purchases</span>
+          </a>
+        </li>
+        <li>
+          <a href="transactions.html">
+            <div class="icon-side"><i class="fas fa-exchange-alt"></i></div>
+            <span>Transactions</span>
+          </a>
+        </li>
+        <!-- Financials -->
+        <li class="sidebar-section-title">Financials</li>
+        <li>
+          <a href="revenue.html">
+            <div class="icon-side"><i class="fas fa-dollar-sign"></i></div>
+            <span>Revenue</span>
+          </a>
+        </li>
+        <li>
+          <a href="deposit.html">
+            <div class="icon-side"><i class="fas fa-wallet"></i></div>
+            <span>Deposit</span>
+          </a>
+        </li>
+        <li>
+          <a href="withdraw.html">
+            <div class="icon-side"><i class="fas fa-hand-holding-usd"></i></div>
+            <span>Withdraw</span>
+          </a>
+        </li>
+        <li>
+          <a href="checkout.html">
+            <div class="icon-side"><i class="fas fa-credit-card"></i></div>
+            <span>Checkout</span>
+          </a>
+        </li>
+        <!-- User Management -->
+        <li class="sidebar-section-title">User Management</li>
+        <li>
+          <a href="profile.html" class="active">
+            <div class="icon-side"><i class="fas fa-user"></i></div>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="settings.html">
+            <div class="icon-side"><i class="fas fa-cog"></i></div>
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="notifications.html">
+            <div class="icon-side"><i class="fas fa-bell"></i></div>
+            <span>Notifications</span>
+          </a>
+        </li>
+        <li>
+          <a href="messages.html">
+            <div class="icon-side"><i class="fas fa-envelope"></i></div>
+            <span>Messages</span>
+          </a>
+        </li>
+        <!-- Analytics & Reports -->
+        <li class="sidebar-section-title">Analytics & Reports</li>
+        <li>
+          <a href="analytics.html">
+            <div class="icon-side"><i class="fas fa-chart-line"></i></div>
+            <span>Analytics</span>
+          </a>
+        </li>
+        <!-- Support & Help -->
+        <li class="sidebar-section-title">Support & Help</li>
+        <li>
+          <a href="help.html">
+            <div class="icon-side"><i class="fas fa-life-ring"></i></div>
+            <span>Help</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Dashboard Content -->
+  <main class="main-content active">
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+      <div class="header-container">
+        <!-- Left Section: Hamburger Icon and Search Box -->
+        <div class="header-left">
+          <button class="hamburger" aria-label="Toggle Sidebar">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="search-box">
+            <input class="form-control" type="search" placeholder="Search listings, sales, messages..." aria-label="Search">
+            <button class="search-btn" aria-label="Search">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Right Section: Notifications and Messages -->
+        <div class="header-right">
+          <div class="icon-wrapper notifications">
+            <a href="#" class="notifications-icon" aria-haspopup="true" aria-expanded="false" aria-label="Notifications">
+              <i class="fas fa-bell"></i>
+              <span class="badge">3</span>
+            </a>
+            <div class="dropdown notifications-dropdown">
+              <div class="dropdown-header">Notifications</div>
+              <ul class="notifications-list">
+                <li class="notification-item">
+                  <img src="img/team/1.jpg" alt="John Doe" class="notification-avatar" loading="lazy">
+                  <div class="notification-content">
+                    <p class="notification-text">John Doe placed a new order.</p>
+                    <span class="notification-time">5 min ago</span>
+                  </div>
+                </li>
+                <li class="notification-item">
+                  <img src="img/team/2.jpg" alt="Jane Smith" class="notification-avatar" loading="lazy">
+                  <div class="notification-content">
+                    <p class="notification-text">Your photo was approved.</p>
+                    <span class="notification-time">20 min ago</span>
+                  </div>
+                </li>
+                <li class="notification-item">
+                  <img src="img/team/3.jpg" alt="Alice" class="notification-avatar" loading="lazy">
+                  <div class="notification-content">
+                    <p class="notification-text">Alice commented on your listing.</p>
+                    <span class="notification-time">1 hour ago</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="icon-wrapper messages">
+            <a href="#" class="messages-icon" aria-haspopup="true" aria-expanded="false" aria-label="Messages">
+              <i class="fas fa-envelope"></i>
+              <span class="badge">2</span>
+            </a>
+            <div class="dropdown messages-dropdown">
+              <div class="dropdown-header">Messages</div>
+              <ul class="messages-list">
+                <li class="message-item">
+                  <img src="img/team/4.jpg" alt="Alice Johnson" class="message-avatar" loading="lazy">
+                  <div class="message-content">
+                    <p class="message-sender">Alice Johnson</p>
+                    <p class="message-snippet">Hi, your recent upload looks fantastic! Can we discuss...</p>
+                    <span class="message-time">10 min ago</span>
+                  </div>
+                </li>
+                <li class="message-item">
+                  <img src="img/team/5.jpg" alt="Mark Wilson" class="message-avatar" loading="lazy">
+                  <div class="message-content">
+                    <p class="message-sender">Mark Wilson</p>
+                    <p class="message-snippet">I have a question about the pricing...</p>
+                    <span class="message-time">30 min ago</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- =================== Profile Section =================== -->
+    <section class="profile-section my-5 p-0">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <!-- Profile Picture -->
+        <div class="profile-picture">
+          <img src="img/team/6.jpg" alt="Profile Picture">
+        </div>
+        <!-- Profile Information -->
+        <div class="profile-info">
+          <h1>John Doe</h1>
+          <p>Professional Photographer & Digital Artist</p>
+        </div>
+      </div>
+      
+      <!-- Profile Navigation Tabs -->
+      <div class="profile-nav">
+        <ul>
+          <li><a href="#" class="active">Overview</a></li>
+          <li><a href="#">Account Settings</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Social Links</a></li>
+        </ul>
+      </div>
+      
+      <!-- Profile Content Sections -->
+      <div class="profile-content">
+        <!-- Overview Content -->
+        <div class="overview-content">
+          <h2>Overview</h2>
+          <p>Welcome to your profile dashboard. Here you can view your personal details, review your recent activities, and get an overall snapshot of your performance on SPACE MEDIA.</p>
+          <!-- Additional overview information can be added here -->
+        </div>
+        <!-- Account Settings Content -->
+        <div class="account-settings-content" style="display: none;">
+          <h2>Account Settings</h2>
+          <form>
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" class="form-control" value="John Doe">
+            </div>
+            <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <input type="email" id="emailAddress" class="form-control" value="john@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number</label>
+              <input type="tel" id="phoneNumber" class="form-control" value="+123456789">
+            </div>
+            <button type="submit" class="btn-save">Save Changes</button>
+          </form>
+        </div>
+        <!-- Security Content -->
+        <div class="security-content" style="display: none;">
+          <h2>Security</h2>
+          <form>
+            <div class="form-group">
+              <label for="currentPassword">Current Password</label>
+              <input type="password" id="currentPassword" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="newPassword">New Password</label>
+              <input type="password" id="newPassword" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm New Password</label>
+              <input type="password" id="confirmPassword" class="form-control">
+            </div>
+            <button type="submit" class="btn-save">Update Password</button>
+          </form>
+        </div>
+        <!-- Social Links Content -->
+        <div class="social-links-content" style="display: none;">
+          <h2>Social Links</h2>
+          <form>
+            <div class="form-group">
+              <label for="facebookLink">Facebook</label>
+              <input type="url" id="facebookLink" class="form-control" value="https://facebook.com/johndoe">
+            </div>
+            <div class="form-group">
+              <label for="twitterLink">Twitter</label>
+              <input type="url" id="twitterLink" class="form-control" value="https://twitter.com/johndoe">
+            </div>
+            <div class="form-group">
+              <label for="instagramLink">Instagram</label>
+              <input type="url" id="instagramLink" class="form-control" value="https://instagram.com/johndoe">
+            </div>
+            <button type="submit" class="btn-save">Update Social Links</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- External JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/jquery-3.7.1.min.js" defer></script>
+  <script src="js/owl.carousel.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/admin.js" defer></script>
+  
+  <!-- Custom JS for Profile Page Tabs -->
+  <script>
+    // Profile Navigation Tabs Switching
+    const tabs = document.querySelectorAll('.profile-nav ul li a');
+    const overviewContent = document.querySelector('.overview-content');
+    const accountSettingsContent = document.querySelector('.account-settings-content');
+    const securityContent = document.querySelector('.security-content');
+    const socialLinksContent = document.querySelector('.social-links-content');
+
+    // Function to hide all content sections
+    function hideAllSections() {
+      overviewContent.style.display = 'none';
+      accountSettingsContent.style.display = 'none';
+      securityContent.style.display = 'none';
+      socialLinksContent.style.display = 'none';
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        // Hide all content sections
+        hideAllSections();
+        // Add active class to clicked tab
+        this.classList.add('active');
+        // Show the corresponding content section
+        const tabText = this.textContent.trim();
+        if (tabText === 'Overview') {
+          overviewContent.style.display = 'block';
+        } else if (tabText === 'Account Settings') {
+          accountSettingsContent.style.display = 'block';
+        } else if (tabText === 'Security') {
+          securityContent.style.display = 'block';
+        } else if (tabText === 'Social Links') {
+          socialLinksContent.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -31,7 +31,7 @@ $(function () {
       const isActive = $sidebar.hasClass('active');
       gsap.to($sidebar, {
         duration: 0.3,
-        width: isActive ? "250px" : "70px",
+        width: isActive ? "250px" : "90px",
         ease: isActive ? "power2.out" : "power2.in"
       });
     });
