@@ -6,14 +6,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Listings - Seller Dashboard | SPACE MEDIA</title>
-  <meta name="description" content="Manage your listings on SPACE MEDIA. Easily view, filter, and update your stock photos, videos, and creative assets." />
+  <meta name="description"
+    content="Manage your listings on SPACE MEDIA. Easily view, filter, and update your stock photos, videos, and creative assets." />
   <meta name="keywords" content="listings, seller dashboard, SPACE MEDIA, stock photos, creative assets" />
   <link rel="canonical" href="https://spacemedia.ps/listings" />
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Listings - Seller Dashboard | SPACE MEDIA" />
-  <meta property="og:description" content="Manage your listings on SPACE MEDIA. Easily view, filter, and update your stock photos, videos, and creative assets." />
+  <meta property="og:description"
+    content="Manage your listings on SPACE MEDIA. Easily view, filter, and update your stock photos, videos, and creative assets." />
   <meta property="og:url" content="https://spacemedia.ps/listings" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="img/logo.png" />
@@ -26,14 +28,13 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/admin.css" />
 
-  
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="loader"></div>
-    </div>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
   <!-- Sidebar Navigation (Same as Main Page) -->
   <aside class="sidebar active" aria-label="Sidebar Navigation">
     <div class="logo">
@@ -42,22 +43,37 @@
     </div>
     <nav>
       <ul>
+        <!-- Dashboard -->
         <li>
-          <a href="index.html">
+          <a href="index.html" class="active">
             <div class="icon-side">
               <i class="fas fa-tachometer-alt"></i>
             </div>
             <span>Dashboard</span>
           </a>
         </li>
+
+        <!-- Listings -->
+        <li class="sidebar-section-title">Listings</li>
         <li>
-          <a href="listings.html" class="active">
+          <a href="listings.html">
             <div class="icon-side">
               <i class="fas fa-images"></i>
             </div>
-            <span>Listings</span>
+            <span>All Listings</span>
           </a>
         </li>
+        <li>
+          <a href="add-listing.html">
+            <div class="icon-side">
+              <i class="fas fa-plus-circle"></i>
+            </div>
+            <span>Add New Listing</span>
+          </a>
+        </li>
+
+        <!-- Sales & Purchases -->
+        <li class="sidebar-section-title">Sales & Purchases</li>
         <li>
           <a href="sales.html">
             <div class="icon-side">
@@ -67,11 +83,81 @@
           </a>
         </li>
         <li>
+          <a href="purchases.html">
+            <div class="icon-side">
+              <i class="fas fa-shopping-basket"></i>
+            </div>
+            <span>Purchases</span>
+          </a>
+        </li>
+        <li>
+          <a href="transactions.html">
+            <div class="icon-side">
+              <i class="fas fa-exchange-alt"></i>
+            </div>
+            <span>Transactions</span>
+          </a>
+        </li>
+
+        <!-- Financials -->
+        <li class="sidebar-section-title">Financials</li>
+        <li>
           <a href="revenue.html">
             <div class="icon-side">
               <i class="fas fa-dollar-sign"></i>
             </div>
             <span>Revenue</span>
+          </a>
+        </li>
+        <li>
+          <a href="deposit.html">
+            <div class="icon-side">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <span>Deposit</span>
+          </a>
+        </li>
+        <li>
+          <a href="withdraw.html">
+            <div class="icon-side">
+              <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <span>Withdraw</span>
+          </a>
+        </li>
+        <li>
+          <a href="checkout.html">
+            <div class="icon-side">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <span>Checkout</span>
+          </a>
+        </li>
+
+        <!-- User Management -->
+        <li class="sidebar-section-title">User Management</li>
+        <li>
+          <a href="profile.html">
+            <div class="icon-side">
+              <i class="fas fa-user"></i>
+            </div>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="settings.html">
+            <div class="icon-side">
+              <i class="fas fa-cog"></i>
+            </div>
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="notifications.html">
+            <div class="icon-side">
+              <i class="fas fa-bell"></i>
+            </div>
+            <span>Notifications</span>
           </a>
         </li>
         <li>
@@ -82,12 +168,26 @@
             <span>Messages</span>
           </a>
         </li>
+
+        <!-- Analytics & Reports -->
+        <li class="sidebar-section-title">Analytics & Reports</li>
         <li>
-          <a href="settings.html">
+          <a href="analytics.html">
             <div class="icon-side">
-              <i class="fas fa-cog"></i>
+              <i class="fas fa-chart-line"></i>
             </div>
-            <span>Settings</span>
+            <span>Analytics</span>
+          </a>
+        </li>
+
+        <!-- Support & Help -->
+        <li class="sidebar-section-title">Support & Help</li>
+        <li>
+          <a href="help.html">
+            <div class="icon-side">
+              <i class="fas fa-life-ring"></i>
+            </div>
+            <span>Help</span>
           </a>
         </li>
       </ul>
@@ -114,7 +214,8 @@
         <!-- Right Section: Notifications & Messages -->
         <div class="header-right">
           <div class="icon-wrapper notifications">
-            <a href="#" class="notifications-icon" aria-haspopup="true" aria-expanded="false" aria-label="Notifications">
+            <a href="#" class="notifications-icon" aria-haspopup="true" aria-expanded="false"
+              aria-label="Notifications">
               <i class="fas fa-bell"></i>
               <span class="badge">3</span>
             </a>
@@ -172,7 +273,8 @@
       <div class="filter-section mb-4">
         <form id="filterForm" class="filter-form row g-2">
           <div class="col-md-3">
-            <input type="search" name="search" class="form-control" placeholder="Search Listings..." aria-label="Search Listings" />
+            <input type="search" name="search" class="form-control" placeholder="Search Listings..."
+              aria-label="Search Listings" />
           </div>
           <div class="col-md-3">
             <select name="category" class="form-select" aria-label="Filter by Category">

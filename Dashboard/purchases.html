@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchases - SPACE MEDIA</title>
+    <meta name="description"
+        content="View and manage your purchases on SPACE MEDIA. Monitor your orders, check status, and view purchase statistics in a professional dashboard interface.">
+    <meta name="keywords" content="purchases, dashboard, SPACE MEDIA, orders, purchase history, digital assets">
+    <link rel="canonical" href="https://spacemedia.ps/purchases.html">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:title" content="Purchases - SPACE MEDIA">
+    <meta property="og:description"
+        content="View and manage your purchases on SPACE MEDIA with our professional dashboard interface.">
+    <meta property="og:url" content="https://spacemedia.ps/purchases.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/logo.png">
+
+    <!-- External CSS Files -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- Inline CSS for Additional Purchases Page Elements -->
+    <style>
+    
+  
+
+        .purchase-filters .form-label {
+            margin: 0;
+        }
+
+      
+
+        /* ----- Purchase Filters Section ----- */
+        .purchase-filters {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+
+
+        /* ----- Monthly Purchase Trend Chart ----- */
+        .chart-container {
+            margin: 30px 0;
+            background: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .chart-container canvas {
+            width: 100% !important;
+            height: 300px !important;
+        }
+
+        /* ----- Purchases Table Styling ----- */
+        .purchases-table-section {
+            margin-bottom: 30px;
+        }
+
+        .purchases-table-section .table {
+            background: var(--background-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .purchases-table-section .table thead {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .purchases-table-section .table th,
+        .purchases-table-section .table td {
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+
+        .purchases-table-section .table tbody tr:hover {
+            background: #f7f7f7;
+        }
+
+        /* ========== Purchase Modal Styles ========== */
+        .purchase-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            z-index: 1050;
+        }
+
+        /* Activate modal by adding the .active class */
+        .purchase-modal.active {
+            display: flex;
+        }
+
+        .purchase-modal-content {
+            background: #fff;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: modalFadeIn 0.4s ease;
+        }
+
+        /* Modal appearance animation */
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modal Header Styling */
+        .purchase-modal-header {
+            padding: 16px 24px;
+            background: var(--primary-color);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .purchase-modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Close Button Styling */
+        .purchase-modal-close {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Modal Body Styling */
+        .purchase-modal-body {
+            padding: 20px 24px;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .purchase-modal-body p {
+            margin: 10px 0;
+        }
+
+        .purchase-modal-body hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+
+        /* Modal Footer Styling */
+        .purchase-modal-footer {
+            padding: 16px 24px;
+            background: var(--secondary-background-color);
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar active" aria-label="Sidebar Navigation">
+        <div class="logo">
+            <img src="img/logo.png" alt="SPACE MEDIA Logo" class="show-in-desktop">
+            <img src="img/favicon.png" alt="SPACE MEDIA Logo" class="show-in-mobile" loading="lazy">
+        </div>
+        <nav>
+            <ul>
+                <!-- Dashboard -->
+                <li>
+                    <a href="index.html">
+                        <div class="icon-side"><i class="fas fa-tachometer-alt"></i></div>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <!-- Listings -->
+                <li class="sidebar-section-title">Listings</li>
+                <li>
+                    <a href="listings.html">
+                        <div class="icon-side"><i class="fas fa-images"></i></div>
+                        <span>All Listings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="add-listing.html">
+                        <div class="icon-side"><i class="fas fa-plus-circle"></i></div>
+                        <span>Add New Listing</span>
+                    </a>
+                </li>
+                <!-- Sales & Purchases -->
+                <li class="sidebar-section-title">Sales & Purchases</li>
+                <li>
+                    <a href="sales.html">
+                        <div class="icon-side"><i class="fas fa-shopping-cart"></i></div>
+                        <span>Sales</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="purchases.html" class="active">
+                        <div class="icon-side"><i class="fas fa-shopping-basket"></i></div>
+                        <span>Purchases</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transactions.html">
+                        <div class="icon-side"><i class="fas fa-exchange-alt"></i></div>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+                <!-- Financials -->
+                <li class="sidebar-section-title">Financials</li>
+                <li>
+                    <a href="revenue.html">
+                        <div class="icon-side"><i class="fas fa-dollar-sign"></i></div>
+                        <span>Revenue</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="deposit.html">
+                        <div class="icon-side"><i class="fas fa-wallet"></i></div>
+                        <span>Deposit</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="withdraw.html">
+                        <div class="icon-side"><i class="fas fa-hand-holding-usd"></i></div>
+                        <span>Withdraw</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="checkout.html">
+                        <div class="icon-side"><i class="fas fa-credit-card"></i></div>
+                        <span>Checkout</span>
+                    </a>
+                </li>
+                <!-- User Management -->
+                <li class="sidebar-section-title">User Management</li>
+                <li>
+                    <a href="profile.html">
+                        <div class="icon-side"><i class="fas fa-user"></i></div>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html">
+                        <div class="icon-side"><i class="fas fa-cog"></i></div>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <div class="icon-side"><i class="fas fa-bell"></i></div>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="messages.html">
+                        <div class="icon-side"><i class="fas fa-envelope"></i></div>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <!-- Analytics & Reports -->
+                <li class="sidebar-section-title">Analytics & Reports</li>
+                <li>
+                    <a href="analytics.html">
+                        <div class="icon-side"><i class="fas fa-chart-line"></i></div>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <!-- Support & Help -->
+                <li class="sidebar-section-title">Support & Help</li>
+                <li>
+                    <a href="help.html">
+                        <div class="icon-side"><i class="fas fa-life-ring"></i></div>
+                        <span>Help</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Dashboard Content -->
+    <main class="main-content active">
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+            <div class="header-container">
+                <!-- Left Section: Hamburger Icon and Search Box -->
+                <div class="header-left">
+                    <button class="hamburger" aria-label="Toggle Sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="search-box">
+                        <input class="form-control" type="search" placeholder="Search listings, sales, messages..."
+                            aria-label="Search">
+                        <button class="search-btn" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Right Section: Notifications and Messages -->
+                <div class="header-right">
+                    <div class="icon-wrapper notifications">
+                        <a href="#" class="notifications-icon" aria-haspopup="true" aria-expanded="false"
+                            aria-label="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </a>
+                        <div class="dropdown notifications-dropdown">
+                            <div class="dropdown-header">Notifications</div>
+                            <ul class="notifications-list">
+                                <li class="notification-item">
+                                    <img src="img/team/1.jpg" alt="John Doe" class="notification-avatar" loading="lazy">
+                                    <div class="notification-content">
+                                        <p class="notification-text">John Doe placed a new order.</p>
+                                        <span class="notification-time">5 min ago</span>
+                                    </div>
+                                </li>
+                                <li class="notification-item">
+                                    <img src="img/team/2.jpg" alt="Jane Smith" class="notification-avatar"
+                                        loading="lazy">
+                                    <div class="notification-content">
+                                        <p class="notification-text">Your photo was approved.</p>
+                                        <span class="notification-time">20 min ago</span>
+                                    </div>
+                                </li>
+                                <li class="notification-item">
+                                    <img src="img/team/3.jpg" alt="Alice" class="notification-avatar" loading="lazy">
+                                    <div class="notification-content">
+                                        <p class="notification-text">Alice commented on your listing.</p>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="icon-wrapper messages">
+                        <a href="#" class="messages-icon" aria-haspopup="true" aria-expanded="false"
+                            aria-label="Messages">
+                            <i class="fas fa-envelope"></i>
+                            <span class="badge">2</span>
+                        </a>
+                        <div class="dropdown messages-dropdown">
+                            <div class="dropdown-header">Messages</div>
+                            <ul class="messages-list">
+                                <li class="message-item">
+                                    <img src="img/team/4.jpg" alt="Alice Johnson" class="message-avatar" loading="lazy">
+                                    <div class="message-content">
+                                        <p class="message-sender">Alice Johnson</p>
+                                        <p class="message-snippet">Hi, your recent upload looks fantastic! Can we
+                                            discuss...</p>
+                                        <span class="message-time">10 min ago</span>
+                                    </div>
+                                </li>
+                                <li class="message-item">
+                                    <img src="img/team/5.jpg" alt="Mark Wilson" class="message-avatar" loading="lazy">
+                                    <div class="message-content">
+                                        <p class="message-sender">Mark Wilson</p>
+                                        <p class="message-snippet">I have a question about the pricing...</p>
+                                        <span class="message-time">30 min ago</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== Purchases Section ===== -->
+        <section class="purchases-section my-5 p-0">
+            <!-- Section Title -->
+            <h2 class="section-title-dahsboard">Your Purchases</h2>
+
+            <!-- Purchase Filters -->
+            <div class="purchase-filters">
+                <div class="d-flex align-items-center gap-2">
+                    <label class="form-label" for="filter-start">Date:</label>
+                    <input class="form-control" type="date" id="filter-start" name="filter-start">
+                    <span>to</span>
+                    <input class="form-control" type="date" id="filter-end" name="filter-end">
+                    <label class="form-label" for="filter-status">Status:</label>
+                    <select id="filter-status" class="form-select" name="filter-status">
+                        <option value="">All</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                        <option value="failed">Failed</option>
+                    </select>
+                </div>
+                <div class="buttons-group">
+                    <button class="btn btn-secondary reset-filter" id="reset-filters">Reset</button>
+                    <button class="btn btn-primary apply-filter" id="apply-filters">Apply Filters</button>
+                </div>
+            </div>
+
+            <!-- Statistics Cards Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-shopping-basket"></i></div>
+                    <div class="stat-info">
+                        <h3>Total Purchases</h3>
+                        <p>87</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="stat-info">
+                        <h3>Total Spent</h3>
+                        <p>$2,300</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-box"></i></div>
+                    <div class="stat-info">
+                        <h3>Items Received</h3>
+                        <p>90</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Purchase Trend Chart -->
+            
+            
+            <div class="charts-container flex-column mt-4 gap-0">
+                <h3 class="section-title-dahsboard">Monthly Purchase Trend</h3>
+                <div class="chart-card">
+                <canvas id="purchaseTrendChart"></canvas>
+            </div>
+        </div>
+            <!-- Purchases Table -->
+            <div class="purchases-table-section">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Order ID</th>
+                                <th>Item</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Purchase Row -->
+                            <tr class="purchase-row" data-order-id="ORD12345">
+                                <td>2025-05-01</td>
+                                <td>ORD12345</td>
+                                <td>Stock Photo - Sunrise</td>
+                                <td>$50</td>
+                                <td><span class="status completed"><i class="fas fa-check-circle"></i> Delivered</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-details">View Details</button>
+                                </td>
+                            </tr>
+                            <tr class="purchase-row" data-order-id="ORD12346">
+                                <td>2025-05-03</td>
+                                <td>ORD12346</td>
+                                <td>Stock Video - Ocean Waves</td>
+                                <td>$120</td>
+                                <td><span class="status pending"><i class="fas fa-clock"></i> Processing</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-details">View Details</button>
+                                </td>
+                            </tr>
+                            <tr class="purchase-row" data-order-id="ORD12347">
+                                <td>2025-05-05</td>
+                                <td>ORD12347</td>
+                                <td>Stock Photo - Mountain</td>
+                                <td>$75</td>
+                                <td><span class="status completed"><i class="fas fa-check-circle"></i> Delivered</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-details">View Details</button>
+                                </td>
+                            </tr>
+                            <!-- More purchase rows can be dynamically generated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-container text-center mt-4">
+                <nav aria-label="Listings Pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- Purchase Details Modal using the existing id "purchaseModal" -->
+    <div class="purchase-modal" id="purchaseModal">
+        <div class="purchase-modal-content">
+            <!-- Modal Header -->
+            <div class="purchase-modal-header">
+                <h2>Purchase Details</h2>
+                <!-- Close button with an icon -->
+                <button class="purchase-modal-close" id="modalCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="purchase-modal-body">
+                <p><strong>Order ID:</strong> <span id="modalOrderId">ORD12345</span></p>
+                <p><strong>Date:</strong> <span id="modalDate">2025-05-01</span></p>
+                <p><strong>Item:</strong> <span id="modalItem">Stock Photo - Sunrise</span></p>
+                <p><strong>Amount:</strong> <span id="modalAmount">$50</span></p>
+                <p><strong>Status:</strong> <span id="modalStatus">Delivered</span></p>
+                <hr>
+                <p><strong>Description:</strong></p>
+                <p id="modalDescription">
+                    Detailed information about the purchase order. This section may include invoice details, download
+                    links, and additional notes.
+                </p>
+            </div>
+            <!-- Modal Footer -->
+            <div class="purchase-modal-footer">
+                <button class="btn btn-secondary" id="downloadInvoice">
+                    <i class="fas fa-download"></i> Download Invoice
+                </button>
+                <button class="btn btn-primary" id="purchaseModalCloseBtn">
+                    <i class="fas fa-check"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/jquery-3.7.1.min.js" defer></script>
+    <script src="js/owl.carousel.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/admin.js" defer></script>
+
+    <!-- Custom JS for Purchases Page -->
+    <script>
+        // Initialize Purchase Trend Chart using Chart.js
+        const ctx = document.getElementById('purchaseTrendChart').getContext('2d');
+        const purchaseTrendChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Purchases',
+                    data: [10, 15, 8, 20, 18, 25],
+                    backgroundColor: 'rgba(50, 43, 131, 0.2)',
+                    borderColor: 'rgba(50, 43, 131, 1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+        // Purchase Details Modal Logic
+        const modal = document.getElementById('purchaseModal');
+        const closeModalElements = document.querySelectorAll('#modalCloseBtn, #purchaseModalCloseBtn');
+        const viewDetailButtons = document.querySelectorAll('.view-details');
+        // Function to open modal and populate purchase data
+        function openModal(orderId, date, item, amount, status, description) {
+            document.getElementById('modalOrderId').textContent = orderId;
+            document.getElementById('modalDate').textContent = date;
+            document.getElementById('modalItem').textContent = item;
+            document.getElementById('modalAmount').textContent = amount;
+            document.getElementById('modalStatus').textContent = status;
+            document.getElementById('modalDescription').textContent = description;
+            modal.classList.add('active');
+        }
+        // Add click event to each "View Details" button
+        viewDetailButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // For demo purposes, using static data. Replace with dynamic data retrieval as needed.
+                const row = this.closest('.purchase-row');
+                const orderId = row.querySelector('td:nth-child(2)').textContent;
+                const date = row.querySelector('td:nth-child(1)').textContent;
+                const item = row.querySelector('td:nth-child(3)').textContent;
+                const amount = row.querySelector('td:nth-child(4)').textContent;
+                const statusText = row.querySelector('td:nth-child(5)').textContent.trim();
+                const description =
+                    "This is a detailed description of the purchase order. It may include download links, invoice details, and additional notes.";
+                openModal(orderId, date, item, amount, statusText, description);
+            });
+        });
+        // Event listeners to close modal
+        closeModalElements.forEach(elem => {
+            elem.addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+        });
+        // Close modal if user clicks outside the modal content
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

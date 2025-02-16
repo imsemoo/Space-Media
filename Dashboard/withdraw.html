@@ -5,16 +5,16 @@
   <!-- Basic Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Revenue - Seller Dashboard | SPACE MEDIA</title>
-  <meta name="description" content="View and manage your revenue on SPACE MEDIA. See your gross revenue, fees, net earnings, and payout history for your creative assets." />
-  <meta name="keywords" content="revenue, seller dashboard, SPACE MEDIA, earnings, fees, payouts, revenue transactions" />
-  <link rel="canonical" href="https://spacemedia.ps/revenue" />
+  <title>Withdraw - Seller Dashboard | SPACE MEDIA</title>
+  <meta name="description" content="Withdraw funds from your SPACE MEDIA account securely using various payment methods including credit cards, PayPal, and bank transfer. Review your withdrawal history and trends." />
+  <meta name="keywords" content="withdraw, seller dashboard, SPACE MEDIA, withdrawal, bank transfer, PayPal, credit card" />
+  <link rel="canonical" href="https://spacemedia.ps/withdraw" />
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Revenue - Seller Dashboard | SPACE MEDIA" />
-  <meta property="og:description" content="View and manage your revenue on SPACE MEDIA. See your gross revenue, fees, net earnings, and payout history for your creative assets." />
-  <meta property="og:url" content="https://spacemedia.ps/revenue" />
+  <meta property="og:title" content="Withdraw - Seller Dashboard | SPACE MEDIA" />
+  <meta property="og:description" content="Withdraw funds from your SPACE MEDIA account securely using various payment methods and review your withdrawal history and trends." />
+  <meta property="og:url" content="https://spacemedia.ps/withdraw" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="img/logo.png" />
 
@@ -26,12 +26,12 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/admin.css" />
 
- 
+   
 </head>
 
 <body>
-  <!-- Preloader -->
-  <div id="preloader">
+   <!-- Preloader -->
+   <div id="preloader">
     <div class="loader"></div>
   </div>
   <!-- Sidebar Navigation (Same as Main Page) -->
@@ -193,7 +193,6 @@
     </nav>
   </aside>
 
-
   <!-- Main Content Area -->
   <main class="main-content active">
     <!-- Dashboard Header (Reused) -->
@@ -201,10 +200,14 @@
       <div class="header-container">
         <!-- Left Section: Hamburger & Search Box -->
         <div class="header-left">
-          <button class="hamburger" aria-label="Toggle Sidebar"><i class="fas fa-bars"></i></button>
+          <button class="hamburger" aria-label="Toggle Sidebar">
+            <i class="fas fa-bars"></i>
+          </button>
           <div class="search-box">
-            <input type="search" placeholder="Search listings, sales, messages..." aria-label="Search Listings" />
-            <button class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+            <input type="search" placeholder="Search listings, sales, messages..." aria-label="Search Listings">
+            <button class="search-btn" aria-label="Search">
+              <i class="fas fa-search"></i>
+            </button>
           </div>
         </div>
         <!-- Right Section: Notifications & Messages -->
@@ -218,7 +221,7 @@
               <div class="dropdown-header">Notifications</div>
               <ul class="notifications-list">
                 <li class="notification-item">
-                  <img src="img/team/1.jpg" alt="John Doe" class="notification-avatar" loading="lazy" />
+                  <img src="img/team/1.jpg" alt="John Doe" class="notification-avatar" loading="lazy">
                   <div class="notification-content">
                     <p class="notification-text">John Doe placed a new order.</p>
                     <span class="notification-time">5 min ago</span>
@@ -237,7 +240,7 @@
               <div class="dropdown-header">Messages</div>
               <ul class="messages-list">
                 <li class="message-item">
-                  <img src="img/team/4.jpg" alt="Alice Johnson" class="message-avatar" loading="lazy" />
+                  <img src="img/team/4.jpg" alt="Alice Johnson" class="message-avatar" loading="lazy">
                   <div class="message-content">
                     <p class="message-sender">Alice Johnson</p>
                     <p class="message-snippet">Hi, your recent upload looks fantastic! Can we discuss...</p>
@@ -252,155 +255,175 @@
       </div>
     </header>
 
-    <!-- Revenue Section -->
-    <section id="revenue" class="container my-5 p-0">
-      <div class="header-section d-flex justify-content-between align-items-center mb-4">
-        <h2 class="section-title-dahsboard">Revenue Overview</h2>
-        <a href="#" class="btn btn-secondary">Export CSV</a>
-      </div>
-
-      <!-- Revenue Summary Cards -->
-      <div class="revenue-summary mb-4">
-        <div class="row g-4">
-          <div class="col-md-3">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
-              <div class="stat-info">
-                <h3>Gross Revenue</h3>
-                <p>$25,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fas fa-hand-holding-usd"></i></div>
-              <div class="stat-info">
-                <h3>Total Fees</h3>
-                <p>$2,500</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fas fa-wallet"></i></div>
-              <div class="stat-info">
-                <h3>Net Revenue</h3>
-                <p>$22,500</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fas fa-handshake"></i></div>
-              <div class="stat-info">
-                <h3>Payouts</h3>
-                <p>$18,000</p>
-              </div>
-            </div>
-          </div>
+    <!-- Withdraw Section -->
+    <section id="withdraw" class="p-0 my-5">
+      <!-- Withdraw Summary -->
+      <div class="withdraw-summary">
+        <div class="summary-card">
+          <h4>Available Balance</h4>
+          <p>$5,200</p>
+        </div>
+        <div class="summary-card">
+          <h4>Pending Withdrawals</h4>
+          <p>$150</p>
+        </div>
+        <div class="summary-card">
+          <h4>Total Withdrawn</h4>
+          <p>$10,000</p>
+        </div>
+        <div class="summary-card">
+          <h4>Last Withdrawal</h4>
+          <p>$400</p>
         </div>
       </div>
 
-      <!-- Revenue Charts -->
-      <div class="charts-container mb-4">
-          <div>
-            <h2 class="section-title-dahsboard">Monthly Revenue Trend</h2>
-            <div class="chart-card">
-              <canvas id="revenueTrendChart"></canvas>
-            </div>
-          </div>
-          <div>
-            <h2 class="section-title-dahsboard">Revenue Breakdown</h2>
-            <div class="chart-card">
-              <canvas id="revenueBreakdownChart"></canvas>
-            </div>
-          </div>
+      <!-- Withdraw Guidelines -->
+      <div class="withdraw-guidelines">
+        <strong>Withdrawal Instructions:</strong>
+        <ul>
+          <li>Ensure you have sufficient available balance before requesting a withdrawal.</li>
+          <li>Supported methods include Credit Card (Visa), PayPal, and Bank Transfer.</li>
+          <li>Withdrawals may take up to 3 business days to process.</li>
+          <li>Verify your withdrawal details carefully before submission.</li>
+        </ul>
       </div>
 
-
-      <!-- Revenue Filter -->
-      <div class="filter-section mb-4">
-        <form id="revenueFilterForm" class="filter-form row g-2">
-          <div class="col-md-3">
-            <input type="date" name="fromDate" class="form-control" placeholder="From Date" required>
+      <!-- Withdraw Form -->
+      <div class="withdraw-container withdraw-form">
+        <h4>Request Withdrawal</h4>
+        <form id="withdrawForm" action="#" method="POST">
+          <div class="mb-3">
+            <label for="withdrawAmount" class="form-label"><i class="fas fa-money-check-alt"></i> Withdrawal Amount (USD)</label>
+            <input type="number" class="form-control" id="withdrawAmount" name="withdrawAmount" placeholder="Enter amount" min="1" step="0.01" required>
           </div>
-          <div class="col-md-3">
-            <input type="date" name="toDate" class="form-control" placeholder="To Date" required>
-          </div>
-          <div class="col-md-3">
-            <select name="revenueType" class="form-select" aria-label="Filter by Revenue Type">
-              <option value="">All Types</option>
-              <option value="sales">Sales</option>
-              <option value="subscriptions">Subscriptions</option>
-              <option value="others">Others</option>
+          <div class="mb-3">
+            <label for="currency" class="form-label"><i class="fas fa-globe"></i> Currency</label>
+            <select class="form-select" id="currency" name="currency" required>
+              <option value="USD" selected>USD</option>
+              <!-- Additional currencies if needed -->
             </select>
           </div>
-          <div class="col-md-3">
-            <button type="submit" class="btn btn-secondary w-100">Filter</button>
+          <div class="mb-3">
+            <label for="withdrawMethod" class="form-label"><i class="fas fa-credit-card"></i> Withdrawal Method</label>
+            <select class="form-select" id="withdrawMethod" name="withdrawMethod" required>
+              <option value="">Select Withdrawal Method</option>
+              <option value="creditCard">Credit Card (Visa)</option>
+              <option value="paypal">PayPal</option>
+              <option value="bankTransfer">Bank Transfer</option>
+            </select>
           </div>
+          <!-- Credit Card Details Section -->
+          <div class="credit-card-details" id="withdrawCreditCardDetails" style="display: none;">
+            <h5><i class="fas fa-credit-card"></i> Credit Card Details</h5>
+            <div class="mb-3">
+              <label for="withdrawCardNumber" class="form-label">Card Number</label>
+              <input type="text" class="form-control" id="withdrawCardNumber" name="withdrawCardNumber" placeholder="Enter card number">
+            </div>
+            <div class="mb-3">
+              <label for="withdrawCardExpiry" class="form-label">Expiry Date</label>
+              <input type="text" class="form-control" id="withdrawCardExpiry" name="withdrawCardExpiry" placeholder="MM/YY">
+            </div>
+            <div class="mb-3">
+              <label for="withdrawCardCVV" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="withdrawCardCVV" name="withdrawCardCVV" placeholder="Enter CVV">
+            </div>
+            <div class="mb-3">
+              <label for="withdrawCardHolder" class="form-label">Card Holder Name</label>
+              <input type="text" class="form-control" id="withdrawCardHolder" name="withdrawCardHolder" placeholder="Name on card">
+            </div>
+          </div>
+          <!-- PayPal Details Section -->
+          <div class="paypal-details" id="withdrawPaypalDetails" style="display: none;">
+            <h5><i class="fab fa-paypal"></i> PayPal Details</h5>
+            <div class="mb-3">
+              <label for="withdrawPaypalEmail" class="form-label">PayPal Email</label>
+              <input type="email" class="form-control" id="withdrawPaypalEmail" name="withdrawPaypalEmail" placeholder="Enter your PayPal email">
+            </div>
+          </div>
+          <!-- Bank Transfer Details Section -->
+          <div class="bank-transfer-details" id="withdrawBankTransferDetails" style="display: none;">
+            <h5><i class="fas fa-university"></i> Bank Transfer Details</h5>
+            <div class="mb-3">
+              <label for="withdrawBankName" class="form-label">Bank Name</label>
+              <input type="text" class="form-control" id="withdrawBankName" name="withdrawBankName" placeholder="Enter your bank name">
+            </div>
+            <div class="mb-3">
+              <label for="withdrawBankAccount" class="form-label">Bank Account Number</label>
+              <input type="text" class="form-control" id="withdrawBankAccount" name="withdrawBankAccount" placeholder="Enter your bank account number">
+            </div>
+            <div class="mb-3">
+              <label for="withdrawBankRouting" class="form-label">Bank Routing Number</label>
+              <input type="text" class="form-control" id="withdrawBankRouting" name="withdrawBankRouting" placeholder="Enter your bank routing number">
+            </div>
+            <div class="mb-3">
+              <label for="withdrawAccountHolder" class="form-label">Account Holder Name</label>
+              <input type="text" class="form-control" id="withdrawAccountHolder" name="withdrawAccountHolder" placeholder="Enter account holder's name">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="withdrawNotes" class="form-label"><i class="fas fa-sticky-note"></i> Notes (Optional)</label>
+            <textarea class="form-control" id="withdrawNotes" name="withdrawNotes" rows="3" placeholder="Any additional details or instructions"></textarea>
+          </div>
+          <button type="submit" class="btn btn-withdraw">Submit Withdrawal</button>
         </form>
       </div>
 
-      <!-- Revenue Transactions Table -->
+
+      <!-- Withdraw History Table -->
       <div class="table-responsive">
+        <h4 class="section-title-dahsboard mb-3">Withdrawal History</h4>
         <table class="table table-striped table-hover">
           <thead class="thead-light">
             <tr>
               <th>Date</th>
-              <th>Transaction ID</th>
-              <th>Source</th>
-              <th>Gross</th>
-              <th>Fees</th>
-              <th>Net</th>
-              <th>Payment Method</th>
-              <th>Actions</th>
+              <th>Withdrawal ID</th>
+              <th>Amount</th>
+              <th>Method</th>
+              <th>Status</th>
+              <th>Fee</th>
+              <th>Net Amount</th>
+              <th>Details</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>2025-04-01</td>
-              <td>REV001</td>
-              <td>Sales</td>
-              <td>$1,000</td>
-              <td>$100</td>
-              <td>$900</td>
-              <td>Credit Card</td>
-              <td>
-                <a href="#" class="btn btn-sm btn-outline-primary">View</a>
-              </td>
+              <td>2025-04-05</td>
+              <td>WIT001</td>
+              <td>$400</td>
+              <td><i class="fas fa-credit-card"></i> Credit Card</td>
+              <td><span class="badge bg-success">Completed</span></td>
+              <td>$8</td>
+              <td>$392</td>
+              <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
             </tr>
             <tr>
-              <td>2025-04-02</td>
-              <td>REV002</td>
-              <td>Subscriptions</td>
-              <td>$500</td>
-              <td>$50</td>
-              <td>$450</td>
-              <td>PayPal</td>
-              <td>
-                <a href="#" class="btn btn-sm btn-outline-primary">View</a>
-              </td>
+              <td>2025-04-07</td>
+              <td>WIT002</td>
+              <td>$250</td>
+              <td><i class="fab fa-paypal"></i> PayPal</td>
+              <td><span class="badge bg-warning">Pending</span></td>
+              <td>$5</td>
+              <td>$245</td>
+              <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
             </tr>
             <tr>
-              <td>2025-04-03</td>
-              <td>REV003</td>
-              <td>Others</td>
-              <td>$750</td>
-              <td>$75</td>
-              <td>$675</td>
-              <td>Credit Card</td>
-              <td>
-                <a href="#" class="btn btn-sm btn-outline-primary">View</a>
-              </td>
+              <td>2025-04-10</td>
+              <td>WIT003</td>
+              <td>$300</td>
+              <td><i class="fas fa-university"></i> Bank Transfer</td>
+              <td><span class="badge bg-danger">Failed</span></td>
+              <td>$0</td>
+              <td>$0</td>
+              <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
             </tr>
-            <!-- More revenue rows can be added here -->
+            <!-- More withdrawal rows can be added here -->
           </tbody>
         </table>
       </div>
 
       <!-- Pagination -->
       <div class="pagination-container text-center mt-4">
-        <nav aria-label="Revenue Pagination">
+        <nav aria-label="Withdrawal Pagination">
           <ul class="pagination justify-content-center">
             <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li>
             <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -414,59 +437,15 @@
   </main>
 
   <!-- External JS Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="js/jquery-3.7.1.min.js" defer></script>
   <script src="js/owl.carousel.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-  <script src="js/bootstrap.bundle.min.js" defer></script>
   <script src="js/admin.js" defer></script>
 
-  <!-- Revenue Trend Chart Script -->
-  <script>
-    const ctxTrend = document.getElementById('revenueTrendChart').getContext('2d');
-    const revenueTrendChart = new Chart(ctxTrend, {
-      type: 'line',
-      data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        datasets: [{
-          label: 'Gross Revenue',
-          data: [2000, 2200, 2500, 2400, 2600, 2800, 3000, 2900, 2700, 2500, 2400, 2600],
-          backgroundColor: 'rgba(50, 43, 131, 0.1)',
-          borderColor: '#322b83',
-          borderWidth: 2,
-          fill: true,
-          tension: 0.3
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: { y: { beginAtZero: true } }
-      }
-    });
-  </script>
 
-  <!-- Revenue Breakdown Chart Script -->
-  <script>
-    const ctxBreakdown = document.getElementById('revenueBreakdownChart').getContext('2d');
-    const revenueBreakdownChart = new Chart(ctxBreakdown, {
-      type: 'doughnut',
-      data: {
-        labels: ['Sales', 'Subscriptions', 'Others'],
-        datasets: [{
-          label: 'Revenue Breakdown',
-          data: [60, 25, 15],
-          backgroundColor: ['#36a2eb', '#ffce56', '#ff6384'],
-          borderColor: '#fff',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { position: 'bottom' } }
-      }
-    });
-  </script>
+
 </body>
 
 </html>

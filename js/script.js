@@ -1,18 +1,24 @@
-$(document).ready(function () {
-  $(".articles-slider").owlCarousel({
-    loop: true,
-    nav: true,
-    dots: false,
-    navText: [
-      '<i class="fas fa-arrow-left"></i>',
-      '<i class="fas fa-arrow-right"></i>'
-    ],
-    responsive: {
-      0: { items: 1 },
-      600: { items: 2 },
-      1000: { items: 3 }
+$(function () {
+  /* ======================================================
+     Payment Method Toggle on Checkout
+  ====================================================== */
+  $('#paymentMethodCheckout').on('change', function () {
+    const method = $(this).val();
+    // Hide both payment details sections
+    $('#creditCardDetails, #paypalDetails').slideUp();
+    // Show the selected method's details
+    if (method === 'creditCard') {
+      $('#creditCardDetails').slideDown();
+    } else if (method === 'paypal') {
+      $('#paypalDetails').slideDown();
     }
-  }); $(".team-slider").owlCarousel({
+  });
+
+  /* ======================================================
+     Owl Carousel Initializations
+  ====================================================== */
+  // Initialize Articles and Team sliders with the same settings
+  $(".articles-slider, .team-slider").owlCarousel({
     loop: true,
     nav: true,
     dots: false,
@@ -26,6 +32,8 @@ $(document).ready(function () {
       1000: { items: 3 }
     }
   });
+
+  // Initialize Testimonial slider with custom settings
   $(".testimonial-slider").owlCarousel({
     loop: true,
     margin: 30,
@@ -36,39 +44,30 @@ $(document).ready(function () {
     smartSpeed: 800,
     animateOut: 'fadeOut',
     animateIn: 'fadeIn',
-    items: 1,  // display one testimonial slide at a time
+    items: 1, // Display one testimonial at a time
     navText: [
       '<i class="fas fa-arrow-left"></i>',
       '<i class="fas fa-arrow-right"></i>'
     ]
   });
 
-
-});
-window.addEventListener("load", function () {
-  const preloader = document.getElementById("preloader");
-  preloader.style.display = "none";
-});
-const collectionPanels = document.querySelectorAll(".collection-panel");
-
-collectionPanels.forEach((panel) => {
-  panel.addEventListener("click", () => {
-    removeActiveClasses();
-    panel.classList.add("active");
-  });
-});
-
-const removeActiveClasses = () => {
-  collectionPanels.forEach((panel) => {
-    panel.classList.remove("active");
-  });
-};
-document.addEventListener("DOMContentLoaded", function () {
-  // Fixed Navbar Animation (unchanged)
-  window.addEventListener("scroll", function () {
-    document.querySelector(".navbar").classList.toggle("fixed-nav", window.scrollY > 50);
+  /* ======================================================
+     Collection Panels - Active State Toggle
+  ====================================================== */
+  $('.collection-panel').on('click', function () {
+    $('.collection-panel').removeClass('active');
+    $(this).addClass('active');
   });
 
+  /* ======================================================
+     Fixed Navbar & GSAP Animations
+  ====================================================== */
+  // Toggle "fixed-nav" class on navbar upon scrolling
+  $(window).on("scroll", function () {
+    $(".navbar").toggleClass("fixed-nav", window.scrollY > 50);
+  });
+
+  // Animate navbar brand and links on page load
   gsap.from(".navbar-brand", {
     duration: 1,
     y: -50,
@@ -84,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ease: "power2.out"
   });
 
-  // Animate Header Section (unchanged)
+  // Animate Header Section with GSAP ScrollTrigger
   gsap.timeline({
     scrollTrigger: {
       trigger: "header.header",
@@ -96,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .from("header.header p", { duration: 1, opacity: 0, y: 50 }, "-=0.7")
     .from("header.header .search-filter", { duration: 1, opacity: 0, y: 50 }, "-=0.7");
 
-  // Animate Featured Media Section (unchanged)
+  // Animate Featured Media Section
   gsap.timeline({
     scrollTrigger: {
       trigger: "#featured-media",
@@ -106,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .from("#featured-media .section-header", { duration: 1, opacity: 0, y: -30, delay: 0.3 })
     .from("#featured-media .media-card", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
 
-  // Animate Thematic Galleries Section (unchanged)
+  // Animate Thematic Galleries Section
   gsap.timeline({
     scrollTrigger: {
       trigger: "#thematic-galleries",
@@ -116,8 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .from("#thematic-galleries .section-header", { duration: 1, opacity: 0, y: -30, delay: 0.3 })
     .from("#thematic-galleries .gallery-card", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
 
-
-  // Animate Latest Updates Section (unchanged)
+  // Animate Latest Updates (Collections) Section
   gsap.timeline({
     scrollTrigger: {
       trigger: "#collections",
@@ -127,8 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .from("#collections .section-header", { duration: 1, opacity: 0, y: -30, delay: 0.3 })
     .from("#collections .collections-container", { duration: 1, opacity: 0, y: 30, stagger: 0.2 }, "-=0.5");
 
-
-  // Animate Articles Section Slider Container Only
+  // Animate Articles Slider Container
   gsap.timeline({
     scrollTrigger: {
       trigger: ".articles-slider",
@@ -138,9 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })
     .from(".articles-slider", { duration: 1, opacity: 0, y: 30, ease: "power2.out" });
 
-
-
-  // Animate Footer Section (optional)
+  // Animate Footer Section
   gsap.from("footer.footer", {
     scrollTrigger: {
       trigger: "footer.footer",
@@ -151,54 +146,53 @@ document.addEventListener("DOMContentLoaded", function () {
     y: 30,
     ease: "power2.out"
   });
-});
 
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const videoCards = document.querySelectorAll(".video-card video");
-
-  videoCards.forEach(video => {
-    video.addEventListener("mouseenter", function () {
-      video.play();
-    });
-    video.addEventListener("mouseleave", function () {
-      video.pause();
-      video.currentTime = 0; // Optionally reset the video to the beginning
-    });
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const cartIcon = document.getElementById("shoppingCartIcon");
-  const cartDropdown = document.getElementById("shoppingCartDropdown");
-
-  // Toggle cart dropdown on icon click
-  cartIcon.addEventListener("click", function (e) {
-    e.preventDefault();
-    cartDropdown.classList.toggle("active");
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener("click", function (e) {
-    if (!cartIcon.contains(e.target) && !cartDropdown.contains(e.target)) {
-      cartDropdown.classList.remove("active");
+  /* ======================================================
+     Video Cards - Play/Pause on Hover
+  ====================================================== */
+  $(".video-card video").on({
+    mouseenter: function () {
+      this.play();
+    },
+    mouseleave: function () {
+      this.pause();
+      this.currentTime = 0; // Reset video to beginning
     }
   });
 
-  // Remove item functionality (for demonstration, simply remove the item from DOM)
-  document.querySelectorAll(".remove-item").forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      const item = this.closest(".cart-item");
-      if (item) {
-        item.remove();
-        // Optionally, update the cart count and total here
-      }
-    });
+  /* ======================================================
+     Shopping Cart Dropdown & Remove Item
+  ====================================================== */
+  const $cartIcon = $("#shoppingCartIcon");
+  const $cartDropdown = $("#shoppingCartDropdown");
+
+  // Toggle cart dropdown when clicking the cart icon
+  $cartIcon.on("click", function (e) {
+    e.preventDefault();
+    $cartDropdown.toggleClass("active");
+  });
+
+  // Close cart dropdown when clicking outside of it or the cart icon
+  $(document).on("click", function (e) {
+    if (
+      !$cartIcon.is(e.target) &&
+      !$cartDropdown.is(e.target) &&
+      !$cartIcon.has(e.target).length &&
+      !$cartDropdown.has(e.target).length
+    ) {
+      $cartDropdown.removeClass("active");
+    }
+  });
+
+  // Remove cart item on clicking the remove button
+  $(".remove-item").on("click", function (e) {
+    e.stopPropagation();
+    $(this).closest(".cart-item").remove();
+    // Optionally update cart count/total here
   });
 });
 
-
+// Hide preloader when the window has fully loaded
+$(window).on("load", function () {
+  $("#preloader").hide();
+});

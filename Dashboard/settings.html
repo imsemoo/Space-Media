@@ -30,7 +30,11 @@
 </head>
 
 <body>
-  <!-- Sidebar Navigation (Reused) -->
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+  <!-- Sidebar Navigation (Same as Main Page) -->
   <aside class="sidebar active" aria-label="Sidebar Navigation">
     <div class="logo">
       <img src="img/logo.png" alt="SPACE MEDIA Logo" class="show-in-desktop" />
@@ -38,40 +42,151 @@
     </div>
     <nav>
       <ul>
+        <!-- Dashboard -->
         <li>
-          <a href="index.html">
-            <div class="icon-side"><i class="fas fa-tachometer-alt"></i></div>
+          <a href="index.html" class="active">
+            <div class="icon-side">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
             <span>Dashboard</span>
           </a>
         </li>
+
+        <!-- Listings -->
+        <li class="sidebar-section-title">Listings</li>
         <li>
           <a href="listings.html">
-            <div class="icon-side"><i class="fas fa-images"></i></div>
-            <span>Listings</span>
+            <div class="icon-side">
+              <i class="fas fa-images"></i>
+            </div>
+            <span>All Listings</span>
           </a>
         </li>
         <li>
+          <a href="add-listing.html">
+            <div class="icon-side">
+              <i class="fas fa-plus-circle"></i>
+            </div>
+            <span>Add New Listing</span>
+          </a>
+        </li>
+
+        <!-- Sales & Purchases -->
+        <li class="sidebar-section-title">Sales & Purchases</li>
+        <li>
           <a href="sales.html">
-            <div class="icon-side"><i class="fas fa-shopping-cart"></i></div>
+            <div class="icon-side">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
             <span>Sales</span>
           </a>
         </li>
         <li>
+          <a href="purchases.html">
+            <div class="icon-side">
+              <i class="fas fa-shopping-basket"></i>
+            </div>
+            <span>Purchases</span>
+          </a>
+        </li>
+        <li>
+          <a href="transactions.html">
+            <div class="icon-side">
+              <i class="fas fa-exchange-alt"></i>
+            </div>
+            <span>Transactions</span>
+          </a>
+        </li>
+
+        <!-- Financials -->
+        <li class="sidebar-section-title">Financials</li>
+        <li>
           <a href="revenue.html">
-            <div class="icon-side"><i class="fas fa-dollar-sign"></i></div>
+            <div class="icon-side">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
             <span>Revenue</span>
           </a>
         </li>
         <li>
-          <a href="messages.html">
-            <div class="icon-side"><i class="fas fa-envelope"></i></div>
-            <span>Messages</span>
+          <a href="deposit.html">
+            <div class="icon-side">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <span>Deposit</span>
           </a>
         </li>
         <li>
-          <a href="settings.html" class="active">
-            <div class="icon-side"><i class="fas fa-cog"></i></div>
+          <a href="withdraw.html">
+            <div class="icon-side">
+              <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <span>Withdraw</span>
+          </a>
+        </li>
+        <li>
+          <a href="checkout.html">
+            <div class="icon-side">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <span>Checkout</span>
+          </a>
+        </li>
+
+        <!-- User Management -->
+        <li class="sidebar-section-title">User Management</li>
+        <li>
+          <a href="profile.html">
+            <div class="icon-side">
+              <i class="fas fa-user"></i>
+            </div>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="settings.html">
+            <div class="icon-side">
+              <i class="fas fa-cog"></i>
+            </div>
             <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="notifications.html">
+            <div class="icon-side">
+              <i class="fas fa-bell"></i>
+            </div>
+            <span>Notifications</span>
+          </a>
+        </li>
+        <li>
+          <a href="messages.html">
+            <div class="icon-side">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <span>Messages</span>
+          </a>
+        </li>
+
+        <!-- Analytics & Reports -->
+        <li class="sidebar-section-title">Analytics & Reports</li>
+        <li>
+          <a href="analytics.html">
+            <div class="icon-side">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <span>Analytics</span>
+          </a>
+        </li>
+
+        <!-- Support & Help -->
+        <li class="sidebar-section-title">Support & Help</li>
+        <li>
+          <a href="help.html">
+            <div class="icon-side">
+              <i class="fas fa-life-ring"></i>
+            </div>
+            <span>Help</span>
           </a>
         </li>
       </ul>

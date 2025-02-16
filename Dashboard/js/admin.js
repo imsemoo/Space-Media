@@ -1,175 +1,204 @@
-$(document).ready(function () {
-  // Script to Toggle Credit Card Details 
+// Run once the DOM is ready
+$(function () {
+  /* ======================================================
+     Payment Method Toggle
+  ====================================================== */
   $('#paymentMethod').on('change', function () {
-    let method = $(this).val();
-    // Hide all detail sections first
+    const method = $(this).val();
+    // Hide all payment details, then show the selected one.
     $('#creditCardDetails, #paypalDetails, #bankTransferDetails').slideUp();
-    // Show the selected one
-    if (method === 'creditCard') {
-      $('#creditCardDetails').slideDown();
-    } else if (method === 'paypal') {
-      $('#paypalDetails').slideDown();
-    } else if (method === 'bankTransfer') {
-      $('#bankTransferDetails').slideDown();
-    }
+    $('#' + method + 'Details').slideDown();
   });
-});
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Select the required elements
-  const hamburger = document.querySelector('.hamburger');
-  const sidebar = document.querySelector('.sidebar');
-  const mainContent = document.querySelector('.main-content');
+  
+  /* ======================================================
+     Sidebar Toggle with GSAP
+  ====================================================== */
+  const $hamburger = $('.hamburger');
+  const $sidebar = $('.sidebar');
+  const $mainContent = $('.main-content');
 
-  // Ensure required elements exist to avoid errors
-  if (!hamburger || !sidebar || !mainContent) {
+  if ($hamburger.length && $sidebar.length && $mainContent.length) {
+    // Set initial sidebar width (if not set via CSS)
+    gsap.set($sidebar, { width: "250px" });
+
+    $hamburger.on('click', function () {
+      $sidebar.toggleClass('active');
+      $mainContent.toggleClass('active');
+
+      // Animate width based on sidebar's active state
+      const isActive = $sidebar.hasClass('active');
+      gsap.to($sidebar, {
+        duration: 0.3,
+        width: isActive ? "250px" : "70px",
+        ease: isActive ? "power2.out" : "power2.in"
+      });
+    });
+  } else {
     console.error("Required elements (.hamburger, .sidebar, .main-content) not found.");
-    return;
   }
 
-  // Set the initial width of the sidebar to 80px (if not already set via CSS)
-  gsap.set(sidebar, { width: "250px" });
-
-  // Add click event listener to the hamburger icon
-  hamburger.addEventListener('click', function () {
-    // Toggle the active class on sidebar and main content
-    sidebar.classList.toggle('active');
-    mainContent.classList.toggle('active');
-
-    // Animate the sidebar's width using GSAP based on its active state
-    if (sidebar.classList.contains('active')) {
-      // Expand sidebar to full width (250px)
-      gsap.to(sidebar, { duration: 0.3, width: "250px", ease: "power2.out" });
-    } else {
-      // Collapse sidebar back to 80px width
-      gsap.to(sidebar, { duration: 0.3, width: "70px", ease: "power2.in" });
-    }
-  });
-  window.addEventListener("load", function () {
-    const preloader = document.getElementById("preloader");
-    preloader.style.display = "none";
-  });
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Initialize the modal using Bootstrap's Modal API
+  /* ======================================================
+     Transaction Modal (Bootstrap)
+  ====================================================== */
   const transactionModalEl = document.getElementById('transactionModal');
-  const transactionModal = new bootstrap.Modal(transactionModalEl);
-
-  // Add click event listener to each transaction row
-  document.querySelectorAll('.transaction-row').forEach(row => {
-    row.addEventListener('click', function () {
-      const date = this.getAttribute('data-date');
-      const id = this.getAttribute('data-id');
-      const type = this.getAttribute('data-type');
-      const amount = this.getAttribute('data-amount');
-      const status = this.getAttribute('data-status');
-      const details = this.getAttribute('data-details');
-      
-      // Populate modal fields
-      document.getElementById('modalDate').textContent = date;
-      document.getElementById('modalId').textContent = id;
-      document.getElementById('modalType').textContent = type;
-      document.getElementById('modalAmount').textContent = amount;
-      document.getElementById('modalStatus').textContent = status;
-      document.getElementById('modalDetails').textContent = details;
-      
-      // Show the modal
+  if (transactionModalEl) {
+    const transactionModal = new bootstrap.Modal(transactionModalEl);
+    $('.transaction-row').on('click', function () {
+      // Populate modal fields from data attributes
+      ['date', 'id', 'type', 'amount', 'status', 'details'].forEach(attr => {
+        const value = $(this).data(attr);
+        $('#modal' + attr.charAt(0).toUpperCase() + attr.slice(1)).text(value);
+      });
       transactionModal.show();
     });
+  }
+
+  /* ======================================================
+     Notifications & Messages Dropdowns
+  ====================================================== */
+  const $notificationsIcon = $(".notifications-icon");
+  const $notificationsWrapper = $(".icon-wrapper.notifications");
+  const $messagesIcon = $(".messages-icon");
+  const $messagesWrapper = $(".icon-wrapper.messages");
+
+  $notificationsIcon.on("click", function (e) {
+    e.preventDefault();
+    $notificationsWrapper.toggleClass("active");
+    $messagesWrapper.removeClass("active");
   });
+
+  $messagesIcon.on("click", function (e) {
+    e.preventDefault();
+    $messagesWrapper.toggleClass("active");
+    $notificationsWrapper.removeClass("active");
+  });
+
+  // Close any open dropdown if clicking outside
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".icon-wrapper").length) {
+      $(".icon-wrapper").removeClass("active");
+    }
+  });
+
+  /* ======================================================
+     Chart.js Initialization
+  ====================================================== */
+  // Revenue Line Chart
+  const revenueCtx = document.getElementById('revenueChart')?.getContext('2d');
+  if (revenueCtx) {
+    new Chart(revenueCtx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+          label: 'Revenue ($)',
+          data: [1200, 1500, 1700, 1400, 1800, 1900, 2200, 2100, 2300, 2500, 2400, 2600],
+          backgroundColor: 'rgba(246, 142, 58, 0.2)',
+          borderColor: 'rgba(50, 43, 131, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(246, 142, 58, 1)'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  }
+
+  // Sales Bar Chart
+  const salesCtx = document.getElementById('salesChart')?.getContext('2d');
+  if (salesCtx) {
+    new Chart(salesCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Sales',
+          data: [50, 75, 60, 90],
+          backgroundColor: 'rgba(246, 142, 58, 0.5)',
+          borderColor: 'rgba(50, 43, 131, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  }
+});
+
+// Remove preloader once all assets are loaded
+$(window).on("load", function () {
+  $("#preloader").hide();
 });
 
 
+     // Multi-Step Form Navigation Script
+     document.addEventListener("DOMContentLoaded", function() {
+      const prevBtns = document.querySelectorAll(".btn-prev");
+      const nextBtns = document.querySelectorAll(".btn-next");
+      const progress = document.getElementById("progress");
+      const formSteps = document.querySelectorAll(".form-step");
+      const progressSteps = document.querySelectorAll(".progress-step");
+      let currentStep = 0;
+      // Update form and progress bar
+      function updateFormSteps() {
+          formSteps.forEach((step, index) => {
+              step.classList.toggle("form-step-active", index === currentStep);
+          });
+      }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Toggle notifications dropdown
-  const notificationsIcon = document.querySelector(".notifications-icon");
-  const notificationsWrapper = document.querySelector(".icon-wrapper.notifications");
-  notificationsIcon.addEventListener("click", function (e) {
-    e.preventDefault();
-    notificationsWrapper.classList.toggle("active");
-    // Close messages dropdown if open
-    document.querySelector(".icon-wrapper.messages").classList.remove("active");
-  });
-
-  // Toggle messages dropdown
-  const messagesIcon = document.querySelector(".messages-icon");
-  const messagesWrapper = document.querySelector(".icon-wrapper.messages");
-  messagesIcon.addEventListener("click", function (e) {
-    e.preventDefault();
-    messagesWrapper.classList.toggle("active");
-    // Close notifications dropdown if open
-    document.querySelector(".icon-wrapper.notifications").classList.remove("active");
-  });
-
-  // Close dropdowns if clicking outside
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest(".icon-wrapper")) {
-      document.querySelectorAll(".icon-wrapper").forEach(wrapper => {
-        wrapper.classList.remove("active");
+      function updateProgressBar() {
+          progressSteps.forEach((step, index) => {
+              if (index <= currentStep) {
+                  step.classList.add("progress-step-active");
+              } else {
+                  step.classList.remove("progress-step-active");
+              }
+          });
+          // Calculate progress bar width based on current step
+          progress.style.width = (currentStep / (progressSteps.length - 1)) * 100 + "%";
+      }
+      // Next button event
+      nextBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+              if (currentStep < formSteps.length - 1) {
+                  currentStep++;
+                  updateFormSteps();
+                  updateProgressBar();
+              }
+          });
       });
-    }
+      // Previous button event
+      prevBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+              if (currentStep > 0) {
+                  currentStep--;
+                  updateFormSteps();
+                  updateProgressBar();
+              }
+          });
+      });
+      // Toggle payment fields based on selected method
+      const paymentMethodSelect = document.getElementById("paymentMethod");
+      const creditCardFields = document.getElementById("creditCardFields");
+      const paypalFields = document.getElementById("paypalFields");
+      paymentMethodSelect.addEventListener("change", function() {
+          if (this.value === "creditCard") {
+              creditCardFields.style.display = "block";
+              paypalFields.style.display = "none";
+          } else if (this.value === "paypal") {
+              paypalFields.style.display = "block";
+              creditCardFields.style.display = "none";
+          } else {
+              creditCardFields.style.display = "none";
+              paypalFields.style.display = "none";
+          }
+      });
   });
-
-});
-
-
-
-
-// Chart.js - Revenue Chart
-const revenueCtx = document.getElementById('revenueChart').getContext('2d');
-const revenueChart = new Chart(revenueCtx, {
-  type: 'line',
-  data: {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    datasets: [{
-      label: 'Revenue ($)',
-      data: [1200, 1500, 1700, 1400, 1800, 1900, 2200, 2100, 2300, 2500, 2400, 2600],
-      backgroundColor: 'rgba(246, 142, 58, 0.2)',
-      borderColor: 'rgba(50, 43, 131, 1)',
-      borderWidth: 2,
-      pointBackgroundColor: 'rgba(246, 142, 58, 1)'
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
-
-// Chart.js - Sales Chart
-const salesCtx = document.getElementById('salesChart').getContext('2d');
-const salesChart = new Chart(salesCtx, {
-  type: 'bar',
-  data: {
-    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-    datasets: [{
-      label: 'Sales',
-      data: [50, 75, 60, 90],
-      backgroundColor: 'rgba(246, 142, 58, 0.5)',
-      borderColor: 'rgba(50, 43, 131, 1)',
-      borderWidth: 1
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
-
-
-
