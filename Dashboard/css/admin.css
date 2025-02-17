@@ -1855,3 +1855,231 @@ table .btn {
   border-color: var(--primary-color);
   outline: none;
 }
+   
+.help-section {
+  padding: 20px;
+}
+.help-section .section-title-dahsboard {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* FAQ Accordion Styling */
+.help-section .faq-accordion .accordion-item {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background: var(--background-color);
+}
+.help-section  .faq-accordion .accordion-button {
+  background: var(--background-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 15px;
+}
+.help-section  .faq-accordion .accordion-button:not(.collapsed) {
+  background: var(--primary-color);
+  color: #fff;
+}
+.faq-accordion .accordion-body {
+  padding: 15px;
+  font-size: 0.95rem;
+  color: var(--text-muted-color);
+}
+
+/* Contact Form Styling */
+.help-section  .contact-form {
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-top: 30px;
+}
+.help-section  .contact-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+.help-section .contact-form .form-group {
+  margin-bottom: 15px;
+}
+.help-section .contact-form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  color: var(--text-color);
+}
+.help-section .contact-form input,
+.help-section .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: border-color 0.3s;
+}
+.help-section  .contact-form input:focus,
+.help-section .contact-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+.help-section .contact-form button {
+  background: var(--secondary-color);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.help-section .contact-form button:hover {
+  background: #2a237d;
+}
+.help-section .contact-form textarea{
+    height: 120px;
+}
+    /* ---------------- Transactions Section ---------------- */
+    .transactions-section {
+      padding: 20px;
+    }
+    .transactions-section .section-title-dahsboard {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+    
+    /* ------------- Filters Section ------------- */
+    .transaction-filters {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background: var(--background-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+    .transaction-filters .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .transaction-filters label {
+      font-weight: bold;
+      margin: 0;
+    }
+    .transaction-filters input,
+    .transaction-filters select {
+      padding: 5px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+    }
+    
+    
+    
+    /* ------------- Transactions Table ------------- */
+    .transactions-table-section {
+      margin-bottom: 30px;
+    }
+    .transactions-table-section .table {
+      background: var(--background-color);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .transactions-table-section .table thead {
+      background: var(--primary-color);
+      color: #fff;
+    }
+    .transactions-table-section .table th,
+    .transactions-table-section .table td {
+      padding: 12px 15px;
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+    .transactions-table-section .table tbody tr:hover {
+      background: #f7f7f7;
+    }
+  
+    
+    /* ---------------- Transaction Modal Styles ---------------- */
+    .transaction-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none; /* Hidden by default */
+      align-items: center;
+      justify-content: center;
+      z-index: 1050;
+    }
+    .transaction-modal.active {
+      display: flex;
+    }
+    .transaction-modal-content {
+      background: #fff;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      margin: 50px auto 0;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      animation: modalFadeIn 0.4s ease;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .transaction-modal-header {
+      padding: 16px 24px;
+      background: var(--primary-color);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .transaction-modal-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .transaction-modal-close {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .transaction-modal-body {
+      padding: 20px 24px;
+      color: var(--text-color);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .transaction-modal-body p {
+      margin: 10px 0;
+    }
+    .transaction-modal-body hr {
+      border: 0;
+      border-top: 1px solid #eee;
+      margin: 20px 0;
+    }
+    .transaction-modal-footer {
+      padding: 16px 24px;
+      background: var(--secondary-background-color);
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .modal-backdrop{
+      z-index: 99;
+    }

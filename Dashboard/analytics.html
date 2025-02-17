@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics - SPACE MEDIA</title>
+  <meta name="description" content="View detailed analytics and reports on SPACE MEDIA. Monitor sales, revenue, customer activity, and performance metrics with interactive charts and data summaries." />
+  <meta name="keywords" content="analytics, reports, dashboard, SPACE MEDIA, sales, revenue, performance, customer metrics" />
+  <link rel="canonical" href="https://spacemedia.ps/analytics.html">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:title" content="Analytics - SPACE MEDIA">
+  <meta property="og:description" content="View detailed analytics and reports on SPACE MEDIA with interactive charts and data summaries." />
+  <meta property="og:url" content="https://spacemedia.ps/analytics.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/logo.png">
+
+  <!-- External CSS Files -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+
+  <!-- Inline CSS for Analytics Page Specific Styling -->
+  <style>
+   
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+  
+  <!-- Sidebar Navigation (Reused) -->
+  <aside class="sidebar active" aria-label="Sidebar Navigation">
+    <div class="logo">
+      <img src="img/logo.png" alt="SPACE MEDIA Logo" class="show-in-desktop">
+      <img src="img/favicon.png" alt="SPACE MEDIA Logo" class="show-in-mobile" loading="lazy">
+    </div>
+    <nav>
+      <ul>
+        <!-- Dashboard -->
+        <li>
+          <a href="index.html">
+            <div class="icon-side"><i class="fas fa-tachometer-alt"></i></div>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- Listings -->
+        <li class="sidebar-section-title">Listings</li>
+        <li>
+          <a href="listings.html">
+            <div class="icon-side"><i class="fas fa-images"></i></div>
+            <span>All Listings</span>
+          </a>
+        </li>
+        <li>
+          <a href="add-listing.html">
+            <div class="icon-side"><i class="fas fa-plus-circle"></i></div>
+            <span>Add New Listing</span>
+          </a>
+        </li>
+        <!-- Sales & Purchases -->
+        <li class="sidebar-section-title">Sales & Purchases</li>
+        <li>
+          <a href="sales.html">
+            <div class="icon-side"><i class="fas fa-shopping-cart"></i></div>
+            <span>Sales</span>
+          </a>
+        </li>
+        <li>
+          <a href="purchases.html">
+            <div class="icon-side"><i class="fas fa-shopping-basket"></i></div>
+            <span>Purchases</span>
+          </a>
+        </li>
+        <li>
+          <a href="transactions.html">
+            <div class="icon-side"><i class="fas fa-exchange-alt"></i></div>
+            <span>Transactions</span>
+          </a>
+        </li>
+        <!-- Financials -->
+        <li class="sidebar-section-title">Financials</li>
+        <li>
+          <a href="revenue.html">
+            <div class="icon-side"><i class="fas fa-dollar-sign"></i></div>
+            <span>Revenue</span>
+          </a>
+        </li>
+        <li>
+          <a href="deposit.html">
+            <div class="icon-side"><i class="fas fa-wallet"></i></div>
+            <span>Deposit</span>
+          </a>
+        </li>
+        <li>
+          <a href="withdraw.html">
+            <div class="icon-side"><i class="fas fa-hand-holding-usd"></i></div>
+            <span>Withdraw</span>
+          </a>
+        </li>
+        <li>
+          <a href="checkout.html">
+            <div class="icon-side"><i class="fas fa-credit-card"></i></div>
+            <span>Checkout</span>
+          </a>
+        </li>
+        <!-- User Management -->
+        <li class="sidebar-section-title">User Management</li>
+        <li>
+          <a href="profile.html">
+            <div class="icon-side"><i class="fas fa-user"></i></div>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="settings.html">
+            <div class="icon-side"><i class="fas fa-cog"></i></div>
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="notifications.html">
+            <div class="icon-side"><i class="fas fa-bell"></i></div>
+            <span>Notifications</span>
+          </a>
+        </li>
+        <li>
+          <a href="messages.html">
+            <div class="icon-side"><i class="fas fa-envelope"></i></div>
+            <span>Messages</span>
+          </a>
+        </li>
+        <!-- Analytics & Reports -->
+        <li class="sidebar-section-title">Analytics & Reports</li>
+        <li>
+          <a href="analytics.html" class="active">
+            <div class="icon-side"><i class="fas fa-chart-line"></i></div>
+            <span>Analytics</span>
+          </a>
+        </li>
+        <!-- Support & Help -->
+        <li class="sidebar-section-title">Support & Help</li>
+        <li>
+          <a href="help.html">
+            <div class="icon-side"><i class="fas fa-life-ring"></i></div>
+            <span>Help</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  
+  <!-- Main Content Area -->
+  <main class="main-content active">
+    <!-- Dashboard Header (Reused) -->
+    <header class="dashboard-header">
+      <div class="header-container">
+        <!-- Left Section: Hamburger & Search Box -->
+        <div class="header-left">
+          <button class="hamburger" aria-label="Toggle Sidebar">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="search-box">
+            <input type="search" placeholder="Search listings, sales, messages..." aria-label="Search Listings">
+            <button class="search-btn" aria-label="Search">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Right Section: Notifications & Messages -->
+        <div class="header-right">
+          <div class="icon-wrapper notifications">
+            <a href="#" class="notifications-icon" aria-haspopup="true" aria-expanded="false" aria-label="Notifications">
+              <i class="fas fa-bell"></i>
+              <span class="badge">3</span>
+            </a>
+            <div class="dropdown notifications-dropdown">
+              <div class="dropdown-header">Notifications</div>
+              <ul class="notifications-list">
+                <li class="notification-item">
+                  <img src="img/team/1.jpg" alt="John Doe" class="notification-avatar" loading="lazy">
+                  <div class="notification-content">
+                    <p class="notification-text">John Doe placed a new order.</p>
+                    <span class="notification-time">5 min ago</span>
+                  </div>
+                </li>
+                <li class="notification-item">
+                  <img src="img/team/2.jpg" alt="Jane Smith" class="notification-avatar" loading="lazy">
+                  <div class="notification-content">
+                    <p class="notification-text">Your photo was approved.</p>
+                    <span class="notification-time">20 min ago</span>
+                  </div>
+                </li>
+                <li class="notification-item">
+                  <img src="img/team/3.jpg" alt="Alice" class="notification-avatar" loading="lazy">
+                  <div class="notification-content">
+                    <p class="notification-text">Alice commented on your listing.</p>
+                    <span class="notification-time">1 hour ago</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="icon-wrapper messages">
+            <a href="#" class="messages-icon" aria-haspopup="true" aria-expanded="false" aria-label="Messages">
+              <i class="fas fa-envelope"></i>
+              <span class="badge">2</span>
+            </a>
+            <div class="dropdown messages-dropdown">
+              <div class="dropdown-header">Messages</div>
+              <ul class="messages-list">
+                <li class="message-item">
+                  <img src="img/team/4.jpg" alt="Alice Johnson" class="message-avatar" loading="lazy">
+                  <div class="message-content">
+                    <p class="message-sender">Alice Johnson</p>
+                    <p class="message-snippet">Hi, your recent upload looks fantastic! Can we discuss...</p>
+                    <span class="message-time">10 min ago</span>
+                  </div>
+                </li>
+                <li class="message-item">
+                  <img src="img/team/5.jpg" alt="Mark Wilson" class="message-avatar" loading="lazy">
+                  <div class="message-content">
+                    <p class="message-sender">Mark Wilson</p>
+                    <p class="message-snippet">I have a question about the pricing...</p>
+                    <span class="message-time">30 min ago</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- =================== Analytics Section =================== -->
+    <section class="analytics-section my-5 p-0">
+      <!-- Section Title -->
+      <h2 class="section-title-dahsboard">Analytics & Reports</h2>
+      
+      <!-- Statistics Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="stat-info">
+            <h3>Total Sales</h3>
+            <p>$12,000</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+          <div class="stat-info">
+            <h3>Total Revenue</h3>
+            <p>$8,500</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-info">
+            <h3>Total Customers</h3>
+            <p>1,250</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Charts Container -->
+      <div class="charts-container mt-5">
+        <!-- Monthly Sales Chart -->
+        <div class="chart-card">
+          <h3>Monthly Sales</h3>
+          <canvas id="salesChart"></canvas>
+        </div>
+        <!-- Revenue Breakdown Chart -->
+        <div class="chart-card">
+          <h3>Revenue Breakdown</h3>
+          <canvas id="revenueBreakdownChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- External JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/jquery-3.7.1.min.js" defer></script>
+  <script src="js/owl.carousel.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/admin.js" defer></script>
+  
+
+</body>
+</html>

@@ -3,12 +3,30 @@ $(function () {
   /* ======================================================
      Payment Method Toggle
   ====================================================== */
-  $('#paymentMethod').on('change', function () {
-    const method = $(this).val();
-    // Hide all payment details, then show the selected one.
-    $('#creditCardDetails, #paypalDetails, #bankTransferDetails').slideUp();
+ // Payment Method Toggle for Deposit Form
+$('#paymentMethod').on('change', function () {
+  const method = $(this).val(); // Expected: 'creditCard', 'paypal', or 'bankTransfer'
+  // Hide all deposit payment detail sections
+  $('#creditCardDetails, #paypalDetails, #bankTransferDetails').slideUp();
+  // Show the selected deposit payment details section (if a method is selected)
+  if (method) {
     $('#' + method + 'Details').slideDown();
-  });
+  }
+});
+
+// Payment Method Toggle for Withdrawal Form
+$('#withdrawMethod').on('change', function () {
+  const method = $(this).val(); // Expected: 'creditCard', 'paypal', or 'bankTransfer'
+  // Hide all withdrawal payment detail sections
+  $('#withdrawCreditCardDetails, #withdrawPaypalDetails, #withdrawBankTransferDetails').slideUp();
+  // If a method is selected, build the corresponding detail section's ID and display it
+  if (method) {
+    // Capitalize the first letter of the method (e.g., 'creditCard' -> 'CreditCard')
+    const capitalizedMethod = method.charAt(0).toUpperCase() + method.slice(1);
+    $('#' + 'withdraw' + capitalizedMethod + 'Details').slideDown();
+  }
+});
+
 
 
   
