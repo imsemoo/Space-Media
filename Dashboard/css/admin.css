@@ -228,23 +228,9 @@ button {
 
 .icon-wrapper a {
   color: var(--primary-color, #322b83);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-decoration: none;
   cursor: pointer;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 120%;
-  right: 0;
-  width: 280px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  padding: 10px 0;
 }
 
 .dropdown ul {
@@ -275,6 +261,7 @@ button {
   display: flex;
   align-items: center;
 }
+
 
 .welcome-text {
   margin-right: 15px;
@@ -342,21 +329,15 @@ button {
 .icon-wrapper {
   position: relative;
   margin-left: 20px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--secondary-background-color);
 }
-.icon-wrapper a {
-  color: var(--primary-color, #322b83);
-  font-size: 1.5rem;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-}
+
 .icon-wrapper .badge {
   position: absolute;
   top: -5px;
@@ -1939,7 +1920,6 @@ table .btn {
   padding: 20px;
 }
 
-
 /* ------------- Filters Section ------------- */
 .transaction-filters {
   display: flex;
@@ -2079,6 +2059,67 @@ table .btn {
   height: 50px;
   background-color: var(--secondary-background-color);
 }
+
+/* ------------------ User Profile Dropdown ------------------ */
+.user-profile-wrapper {
+  position: relative;
+  margin-left: 20px;
+  display: flex;
+}
+.user-profile-link {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+}
+.user-profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+  transition: border 0.3s;
+}
+.user-profile-link:hover .user-profile-pic {
+  border-color: var(--secondary-color);
+}
+.user-profile-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  z-index: 1000;
+}
+.user-profile-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.user-profile-dropdown ul li {
+  border-bottom: 1px solid #eee;
+}
+.user-profile-dropdown ul li:last-child {
+  border-bottom: none;
+}
+.user-profile-dropdown ul li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  transition: background 0.3s;
+}
+.user-profile-dropdown ul li a:hover {
+  background: var(--secondary-background-color);
+}
+.user-profile-dropdown.active {
+  display: block;
+}
 @media (max-width: 768px) {
   .main-content.active {
     margin-left: 90px;
@@ -2160,30 +2201,34 @@ table .btn {
     width: 100% !important;
     height: auto !important;
   }
-  .chart-card{
+  .chart-card {
     min-width: 280px;
   }
-  .purchase-filters{
+  .purchase-filters {
     flex-flow: column;
     gap: 10px;
   }
   .transaction-filters .filter-group,
-  .purchase-filters .d-flex{
+  .purchase-filters .d-flex {
     flex-wrap: wrap;
     width: 100%;
   }
-  .header-section  .btn{
+  .header-section .btn {
     width: max-content;
-  }#revenueBreakdownChart {
+  }
+  #revenueBreakdownChart {
     width: 100% !important;
     height: auto !important;
     margin: auto;
-}
-.settings-container{
-  gap: 20px;
-  background: transparent;
-}
-#salesChart{
-  height: 300px !important;
-}
+  }
+  .settings-container {
+    gap: 20px;
+    background: transparent;
+  }
+  #salesChart {
+    height: 300px !important;
+  }
+  .search-box {
+    display: none;
+  }
 }

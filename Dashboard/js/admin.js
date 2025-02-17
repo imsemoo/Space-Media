@@ -1,8 +1,20 @@
 // Run once the DOM is ready
 $(function () {
-  /* ======================================================
-     Payment Method Toggle
-  ====================================================== */
+  // Toggle user profile dropdown on click
+  $('.user-profile-link').on('click', function(e) {
+    e.preventDefault();
+    // Toggle the dropdown menu
+    $(this).siblings('.user-profile-dropdown').toggleClass('active');
+  });
+
+  // Close the user profile dropdown if clicking outside
+  $(document).on('click', function(e) {
+    if (!$(e.target).closest('.user-profile-wrapper').length) {
+      $('.user-profile-dropdown').removeClass('active');
+    }
+  });
+
+  
  // Payment Method Toggle for Deposit Form
 $('#paymentMethod').on('change', function () {
   const method = $(this).val(); // Expected: 'creditCard', 'paypal', or 'bankTransfer'

@@ -206,7 +206,6 @@
       <div class="header-container">
         <!-- Left Section: Hamburger Icon and Search Box -->
         <div class="header-left">
-          <!-- Hamburger Icon for Mobile -->
           <button class="hamburger" aria-label="Toggle Sidebar">
             <i class="fas fa-bars"></i>
           </button>
@@ -218,7 +217,7 @@
           </div>
         </div>
 
-        <!-- Right Section: Icons and User Actions -->
+        <!-- Right Section: Notifications, Messages & User Profile -->
         <div class="header-right">
           <!-- Notifications Icon & Dropdown -->
           <div class="icon-wrapper notifications">
@@ -237,23 +236,11 @@
                     <span class="notification-time">5 min ago</span>
                   </div>
                 </li>
-                <li class="notification-item">
-                  <img src="img/team/2.jpg" alt="Jane Smith" class="notification-avatar" loading="lazy">
-                  <div class="notification-content">
-                    <p class="notification-text">Your photo was approved.</p>
-                    <span class="notification-time">20 min ago</span>
-                  </div>
-                </li>
-                <li class="notification-item">
-                  <img src="img/team/3.jpg" alt="Alice" class="notification-avatar" loading="lazy">
-                  <div class="notification-content">
-                    <p class="notification-text">Alice commented on your listing.</p>
-                    <span class="notification-time">1 hour ago</span>
-                  </div>
-                </li>
+                <!-- Additional notification items -->
               </ul>
             </div>
           </div>
+
           <!-- Messages Icon & Dropdown -->
           <div class="icon-wrapper messages">
             <a href="#" class="messages-icon" aria-haspopup="true" aria-expanded="false" aria-label="Messages">
@@ -271,24 +258,24 @@
                     <span class="message-time">10 min ago</span>
                   </div>
                 </li>
-                <li class="message-item">
-                  <img src="img/team/5.jpg" alt="Mark Wilson" class="message-avatar" loading="lazy">
-                  <div class="message-content">
-                    <p class="message-sender">Mark Wilson</p>
-                    <p class="message-snippet">I have a question about the pricing...</p>
-                    <span class="message-time">30 min ago</span>
-                  </div>
-                </li>
+                <!-- Additional message items -->
               </ul>
             </div>
           </div>
-          <!-- User Actions (commented out) -->
-          <!--
-          <div class="user-actions">
-            <span class="welcome-text">Welcome, SellerName</span>
-            <a href="#" class="btn logout-btn">Logout</a>
+
+          <!-- User Profile Dropdown -->
+          <div class="user-profile-wrapper">
+            <a href="#" class="user-profile-link" aria-haspopup="true" aria-expanded="false">
+              <img src="img/team/5.jpg" alt="User Profile" class="user-profile-pic">
+            </a>
+            <div class="dropdown user-profile-dropdown">
+              <ul>
+                <li><a href="profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+              </ul>
+            </div>
           </div>
-          -->
         </div>
       </div>
     </header>
