@@ -30,32 +30,50 @@ $('#withdrawMethod').on('change', function () {
 
 
   
-  /* ======================================================
-     Sidebar Toggle with GSAP
-  ====================================================== */
-  const $hamburger = $('.hamburger');
-  const $sidebar = $('.sidebar');
-  const $mainContent = $('.main-content');
+  // Sidebar Toggle with GSAP - Mobile Behavior: Hidden when closed, 90px when open.
+const $hamburger = $('.hamburger');
+const $sidebar = $('.sidebar');
+const $mainContent = $('.main-content');
 
-  if ($hamburger.length && $sidebar.length && $mainContent.length) {
-    // Set initial sidebar width (if not set via CSS)
+if ($hamburger.length && $sidebar.length && $mainContent.length) {
+  // Determine if the device is mobile (width < 768px)
+  const isMobile = window.innerWidth < 768;
+  
+  // Set initial sidebar width based on device type
+  if (isMobile) {
+    gsap.set($sidebar, { width: "0px" });
+  } else {
     gsap.set($sidebar, { width: "250px" });
-
-    $hamburger.on('click', function () {
-      $sidebar.toggleClass('active');
-      $mainContent.toggleClass('active');
-
-      // Animate width based on sidebar's active state
-      const isActive = $sidebar.hasClass('active');
+  }
+  
+  $hamburger.on('click', function () {
+    // Toggle active classes for sidebar and main content
+    $sidebar.toggleClass('active');
+    $mainContent.toggleClass('active');
+    
+    const isActive = $sidebar.hasClass('active');
+    
+    if (isMobile) {
+      // On mobile: Open to 90px if active, close to 0px if not
+      gsap.to($sidebar, {
+        duration: 0.3,
+        width: isActive ? "90px" : "0px",
+        display: isActive ? "block" : "none",
+        ease: isActive ? "power2.out" : "power2.in"
+      });
+    } else {
+      // On desktop: Open to 250px if active, close to 90px if not
       gsap.to($sidebar, {
         duration: 0.3,
         width: isActive ? "250px" : "90px",
         ease: isActive ? "power2.out" : "power2.in"
       });
-    });
-  } else {
-    console.error("Required elements (.hamburger, .sidebar, .main-content) not found.");
-  }
+    }
+  });
+} else {
+  console.error("Required elements (.hamburger, .sidebar, .main-content) not found.");
+}
+
 
   /* ======================================================
      Transaction Modal (Bootstrap)
