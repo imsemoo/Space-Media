@@ -1127,7 +1127,7 @@ table .btn {
   font-size: 1rem;
   padding: 10px 15px;
   margin-bottom: 10px;
-  text-align: left;
+   text-align: start;
   transition: background 0.3s;
 }
 .settings-nav .nav-link:hover {
@@ -1527,7 +1527,7 @@ table .btn {
   color: #555;
 }
 .deposit-guidelines ul {
-  padding-left: 20px;
+  padding-inline-start: 20px;
   margin: 0;
   list-style: disc;
 }
@@ -2231,4 +2231,71 @@ table .btn {
   .search-box {
     display: none;
   }
+}
+ /* Notifications Page Section */
+ .notifications-page-section {
+  padding: 20px;
+}
+.notifications-page-section .section-title-dahsboard {
+  padding: 0;
+}
+
+/* Clear All Button */
+.clear-notifications {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--danger-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  height: 40px;
+  font-size: 14px;
+}
+
+
+/* Notifications List Styling */
+.notifications-list-page {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.notifications-list-page li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: background 0.3s;
+}
+.notifications-list-page li:hover {
+  background: #f7f7f7;
+}
+.notification-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+}
+.notification-content {
+  flex: 1;
+}
+.notification-content h4 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--primary-color);
+}
+.notification-content p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+}
+.notification-time {
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
 }

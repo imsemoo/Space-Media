@@ -1,0 +1,237 @@
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'cairo-Regular', sans-serif;
+}
+
+@font-face {
+    font-family: "cairo-Regular";
+    src: url(../fonts/Cairo-Regular.ttf);
+}
+
+@font-face {
+    font-family: "cairo-SemiBold";
+    src: url(../fonts/Cairo-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "cairo-Bold";
+    src: url(../fonts/Cairo-Bold.ttf);
+}
+
+@font-face {
+    font-family: "barada";
+    src: url(../fonts/barada-reqa.ttf);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "cairo-Bold";
+
+}
+
+.navbar {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+.nav-link::after {
+    left: unset;
+    right: 0;
+}
+
+.dedcription-btn,
+.dedcription-btn-orange {
+    padding-right: 30px;
+    padding-left: 0;
+}
+
+.dedcription-btn .btn-icon,
+.dedcription-btn-orange .btn-icon-orange {
+    float: right;
+    right: 0;
+
+    border-radius: 25px 25px 25px 0;
+}
+
+.btn-icon,
+.btn-icon-orange {
+    right: 15px;
+    left: auto;
+}
+
+.me-2 {
+    margin-right: 0 !important;
+    margin-left: .5rem !important;
+}
+
+.collection-panel h3 {
+    left: 0;
+    right: 20px;
+}
+
+
+.footer-column.social form.footer-newsletter button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.footer-column.social form.footer-newsletter input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.read-more .fa-arrow-right {
+    transform: rotate(180deg);
+}
+
+.form-select {
+    background-position: left .75rem center;
+
+}
+
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3),
+.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,
+.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select,
+.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-right: calc(var(--bs-border-width)* -1);
+}
+
+.search-filter .input-group-text {
+    border-right: 1px solid var(--border-color)
+}
+
+.breadcrumb-item+.breadcrumb-item {
+    padding-right: var(--bs-breadcrumb-item-padding-x);
+    padding-left: 0;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    float: right;
+    padding-right: 0;
+    padding-left: var(--bs-breadcrumb-item-padding-x);
+
+}
+
+.fa-angles-right {
+    transform: rotate(180deg);
+}
+
+.fa-angles-left {
+    transform: rotate(180deg);
+}
+
+.accordion-button::after {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.author-box img {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.newsletter-form .form-control {
+    border: 1px solid #ccc !important;
+}
+
+.sidebar {
+    right: 0;
+    left: unset;
+}
+
+.main-content.active {
+    margin-right: 250px;
+    margin-left: 0;
+}
+
+.main-content {
+    margin-right: 90px;
+    margin-left: 0;
+
+}
+
+.icon-wrapper {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+section {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.timeline:before {
+    left: unset;
+    right: 30px;
+}
+
+.timeline-content:before {
+    left: unset;
+    right: -8px;
+    border-right: 0;
+    border-left: 8px solid #f8f7fc;
+}
+
+.status i {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+.settings-section form .form-control,
+.settings-section form .form-select,
+.settings-section form textarea,
+.profile-content form input,
+.profile-content form textarea,
+.profile-content form select {
+    direction: rtl;
+}
+
+@media (max-width: 768px) {
+    .main-content.active {
+        margin-left: 0;
+        margin-right: 90px;
+    }
+
+    .main-content {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.nav-link:hover, .nav-link.active {
+    font-family: "cairo-SemiBold";
+
+}
+
+.dropdown-item{
+    text-align: start;
+}

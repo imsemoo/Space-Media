@@ -22,6 +22,8 @@ $(function () {
     loop: true,
     nav: true,
     dots: false,
+    rtl:true,
+
     navText: [
       '<i class="fas fa-arrow-left"></i>',
       '<i class="fas fa-arrow-right"></i>'
@@ -43,7 +45,8 @@ $(function () {
     autoplayTimeout: 5000,
     smartSpeed: 800,
     animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
+    animateIn: 'fadeIn',    rtl:true,
+
     items: 1, // Display one testimonial at a time
     navText: [
       '<i class="fas fa-arrow-left"></i>',
@@ -54,11 +57,16 @@ $(function () {
   /* ======================================================
      Collection Panels - Active State Toggle
   ====================================================== */
-  $('.collection-panel').on('click', function () {
+  $('.collection-panel').on('click', function (e) {
+    e.preventDefault(); // منع السلوك الافتراضي مؤقتاً
     $('.collection-panel').removeClass('active');
     $(this).addClass('active');
+    const target = $(this).attr('href');
+    setTimeout(function() {
+      window.location.href = target;
+    }, 900); // تأخير 300 مللي ثانية
   });
-
+  
   /* ======================================================
      Fixed Navbar & GSAP Animations
   ====================================================== */
